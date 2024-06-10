@@ -21,8 +21,10 @@ using namespace std;
 int main(int argc, char **argv) {
 	Engine::LOG::SetConfig(true, PRINT_LOG_VERBOSE);
 	Engine::GameEngine& game = Engine::GameEngine::GetInstance();
-
 	cout << "hello world";
+
+    cout << "hello world kuo";
+
     // TODO: [HACKATHON-1-SCENE] (3/4): Register Scenes here
 	game.AddNewScene("start", new StartScene());
 
