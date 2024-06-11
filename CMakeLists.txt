@@ -73,6 +73,7 @@ add_executable(2024_I2P2_TowerDefense_with_answer
         Scene/SettingsScene.cpp
         Scene/ScoreBoardScene.cpp
         Scene/NormalPlayScene.cpp
+        Potion/Potion.cpp
     )
 
 
