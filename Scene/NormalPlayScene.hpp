@@ -81,6 +81,7 @@ public:
 	virtual void DeconstructTurret(const int &x, const int &y) override final;
 	virtual void UpdateDangerIndicator() override final;
 	virtual void ActivateCheatMode() override final;
+	virtual bool handle_revive() override final;
 
 // ========= Non-Virtual Functions ============ // 	
 

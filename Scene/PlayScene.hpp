@@ -30,6 +30,8 @@ protected:
 	int money;
 	int total_score;
 	int SpeedMult;
+	bool have_entered_revive_scene;
+	bool entering_revive_scene;
 
 public:
 	static bool DebugMode;
@@ -100,6 +102,9 @@ public:
 	// delete turret (x,y) and return half of its price if exist
 	virtual void DeconstructTurret(const int &x, const int &y) =0;
 	virtual void UpdateDangerIndicator() =0;
+
+	// Return value show whether it is enter from revive scene
+	virtual bool handle_revive() =0;
 
 
 // ========= Non-Virtual Functions ============ // 

@@ -275,4 +275,13 @@ namespace Engine {
 		static GameEngine instance;
 		return instance;
 	}
+	std::string GameEngine::GetSceneName(IScene *scene)
+	{
+		for(auto p : scenes)
+		{
+			if(p.second == scene)
+				return p.first;
+		}
+		return "no such scene";
+	}
 }

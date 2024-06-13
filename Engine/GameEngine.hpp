@@ -161,6 +161,7 @@ namespace Engine {
 		/// </summary>
 		/// <returns>The Singleton instance of GameEngine.</returns>
 		static GameEngine& GetInstance();
+		std::string GetSceneName(IScene* scene);
 	};
 }
 #endif // GAMEENGINE_HPP

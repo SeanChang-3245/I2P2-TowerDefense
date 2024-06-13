@@ -39,6 +39,10 @@ void NormalPlayScene::Initialize()
 	Engine::LOG(Engine::INFO) << "enter NormalPlayScene::initialize\n";
 	PlayScene::Initialize();
 
+	// enter from revive scene
+	if(have_entered_revive_scene)
+		return;
+
 	deathCountDown = -1;
 	ReadEnemyWave();
 	preview = nullptr;
@@ -373,7 +377,14 @@ void NormalPlayScene::Hit()
 	PlayScene::Hit();
 	if (lives <= 0)
 	{
-		Engine::GameEngine::GetInstance().ChangeScene("lose");
+		if(have_entered_revive_scene)
+			Engine::GameEngine::GetInstance().ChangeScene("lose");
+		else
+		{
+			have_entered_revive_scene = true;
+			entering_revive_scene = true;
+			Engine::GameEngine::GetInstance().ChangeScene("revive");
+		}
 	}
 }
 
@@ -489,4 +500,15 @@ void NormalPlayScene::ActivateCheatMode()
 {
 	EarnMoney(10000);
 	EffectGroup->AddNewObject(new Plane());
+}
+
+bool NormalPlayScene::handle_revive()
+{
+	if(have_entered_revive_scene)
+	{
+		lives = 5;
+		UILives->Text = std::string("Life ") + std::to_string(lives);
+		return true;
+	}
+	return false;
 }

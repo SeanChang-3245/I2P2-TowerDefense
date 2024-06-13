@@ -55,6 +55,12 @@ Engine::Point PlayScene::GetClientSize()
 
 void PlayScene::Initialize()
 {
+	bool enter_from_revive = handle_revive();
+	if(enter_from_revive)
+		return;
+
+	
+
 	Engine::LOG(Engine::INFO) << "enter PlayScene::initialize\n";
 
 	mapState.clear();
@@ -64,6 +70,8 @@ void PlayScene::Initialize()
 	money = 150;
 	total_score = 0;
 	SpeedMult = 1;
+	have_entered_revive_scene = false;
+	entering_revive_scene = false;
 
 	// a scene is a Group, so there is a vector of object in the scene
 	// Add groups from bottom to top.
@@ -92,6 +100,15 @@ void PlayScene::Initialize()
 
 void PlayScene::Terminate()
 {
+	if(entering_revive_scene)
+	{
+		AudioHelper::StopBGM(bgmId);
+		SpeedMult = 0;
+		entering_revive_scene = false;
+		return;
+	}
+
+	entering_revive_scene = have_entered_revive_scene = false;
 	AudioHelper::StopBGM(bgmId);
 	AudioHelper::StopSample(deathBGMInstance);
 	deathBGMInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
