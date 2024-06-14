@@ -25,6 +25,7 @@ private:
 
 public:
 	Turret* preview;
+	std::list<std::pair<int, float>> enemyWaveData;
 	// static bool DebugMode;
 	// static const std::vector<Engine::Point> directions;
 	// static const int MapWidth, MapHeight;
@@ -88,6 +89,7 @@ public:
 	explicit NormalPlayScene() = default;
 	void ReadEnemyWave();
 	void UpdateSpawnEnemy(float deltaTime);
+	void ClearCloseEnemy();
 
 	// static Engine::Point GetClientSize();
 	// virtual void Draw() const override;

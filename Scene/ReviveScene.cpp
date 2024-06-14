@@ -13,6 +13,7 @@
 #include "Engine/Point.hpp"
 #include "ReviveScene.hpp"
 #include "Engine/LOG.hpp"
+#include "Enemy/Enemy.hpp"
 
 const float ReviveScene::MaxAnswerTime = 60;
 
@@ -94,8 +95,10 @@ void ReviveScene::GiveUpOnClick()
 void ReviveScene::SubmitOnClick() 
 {
     if(CheckAnswer())
-        // To be done
+	{
+		std::string prev_scene = getPrevSceneName();
 	    Engine::GameEngine::GetInstance().ChangeScene(getPrevSceneName());
+	}
     else
 	{
 		Engine::GameEngine::GetInstance().GetPreviousScene()->Terminate();
@@ -154,3 +157,4 @@ std::string ReviveScene::getPrevSceneName() {
 	PlayScene* scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetPreviousScene());
 	return Engine::GameEngine::GetInstance().GetSceneName(scene);
 }
+

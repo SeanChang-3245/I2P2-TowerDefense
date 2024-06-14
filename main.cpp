@@ -15,6 +15,7 @@
 #include "Scene/ScoreboardScene.hpp"
 #include "Scene/MapCreateScene.hpp"
 #include "Scene/ReviveScene.hpp"
+#include "Scene/SurvivalPlayScene.hpp"
 #include "DebugMacro.hpp"
 #include <iostream>
 using namespace std;
@@ -36,6 +37,7 @@ int main(int argc, char **argv) {
 	
 	game.AddNewScene("play-normal", new NormalPlayScene());
 	game.AddNewScene("play-reverse", new ReversePlayScene());
+	game.AddNewScene("play-survival", new SurvivalPlayScene());
 	
 	game.AddNewScene("lose", new LoseScene());
 	game.AddNewScene("scoreboard", new ScoreboardScene());
