@@ -6,6 +6,7 @@
 
 #include "Engine/Group.hpp"
 #include "Scene/PlayScene.hpp"
+#include "Scene/NormalPlayScene.hpp"
 #include "Engine/Point.hpp"
 #include "Potion.hpp"
 #include "Enemy/Enemy.hpp"
@@ -19,7 +20,6 @@ Potion::Potion(std::string Potionbase, std::string Potionimg, int r, int dmg, in
     duration=p;
 }
 
-#include <iostream>
 void Potion::Update(float deltaTime) 
 {
   Sprite::Update(deltaTime);
@@ -36,7 +36,8 @@ void Potion::Update(float deltaTime)
       Target = dynamic_cast<Enemy*>(it);
       resume(Target);
     }
-    getPlayScene()->BulletGroup->RemoveObject(objectIterator);
+    // scene->mapState[Position.y][Position.x]=scene->originalMapState[Position.y][Position.x];
+    scene->TowerGroup->RemoveObject(this->GetObjectIterator());
     return ;
   }
   
@@ -44,6 +45,7 @@ void Potion::Update(float deltaTime)
 			Engine::Point diff = it->Position - Position;
       Target = dynamic_cast<Enemy*>(it);
 			if (diff.Magnitude() <= CollisionRadius) effect(Target);
+      else resume(Target);
 		}
 }
 

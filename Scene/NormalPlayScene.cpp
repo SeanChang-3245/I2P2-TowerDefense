@@ -371,7 +371,7 @@ void NormalPlayScene::PlaceTurret(const int &x, const int &y)
 	// Remove Preview.
 	preview = nullptr;
 
-	mapState[y][x] = TILE_OCCUPIED;
+	// mapState[y][x] = TILE_OCCUPIED;
 	// OnMouseMove(mx, my);
 	
  }
