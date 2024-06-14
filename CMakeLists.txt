@@ -60,6 +60,8 @@ add_executable(2024_I2P2_TowerDefense_with_answer
         Turret/TurretButton.cpp
         Turret/HoverTurretButton.cpp
         Turret/Shovel.cpp
+        Turret/Potion.cpp
+        Turret/FrostPotion.cpp
         
         Scene/WinScene.cpp
         Scene/MapCreateScene.cpp
@@ -73,7 +75,6 @@ add_executable(2024_I2P2_TowerDefense_with_answer
         Scene/SettingsScene.cpp
         Scene/ScoreBoardScene.cpp
         Scene/NormalPlayScene.cpp
-        Potion/Potion.cpp
     )
 
 

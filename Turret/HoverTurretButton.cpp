@@ -27,6 +27,22 @@ HoverTurretButton::HoverTurretButton(std::string img, std::string imgIn, Engine:
 }
 
 HoverTurretButton::HoverTurretButton(std::string img, std::string imgIn, Engine::Sprite Base, Engine::Sprite Turret, 
+            int img_x, int img_y,
+            int inf_x, int inf_y,
+            unsigned char r, unsigned char g, unsigned char b, unsigned char a, 
+            int cost, int radius, int duration, 
+			std::vector<std::string> details) :
+			cost(cost), Base(Base), Turret(Turret),
+			HoverImageButton(img, imgIn, img_x, img_y, inf_x, inf_y, r, g, b, a)
+
+{
+	for(const auto &str : details)
+	{
+		AddNewInformation(str);
+	}
+}
+
+HoverTurretButton::HoverTurretButton(std::string img, std::string imgIn, Engine::Sprite Base, Engine::Sprite Turret, 
 			int  img_x, int img_y,
 			int inf_x, int inf_y,
 			unsigned char r, unsigned char g, unsigned char b, unsigned char a, 
@@ -39,6 +55,7 @@ HoverTurretButton::HoverTurretButton(std::string img, std::string imgIn, Engine:
 		AddNewInformation(str);
 	}
 }
+
 
 void HoverTurretButton::Update(float deltaTime) {
 	HoverImageButton::Update(deltaTime);

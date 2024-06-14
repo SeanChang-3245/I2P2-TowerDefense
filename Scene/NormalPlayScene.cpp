@@ -33,6 +33,9 @@
 #include "DebugMacro.hpp"
 #include "Bullet/FireBullet.hpp"
 #include "UI/Component/ImageButton.hpp"
+#include "Turret/Potion.hpp"
+#include "Turret/FrostPotion.hpp"
+
 
 void NormalPlayScene::Initialize()
 {
@@ -47,8 +50,6 @@ void NormalPlayScene::Initialize()
 void NormalPlayScene::Update(float deltaTime)
 {
 	UpdateDangerIndicator();
-
-	
 	for (int i = 0; i < SpeedMult; i++)
 	{
 		IScene::Update(deltaTime);
@@ -88,6 +89,12 @@ void NormalPlayScene::OnMouseMove(int mx, int my)
 	imgTarget->Position.y = y * BlockSize;
 }
 
+void NormalPlayScene::PlaceObject(const int &x, const int &y)
+{
+	if (preview->GetType()==TURRET) PlaceTurret(x, y);
+	else if (preview->GetType()==POTION) PlacePotion(x, y);
+}
+
 void NormalPlayScene::OnMouseUp(int button, int mx, int my)
 {
 	IScene::OnMouseUp(button, mx, my);
@@ -100,7 +107,7 @@ void NormalPlayScene::OnMouseUp(int button, int mx, int my)
 	{ 
 		if (mapState[y][x] != TILE_OCCUPIED)
 		{
-			PlaceTurret(x, y);
+			PlaceObject(x, y);
 		}
 		if (mapState[y][x] == TILE_OCCUPIED)
 		{
@@ -224,6 +231,19 @@ void NormalPlayScene::ConstructUI()
 	btn->SetOnClickCallback(std::bind(&NormalPlayScene::UIBtnClicked, this, 4));
 	UIGroup->AddNewControlObject(btn);
 
+	details.clear();
+	details.push_back("freeze the enemies");
+	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
+		Engine::Sprite("play/potion.png", 1370, 252, 0, 0, 0, 0),
+		Engine::Sprite("play/potion.png", 1370, 252, 0, 0, 0, 0),
+		1370, 252,
+		information_x, information_y,
+		0, 0, 0, 255,
+		10, 100, 10,
+		details);
+	btn->SetOnClickCallback(std::bind(&NormalPlayScene::UIBtnClicked, this, 5));
+	UIGroup->AddNewControlObject(btn);
+
 	// Background
 	// UIGroup->AddNewObject(new Engine::Image("play/sand.png", 1280, 0, 320, 832));
 
@@ -267,6 +287,8 @@ void NormalPlayScene::UIBtnClicked(int id)
 		preview = new AdvancedMissileTurret(0, 0);
 	else if (id == 4)
 		preview = new Shovel(0, 0);
+	else if (id == 5)
+		preview = new FrostPotion(0, 0);
 
 
 	if (!preview)
@@ -324,6 +346,35 @@ void NormalPlayScene::PlaceTurret(const int &x, const int &y)
 	mapState[y][x] = TILE_OCCUPIED;
 	// OnMouseMove(mx, my);
 }
+
+ void NormalPlayScene::PlacePotion(const int &x, const int &y)
+ {
+	if (!preview || preview->GetType() != POTION)
+		return;
+	EarnMoney(-preview->GetPrice());
+	
+	// Remove Preview.
+	preview->GetObjectIterator()->first = false;
+	UIGroup->RemoveObject(preview->GetObjectIterator());
+	
+	// Construct real turret.
+	preview->Position.x = x * BlockSize + BlockSize / 2;
+	preview->Position.y = y * BlockSize + BlockSize / 2;
+	preview->Enabled = true;
+	preview->Preview = false;
+	preview->Tint = al_map_rgba(255, 255, 255, 255);
+	TowerGroup->AddNewObject(preview);
+	
+	// To keep responding when paused.
+	preview->Update(0);
+	
+	// Remove Preview.
+	preview = nullptr;
+
+	mapState[y][x] = TILE_OCCUPIED;
+	// OnMouseMove(mx, my);
+	
+ }
 
 void NormalPlayScene::DeconstructTurret(const int &x, const int &y)
 {
