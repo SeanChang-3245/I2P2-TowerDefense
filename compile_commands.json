@@ -247,6 +247,18 @@
 },
 {
   "directory": "C:/mycode/I2P2-TowerDefense/build",
+  "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Turret\\Potion.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Turret\\Potion.cpp",
+  "file": "C:/mycode/I2P2-TowerDefense/Turret/Potion.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Potion.cpp.obj"
+},
+{
+  "directory": "C:/mycode/I2P2-TowerDefense/build",
+  "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Turret\\FrostPotion.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Turret\\FrostPotion.cpp",
+  "file": "C:/mycode/I2P2-TowerDefense/Turret/FrostPotion.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/FrostPotion.cpp.obj"
+},
+{
+  "directory": "C:/mycode/I2P2-TowerDefense/build",
   "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Scene\\WinScene.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Scene\\WinScene.cpp",
   "file": "C:/mycode/I2P2-TowerDefense/Scene/WinScene.cpp",
   "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/WinScene.cpp.obj"
@@ -316,17 +328,5 @@
   "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Scene\\NormalPlayScene.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Scene\\NormalPlayScene.cpp",
   "file": "C:/mycode/I2P2-TowerDefense/Scene/NormalPlayScene.cpp",
   "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/NormalPlayScene.cpp.obj"
-},
-{
-  "directory": "C:/mycode/I2P2-TowerDefense/build",
-  "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Potion\\Potion.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Potion\\Potion.cpp",
-  "file": "C:/mycode/I2P2-TowerDefense/Potion/Potion.cpp",
-  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Potion/Potion.cpp.obj"
-},
-{
-  "directory": "C:/mycode/I2P2-TowerDefense/build",
-  "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Potion\\Frost_Potion.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Potion\\Frost_Potion.cpp",
-  "file": "C:/mycode/I2P2-TowerDefense/Potion/Frost_Potion.cpp",
-  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Potion/Frost_Potion.cpp.obj"
 }
 ]

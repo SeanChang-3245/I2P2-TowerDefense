@@ -42,6 +42,7 @@
 [INFO] Loaded Resource<image>: Resource/images/play/turret-3.png
 [INFO] Loaded Resource<image>: Resource/images/play/turret-6.png
 [INFO] Loaded Resource<image>: Resource/images/play/shovel.png
+[INFO] Loaded Resource<image>: Resource/images/play/potion.png
 [INFO] Loaded Resource<image>: Resource/images/play/dirt.png scaled to 64x64
 [INFO] Loaded Resource<image>: Resource/images/play/floor.png scaled to 64x64
 [INFO] Loaded Resource<audio>: Resource/audios/astronomia.ogg
@@ -59,6 +60,7 @@
 [INFO] Destroyed Resource<image>: play/floor.png?64x64
 [INFO] Destroyed Resource<image>: play/shovel.png
 [INFO] Destroyed Resource<image>: play/turret-3.png
+[INFO] Destroyed Resource<image>: play/potion.png
 [INFO] Destroyed Resource<image>: play/tower-base.png
 [INFO] Destroyed Resource<image>: stage-select/floor.png
 [INFO] Destroyed Resource<image>: play/target.png
