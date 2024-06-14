@@ -61,6 +61,47 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Potion.cpp.obj: \
   C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/stdint.h \
   C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/lib/clang/18/include/__stddef_wint_t.h \
   C:/allegro/include/allegro5/platform/astdbool.h \
+  C:/allegro/include/allegro5/color.h \
+  C:/allegro/include/allegro5/allegro_primitives.h \
+  C:/allegro/include/allegro5/allegro.h \
+  C:/allegro/include/allegro5/altime.h \
+  C:/allegro/include/allegro5/bitmap.h \
+  C:/allegro/include/allegro5/bitmap_draw.h \
+  C:/allegro/include/allegro5/bitmap_io.h \
+  C:/allegro/include/allegro5/file.h C:/allegro/include/allegro5/path.h \
+  C:/allegro/include/allegro5/utf8.h \
+  C:/allegro/include/allegro5/bitmap_lock.h \
+  C:/allegro/include/allegro5/blender.h \
+  C:/allegro/include/allegro5/clipboard.h \
+  C:/allegro/include/allegro5/display.h \
+  C:/allegro/include/allegro5/events.h \
+  C:/allegro/include/allegro5/config.h C:/allegro/include/allegro5/cpu.h \
+  C:/allegro/include/allegro5/debug.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/assert.h \
+  C:/allegro/include/allegro5/drawing.h \
+  C:/allegro/include/allegro5/error.h \
+  C:/allegro/include/allegro5/fixed.h \
+  C:/allegro/include/allegro5/fmaths.h \
+  C:/allegro/include/allegro5/inline/fmaths.inl \
+  C:/allegro/include/allegro5/fshook.h \
+  C:/allegro/include/allegro5/fullscreen_mode.h \
+  C:/allegro/include/allegro5/haptic.h \
+  C:/allegro/include/allegro5/joystick.h \
+  C:/allegro/include/allegro5/keyboard.h \
+  C:/allegro/include/allegro5/keycodes.h \
+  C:/allegro/include/allegro5/mouse.h \
+  C:/allegro/include/allegro5/touch_input.h \
+  C:/allegro/include/allegro5/memory.h \
+  C:/allegro/include/allegro5/monitor.h \
+  C:/allegro/include/allegro5/mouse_cursor.h \
+  C:/allegro/include/allegro5/render_state.h \
+  C:/allegro/include/allegro5/shader.h \
+  C:/allegro/include/allegro5/transformations.h \
+  C:/allegro/include/allegro5/system.h \
+  C:/allegro/include/allegro5/threads.h \
+  C:/allegro/include/allegro5/timer.h C:/allegro/include/allegro5/tls.h \
+  C:/allegro/include/allegro5/alcompat.h \
+  C:/allegro/include/allegro5/platform/alwin.h \
   C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/cmath \
   C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__assert \
   C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__assertion_handler \
@@ -812,48 +853,37 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Potion.cpp.obj: \
   C:/mycode/I2P2-TowerDefense/./Engine/Point.hpp \
   C:/mycode/I2P2-TowerDefense/./Scene/PlayScene.hpp \
   C:/allegro/include/allegro5/allegro_audio.h \
-  C:/allegro/include/allegro5/allegro.h \
-  C:/allegro/include/allegro5/altime.h \
-  C:/allegro/include/allegro5/bitmap.h \
-  C:/allegro/include/allegro5/color.h \
-  C:/allegro/include/allegro5/bitmap_draw.h \
-  C:/allegro/include/allegro5/bitmap_io.h \
-  C:/allegro/include/allegro5/file.h C:/allegro/include/allegro5/path.h \
-  C:/allegro/include/allegro5/utf8.h \
-  C:/allegro/include/allegro5/bitmap_lock.h \
-  C:/allegro/include/allegro5/blender.h \
-  C:/allegro/include/allegro5/clipboard.h \
-  C:/allegro/include/allegro5/display.h \
-  C:/allegro/include/allegro5/events.h \
-  C:/allegro/include/allegro5/config.h C:/allegro/include/allegro5/cpu.h \
-  C:/allegro/include/allegro5/debug.h \
-  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/assert.h \
-  C:/allegro/include/allegro5/drawing.h \
-  C:/allegro/include/allegro5/error.h \
-  C:/allegro/include/allegro5/fixed.h \
-  C:/allegro/include/allegro5/fmaths.h \
-  C:/allegro/include/allegro5/inline/fmaths.inl \
-  C:/allegro/include/allegro5/fshook.h \
-  C:/allegro/include/allegro5/fullscreen_mode.h \
-  C:/allegro/include/allegro5/haptic.h \
-  C:/allegro/include/allegro5/joystick.h \
-  C:/allegro/include/allegro5/keyboard.h \
-  C:/allegro/include/allegro5/keycodes.h \
-  C:/allegro/include/allegro5/mouse.h \
-  C:/allegro/include/allegro5/touch_input.h \
-  C:/allegro/include/allegro5/memory.h \
-  C:/allegro/include/allegro5/monitor.h \
-  C:/allegro/include/allegro5/mouse_cursor.h \
-  C:/allegro/include/allegro5/render_state.h \
-  C:/allegro/include/allegro5/shader.h \
-  C:/allegro/include/allegro5/transformations.h \
-  C:/allegro/include/allegro5/system.h \
-  C:/allegro/include/allegro5/threads.h \
-  C:/allegro/include/allegro5/timer.h C:/allegro/include/allegro5/tls.h \
-  C:/allegro/include/allegro5/alcompat.h \
-  C:/allegro/include/allegro5/platform/alwin.h \
   C:/mycode/I2P2-TowerDefense/./Engine/IScene.hpp \
   C:/mycode/I2P2-TowerDefense/Turret/Potion.hpp \
   C:/mycode/I2P2-TowerDefense/Turret/Turret.hpp \
   C:/mycode/I2P2-TowerDefense/./Engine/Sprite.hpp \
-  C:/mycode/I2P2-TowerDefense/./UI/Component/Image.hpp
+  C:/mycode/I2P2-TowerDefense/./UI/Component/Image.hpp \
+  C:/mycode/I2P2-TowerDefense/./Enemy/Enemy.hpp \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/deque \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/iostream \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/istream \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/ostream \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/bitset \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/format \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/container_adaptor.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/range_default_formatter.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__chrono/statically_widen.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/range_formatter.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_context.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_arg_store.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_args.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__ranges/ref_view.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/queue \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/stack \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_functions.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_char.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/write_escaped.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/escaped_output_table.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_floating_point.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__charconv/chars_format.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__charconv/to_chars_floating_point.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_integer.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_pointer.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_string.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_tuple.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/print
