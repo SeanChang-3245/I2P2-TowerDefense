@@ -287,7 +287,7 @@ void NormalPlayScene::UIBtnClicked(int id)
 		preview = new AdvancedMissileTurret(0, 0);
 	else if (id == 4)
 		preview = new Shovel(0, 0);
-	else if (id == 5)
+	else if (id == 5 && money >= FrostPotion::Price)
 		preview = new FrostPotion(0, 0);
 
 
