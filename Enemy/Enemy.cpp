@@ -49,6 +49,7 @@ Enemy::Enemy(std::string img, float x, float y, float radius, float speed, float
 	CollisionRadius = radius;
 	reachEndTime = 0;
 	froze_count_down = 0;
+	Frozen=0;
 }
 
 void Enemy::Hit(float damage) {
@@ -157,14 +158,14 @@ void Enemy::UpdateIntermediatePath(const std::vector<std::vector<int>>& mapDista
 
 void Enemy::Update(float deltaTime) {
 	// Pre-calculate the velocity.
-
+	if (Frozen) return;
 	float remainSpeed = speed * deltaTime;
 	froze_count_down -= deltaTime;
 	if(froze_count_down > 0)
 		remainSpeed = 0.001;
 	else
 		froze_count_down = 0;
-
+	
 	while (remainSpeed != 0) 
 	{
 		if(intermediate_path.size() && !pass_intermediate_point)

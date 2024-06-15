@@ -71,6 +71,7 @@ void PlayScene::Initialize()
 	AddNewObject(GroundEffectGroup = new Group());
 	AddNewObject(DebugIndicatorGroup = new Group());
 	AddNewObject(TowerGroup = new Group());
+	AddNewObject(PotionGroup = new Group());
 	AddNewObject(EnemyGroup = new Group());
 	AddNewObject(BulletGroup = new Group());
 	AddNewObject(EffectGroup = new Group());

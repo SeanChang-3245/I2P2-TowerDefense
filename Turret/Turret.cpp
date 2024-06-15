@@ -23,8 +23,11 @@ Turret::Turret(std::string imgBase, std::string imgTurret, float x, float y, flo
 	CollisionRadius = radius;
 }
 
+#include <iostream>
 void Turret::Update(float deltaTime) {
 	Sprite::Update(deltaTime);
+	if (type==TURRET) std::cout << "TURRET UPDATE\n";
+	else if (type==POTION) std::cout << "POTION UPDATE\n";
 	PlayScene* scene = getPlayScene();
 	imgBase.Position = Position;
 	imgBase.Tint = Tint;
@@ -81,7 +84,8 @@ void Turret::Update(float deltaTime) {
 }
 void Turret::Draw() const {
 	if (Preview) {
-		al_draw_filled_circle(Position.x, Position.y, CollisionRadius, al_map_rgba(0, 255, 0, 50));
+		if (type==TURRET) al_draw_filled_circle(Position.x, Position.y, CollisionRadius, al_map_rgba(0, 255, 0, 50));
+		else if (type==POTION) al_draw_filled_circle(Position.x, Position.y, CollisionRadius, al_map_rgba(0, 255, 0, 50));
 	}
 	imgBase.Draw();
 	Sprite::Draw();
@@ -89,6 +93,7 @@ void Turret::Draw() const {
 		// Draw target radius.
 		al_draw_circle(Position.x, Position.y, CollisionRadius, al_map_rgb(0, 0, 255), 2);
 	}
+	if (type==POTION && Enabled) al_draw_filled_circle(Position.x, Position.y, CollisionRadius, al_map_rgba(255, 0, 0, 50));
 }
 int Turret::GetPrice() const {
 	return price;

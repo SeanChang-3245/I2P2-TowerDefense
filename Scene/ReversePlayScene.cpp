@@ -368,6 +368,16 @@ void ReversePlayScene::ChooseTurretType()
 	}
 }
 
+void ReversePlayScene::PlaceObject(const int &x, const int &y)
+{
+
+}
+
+void ReversePlayScene::PlacePotion(const int &x, const int &y)
+{
+
+}
+
 void ReversePlayScene::PlaceTurret(const int &x, const int &y)
 {
 	if (!cur_turret || x == -1 || y == -1)

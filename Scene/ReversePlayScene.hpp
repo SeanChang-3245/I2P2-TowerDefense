@@ -116,6 +116,8 @@ public:
 	void ChooseTurretType();
 	// Check if need to add a new turret, if yes, then add
 	void UpdatePlaceTurret(float deltaTime);
+	virtual void PlaceObject(const int &x, const int &y) override final;
+	virtual void PlacePotion(const int &x, const int &y) override final;
 	// After placing new turret, update all enemies' path and intermediate_path
 	void UpdateAllEnemyPath();
 	void SetChooseTurretPositionFunc(std::function<void(void)> selectFunc);
