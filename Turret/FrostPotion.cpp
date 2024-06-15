@@ -8,10 +8,13 @@
 #include "FrostPotion.hpp"
 #include "Enemy/Enemy.hpp"
 
-inline static std::string Potionbase="play/potion.png";
-inline static std::string Potionimg="play/potion.png";
+const std::string FrostPotion::Potionbase="play/potion.png";
+const std::string FrostPotion::Potionimg="play/potion.png";
+const int FrostPotion::Range=100;
+const int FrostPotion::Duration=100;
+const int FrostPotion::Price=50;
 
-FrostPotion::FrostPotion(float x, float y) : Potion(Potionbase, Potionimg, 100, 0, 100, 50, x, y)
+FrostPotion::FrostPotion(float x, float y) : Potion(Potionbase, Potionimg, Range, 0, Duration, Price, x, y)
 {
 
 }

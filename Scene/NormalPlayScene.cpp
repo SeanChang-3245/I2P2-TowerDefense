@@ -239,7 +239,7 @@ void NormalPlayScene::ConstructUI()
 		1370, 252,
 		information_x, information_y,
 		0, 0, 0, 255,
-		10, 100, 10,
+		FrostPotion::Price, FrostPotion::Range, FrostPotion::Range,
 		details);
 	btn->SetOnClickCallback(std::bind(&NormalPlayScene::UIBtnClicked, this, 5));
 	UIGroup->AddNewControlObject(btn);
