@@ -16,7 +16,10 @@ const int AdvancedMissileTurret::Damage = AdvancedMissileBullet::Damage;
 const float AdvancedMissileTurret::Reload = 2;
 
 AdvancedMissileTurret::AdvancedMissileTurret(float x, float y) :
-	Turret("play/tower-base.png", "play/turret-6.png", x, y, Range, Price, Reload, TURRET) {
+	Turret("play/tower-base.png", "play/turret-6.png", x, y, Range, Price, Reload, TURRET) 
+{
+	// make turret point directly at enemy
+	bullet_speed = 100000;
 }
 
 void AdvancedMissileTurret::CreateBullet() {

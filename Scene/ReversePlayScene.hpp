@@ -19,9 +19,10 @@ namespace Engine {
 	class Sprite;
 }  // namespace Engine
 
-class ReversePlayScene final : public PlayScene {
-
+class ReversePlayScene final : public PlayScene 
+{
 private:
+
 	bool playing_danger_bgm;
 	Engine::Point intermediate_point;
 
@@ -39,6 +40,7 @@ private:
 	Engine::Point closet_valid_space(Engine::Point p);
 
 public:
+	static const float MaxTimeSpan;
 	// remaining time to play this round, lose if run out
 	float remain_time;
 	// the time interval between placing two turrets
@@ -105,6 +107,7 @@ public:
 	virtual void OnMouseUp(int button, int mx, int my) override final;
 	virtual void UpdateDangerIndicator() override final;
 	virtual void ActivateCheatMode() override final;
+	virtual bool handle_revive() override final;  
 
 	virtual void PlaceTurret(const int &x, const int &y) override final;
 	virtual void DeconstructTurret(const int &x, const int &y) override final;

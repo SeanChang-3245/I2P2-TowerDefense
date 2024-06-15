@@ -51,7 +51,8 @@ using namespace std;
 // 										  ALLEGRO_KEY_LEFT, ALLEGRO_KEY_LEFT, ALLEGRO_KEY_RIGHT, ALLEGRO_KEY_RIGHT,
 // 										  ALLEGRO_KEY_B, ALLEGRO_KEY_A, ALLEGRO_KEYMOD_SHIFT, ALLEGRO_KEY_ENTER};
 
-const float ReversePlayScene::PlaceTurretDuration = 3.0;
+const float ReversePlayScene::PlaceTurretDuration = 1.0;
+const float ReversePlayScene::MaxTimeSpan = 100;
 
 using Engine::LOG;
 using Engine::INFO;
@@ -61,7 +62,11 @@ void ReversePlayScene::Initialize()
 	Engine::LOG(Engine::INFO) << "enter ReversePlayScene::initialize\n";
 	PlayScene::Initialize();
 
-	remain_time = 180 / difficulty;
+	// enter from revive scene
+	if(have_entered_revive_scene)
+		return;
+
+	remain_time = MaxTimeSpan / difficulty;
 	placeTurretCountDown = PlaceTurretDuration;
 	playing_danger_bgm = false;
 	cur_turret = nullptr;
@@ -83,9 +88,17 @@ void ReversePlayScene::Update(float deltaTime)
 		// Check if run out of time, if so then lose
 		if(remain_time < 0)
 		{
-			remain_time = 0;
-			Engine::GameEngine::GetInstance().ChangeScene("lose");
-			return;
+			if(have_entered_revive_scene)
+			{
+				remain_time = 0;
+				Engine::GameEngine::GetInstance().ChangeScene("lose");
+			}
+			else
+			{
+				have_entered_revive_scene = true;
+				entering_revive_scene = true;
+				Engine::GameEngine::GetInstance().ChangeScene("revive");
+			}
 		}
 	}	
 }
@@ -290,6 +303,7 @@ void ReversePlayScene::UpdateTimer(float deltaTime)
 void ReversePlayScene::Hit()
 {
 	PlayScene::Hit();
+	EarnMoney(100);
 	if (lives <= 0)
 	{
 		total_score += remain_time * 1000;
@@ -323,6 +337,12 @@ void ReversePlayScene::UpdateDangerIndicator()
 		float alpha = pos / DangerTime;
 		alpha = std::max(0, std::min(255, static_cast<int>(alpha * alpha * 255)));
 		dangerIndicator->Tint = al_map_rgba(255, 255, 255, alpha);
+	}
+	else
+	{
+		AudioHelper::StopSample(deathBGMInstance);
+		playing_danger_bgm = false;
+		dangerIndicator->Tint = al_map_rgba(255, 255, 255, 0);
 	}
 	
 }
@@ -366,6 +386,7 @@ void ReversePlayScene::ChooseTurretType()
 	default:
 		break;
 	}
+
 }
 
 void ReversePlayScene::PlaceObject(const int &x, const int &y)
@@ -568,6 +589,17 @@ void ReversePlayScene::UpdateAllEnemyPath()
 		}
 		enemy->UpdatePath(mapDistance);
 	}
+}
+
+bool ReversePlayScene::handle_revive()
+{
+	if(have_entered_revive_scene)
+	{
+		remain_time = MaxTimeSpan / difficulty / 2;
+		UpdateTimer(0);
+		return true;
+	}
+	return false;
 }
 
 void ReversePlayScene::DeconstructTurret(const int &x, const int &y) {}

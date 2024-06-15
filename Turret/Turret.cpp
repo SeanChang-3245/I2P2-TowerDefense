@@ -57,9 +57,39 @@ void Turret::Update(float deltaTime) {
 	}
 
 	// make the turret points to the target enemy
+	// if (Target) {
+	// 	Engine::Point originRotation = Engine::Point(cos(Rotation - ALLEGRO_PI / 2), sin(Rotation - ALLEGRO_PI / 2));
+	// 	Engine::Point targetRotation = (Target->Position - Position).Normalize();
+	// 	float maxRotateRadian = rotateRadian * deltaTime;
+	// 	float cosTheta = originRotation.Dot(targetRotation);
+	// 	// Might have floating-point precision error.
+	// 	if (cosTheta > 1) cosTheta = 1;
+	// 	else if (cosTheta < -1) cosTheta = -1;
+	// 	float radian = acos(cosTheta);
+	// 	Engine::Point rotation;
+	// 	if (abs(radian) <= maxRotateRadian)
+	// 		rotation = targetRotation;
+	// 	else
+	// 		rotation = ((abs(radian) - maxRotateRadian) * originRotation + maxRotateRadian * targetRotation) / radian;
+	// 	// Add 90 degrees (PI/2 radian), since we assume the image is oriented upward.
+	// 	Rotation = atan2(rotation.y, rotation.x) + ALLEGRO_PI / 2;
+	// 	// Shoot reload.
+	// 	reload -= deltaTime;
+	// 	if (reload <= 0) {
+	// 		// shoot.
+	// 		reload = coolDown;
+	// 		CreateBullet();
+	// 	}
+	// }
+
+	// make the turret points to the target enemy with leading
 	if (Target) {
 		Engine::Point originRotation = Engine::Point(cos(Rotation - ALLEGRO_PI / 2), sin(Rotation - ALLEGRO_PI / 2));
-		Engine::Point targetRotation = (Target->Position - Position).Normalize();
+		
+		float estimatedTime = (Target->Position - this->Position).Magnitude() / bullet_speed;
+		Engine::Point predictedPosistion = Target->Position + estimatedTime * Target->Velocity;
+
+		Engine::Point targetRotation = (predictedPosistion - this->Position).Normalize();
 		float maxRotateRadian = rotateRadian * deltaTime;
 		float cosTheta = originRotation.Dot(targetRotation);
 		// Might have floating-point precision error.

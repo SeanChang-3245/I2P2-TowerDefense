@@ -11,19 +11,21 @@
 void Engine::TextInputBlock::OnKeyDown(int keyCode)
 {
     char input_char = '\0';
-    std::string &cur_name = this->user_entered_text->Text;
+    std::string &cur_text = this->user_entered_text->Text;
 
     if(ALLEGRO_KEY_A <= keyCode && keyCode <= ALLEGRO_KEY_Z)
         input_char = keyCode - ALLEGRO_KEY_A + 'a';
     else if(ALLEGRO_KEY_0 <= keyCode && keyCode <= ALLEGRO_KEY_9)
         input_char = keyCode - ALLEGRO_KEY_0 + '0';
-    else if(keyCode == ALLEGRO_KEY_BACKSPACE && cur_name.size())
-        cur_name.pop_back();
+    else if(keyCode == ALLEGRO_KEY_BACKSPACE && cur_text.size())
+        cur_text.pop_back();
+    else if(keyCode == ALLEGRO_KEY_SLASH)
+        input_char = '/';
 
-    if(cur_name.size() < MAX_NAME_LEN && input_char != '\0')
-        cur_name += input_char;
+    if(cur_text.size() < MAX_NAME_LEN && input_char != '\0')
+        cur_text += input_char;
 
-    if(cur_name.empty())
+    if(cur_text.empty())
         default_message->Visible = true;
     else
         default_message->Visible = false;
@@ -92,4 +94,14 @@ void Engine::TextInputBlock::save_input_to_file(int score)
     // write into scoreboard under build folder, used to show data in the same round
     fout.open("Resource/scoreboard.txt", std::ios_base::app);
     fout << this->user_entered_text->Text << " " << score << " " << date << '\n';
+}
+
+std::string Engine::TextInputBlock::get_text_inputed() const
+{
+    return user_entered_text->Text;
+}
+
+void Engine::TextInputBlock::set_default_message(std::string str)
+{
+    default_message->Text = str;
 }
