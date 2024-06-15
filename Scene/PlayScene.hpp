@@ -57,6 +57,7 @@ public:
 	Group* DebugIndicatorGroup;
 	Group* BulletGroup;
 	Group* TowerGroup;
+	Group* PotionGroup;
 	Group* EnemyGroup;
 	Group* EffectGroup;
 	Group* UIGroup;
@@ -100,6 +101,8 @@ public:
 	virtual void OnMouseDown(int button, int mx, int my) override =0;
 	// place turret at (x,y) if possible
 	virtual void PlaceTurret(const int &x, const int &y) =0;
+	virtual void PlacePotion(const int &x, const int &y) =0;
+	virtual void PlaceObject(const int &x, const int &y) =0;
 	// delete turret (x,y) and return half of its price if exist
 	virtual void DeconstructTurret(const int &x, const int &y) =0;
 	virtual void UpdateDangerIndicator() =0;

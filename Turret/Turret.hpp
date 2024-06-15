@@ -12,7 +12,7 @@ class PlayScene;
 
 enum Turret_Type
 {
-    TURRET, TOOL
+    TURRET, TOOL, POTION
 };
 
 class Turret: public Engine::Sprite {
