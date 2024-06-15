@@ -23,11 +23,8 @@ Turret::Turret(std::string imgBase, std::string imgTurret, float x, float y, flo
 	CollisionRadius = radius;
 }
 
-#include <iostream>
 void Turret::Update(float deltaTime) {
 	Sprite::Update(deltaTime);
-	if (type==TURRET) std::cout << "TURRET UPDATE\n";
-	else if (type==POTION) std::cout << "POTION UPDATE\n";
 	PlayScene* scene = getPlayScene();
 	imgBase.Position = Position;
 	imgBase.Tint = Tint;

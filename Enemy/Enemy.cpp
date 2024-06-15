@@ -223,6 +223,7 @@ void Enemy::Update(float deltaTime) {
 			}
 			else {
 				Velocity = normalized * remainSpeed / deltaTime;
+				if (Berserk) Velocity * 2;
 				remainSpeed = 0;
 			}
 		}

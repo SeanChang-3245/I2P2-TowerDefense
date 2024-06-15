@@ -38,6 +38,8 @@ using namespace std;
 #include "DebugMacro.hpp"
 #include "Bullet/FireBullet.hpp"
 #include "UI/Component/ImageButton.hpp"
+#include "Turret/BerserkPotion.hpp"
+#include "Turret/HoverTurretButton.hpp"
 
 // bool ReversePlayScene::DebugMode = false;
 // const std::vector<Engine::Point> ReversePlayScene::directions = {Engine::Point(-1, 0), Engine::Point(0, -1), Engine::Point(1, 0), Engine::Point(0, 1)};
@@ -154,7 +156,7 @@ void ReversePlayScene::ConstructUI()
 
 	// Text
 	UIGroup->AddNewObject(UITime = new Engine::Label(std::string("time") + std::to_string(remain_time), "pirulen.ttf", 24, 1294, 168));
-
+	std::vector<std::string> details;
 	Engine::EnemyButton *btn;
 	const int information_x = 1294;
 	const int information_y = 400;
@@ -211,7 +213,6 @@ void ReversePlayScene::ConstructUI()
 	btn->AddNewInformation(std::string("Speed: ") + std::to_string(static_cast<int>(AdvancedTankEnemy::Speed)));
 	btn->SetCostValue(AdvancedTankEnemy::Cost);
 	UIGroup->AddNewControlObject(btn);
-
 
 	// Background
 	// UIGroup->AddNewObject(new Engine::Image("play/sand.png", 1280, 0, 320, 832));

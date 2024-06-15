@@ -19,7 +19,6 @@ FrostPotion::FrostPotion(float x, float y) : Potion(Potionbase, Potionimg, Range
 
 }
 
-#include <iostream>
 void FrostPotion::effect(Enemy *enemy)
 {
 	enemy->Frozen=1;
