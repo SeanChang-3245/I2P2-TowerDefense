@@ -15,7 +15,10 @@ const int MissileTurret::Damage = MissileBullet::Damage;
 const float MissileTurret::Reload = 4;
 
 MissileTurret::MissileTurret(float x, float y) :
-	Turret("play/tower-base.png", "play/turret-3.png", x, y, Range, Price, Reload, TURRET) {
+	Turret("play/tower-base.png", "play/turret-3.png", x, y, Range, Price, Reload, TURRET) 
+{
+	// make turret point directly at enemy
+	bullet_speed = 100000;
 }
 
 void MissileTurret::CreateBullet() {

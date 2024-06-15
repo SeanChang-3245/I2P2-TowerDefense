@@ -30,6 +30,9 @@ protected:
 	int money;
 	int total_score;
 	int SpeedMult;
+	bool have_entered_revive_scene;
+	bool entering_revive_scene;
+	
 
 public:
 	static bool DebugMode;
@@ -40,6 +43,7 @@ public:
 	static const Engine::Point SpawnGridPoint;
 	static const Engine::Point EndGridPoint;
 	static const std::vector<int> code;
+	static const int EnemyTypes;
 	// multiplier for enemy count
 	// easy: 1.0, normal: 1.3, hard: 1.5
 	float difficulty;
@@ -67,7 +71,6 @@ public:
 	std::vector<std::vector<TileType>> originalMapState;
 	// Store the distance to the end point
 	std::vector<std::vector<int>> mapDistance;
-	std::list<std::pair<int, float>> enemyWaveData;
 	// Store previous key strokes, use to activate cheat code
 	std::list<int> keyStrokes;
 
@@ -103,6 +106,9 @@ public:
 	// delete turret (x,y) and return half of its price if exist
 	virtual void DeconstructTurret(const int &x, const int &y) =0;
 	virtual void UpdateDangerIndicator() =0;
+
+	// Return value show whether it is enter from revive scene
+	virtual bool handle_revive() =0;
 
 
 // ========= Non-Virtual Functions ============ // 

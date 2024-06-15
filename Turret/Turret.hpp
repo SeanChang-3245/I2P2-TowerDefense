@@ -22,6 +22,7 @@ protected:
     float coolDown;
     float reload = 0;
     float rotateRadian = 2 * ALLEGRO_PI;
+    float bullet_speed;
     Sprite imgBase;
     std::list<Turret*>::iterator lockedTurretIterator;
     PlayScene* getPlayScene();

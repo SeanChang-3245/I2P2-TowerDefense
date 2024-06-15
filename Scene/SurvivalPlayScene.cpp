@@ -20,7 +20,7 @@
 #include "Turret/AdvancedMissileTurret.hpp"
 #include "UI/Animation/Plane.hpp"
 #include "Enemy/PlaneEnemy.hpp"
-#include "NormalPlayScene.hpp"
+#include "SurvivalPlayScene.hpp"
 #include "Engine/Point.hpp"
 #include "Engine/Resources.hpp"
 #include "Enemy/SoldierEnemy.hpp"
@@ -33,13 +33,13 @@
 #include "DebugMacro.hpp"
 #include "Bullet/FireBullet.hpp"
 #include "UI/Component/ImageButton.hpp"
-#include "Turret/Potion.hpp"
-#include "Turret/FrostPotion.hpp"
 
+const float SurvivalPlayScene::EnemySpawnDuration = 0.5;
+const float SurvivalPlayScene::PlayerAutoEarnMoneyDuration = 2;
 
-void NormalPlayScene::Initialize()
+void SurvivalPlayScene::Initialize()
 {
-	Engine::LOG(Engine::INFO) << "enter NormalPlayScene::initialize\n";
+	Engine::LOG(Engine::INFO) << "enter SurvivalPlayScene::initialize\n";
 	PlayScene::Initialize();
 
 	// enter from revive scene
@@ -49,16 +49,34 @@ void NormalPlayScene::Initialize()
 		return;
 	}
 
+    money = 300;
+    computer_money = 15;
+    elapsed_time = 0;
+    enemy_spawn_cd = EnemySpawnDuration;
+    player_auto_earn_money_cd = PlayerAutoEarnMoneyDuration;
+    next_enemy_type = rand() % EnemyTypes + 1;
+
+
 	deathCountDown = -1;
-	ReadEnemyWave();
 	preview = nullptr;
 }
 
-void NormalPlayScene::Update(float deltaTime)
+void SurvivalPlayScene::Update(float deltaTime)
 {
 	UpdateDangerIndicator();
+
+	
 	for (int i = 0; i < SpeedMult; i++)
 	{
+        player_auto_earn_money_cd -= deltaTime;
+        if(player_auto_earn_money_cd <= 0)
+        {
+            EarnMoney(5);
+            player_auto_earn_money_cd = PlayerAutoEarnMoneyDuration;
+        }
+
+        computer_money += (elapsed_time / 800 * difficulty);
+        elapsed_time += deltaTime;
 		IScene::Update(deltaTime);
 		UpdateSpawnEnemy(deltaTime);
 	}
@@ -70,7 +88,7 @@ void NormalPlayScene::Update(float deltaTime)
 	}
 }
 
-void NormalPlayScene::OnMouseDown(int button, int mx, int my)
+void SurvivalPlayScene::OnMouseDown(int button, int mx, int my)
 {
 	if ((button == 1) && !imgTarget->Visible && preview)
 	{
@@ -81,7 +99,7 @@ void NormalPlayScene::OnMouseDown(int button, int mx, int my)
 	IScene::OnMouseDown(button, mx, my);
 }
 
-void NormalPlayScene::OnMouseMove(int mx, int my)
+void SurvivalPlayScene::OnMouseMove(int mx, int my)
 {
 	IScene::OnMouseMove(mx, my);
 	const int x = mx / BlockSize;
@@ -96,13 +114,7 @@ void NormalPlayScene::OnMouseMove(int mx, int my)
 	imgTarget->Position.y = y * BlockSize;
 }
 
-void NormalPlayScene::PlaceObject(const int &x, const int &y)
-{
-	if (preview->GetType()==TURRET) PlaceTurret(x, y);
-	else if (preview->GetType()==POTION) PlacePotion(x, y);
-}
-
-void NormalPlayScene::OnMouseUp(int button, int mx, int my)
+void SurvivalPlayScene::OnMouseUp(int button, int mx, int my)
 {
 	IScene::OnMouseUp(button, mx, my);
 	if (!imgTarget->Visible)
@@ -114,7 +126,7 @@ void NormalPlayScene::OnMouseUp(int button, int mx, int my)
 	{ 
 		if (mapState[y][x] != TILE_OCCUPIED)
 		{
-			PlaceObject(x, y);
+			PlaceTurret(x, y);
 		}
 		if (mapState[y][x] == TILE_OCCUPIED)
 		{
@@ -125,7 +137,7 @@ void NormalPlayScene::OnMouseUp(int button, int mx, int my)
 	OnMouseMove(mx, my);
 }
 
-void NormalPlayScene::OnKeyDown(int keyCode)
+void SurvivalPlayScene::OnKeyDown(int keyCode)
 {
 	PlayScene::OnKeyDown(keyCode);
 	if (keyCode == ALLEGRO_KEY_Q)
@@ -155,25 +167,7 @@ void NormalPlayScene::OnKeyDown(int keyCode)
 	}
 }
 
-void NormalPlayScene::ReadEnemyWave()
-{
-	// if the map is user defined, then use the same enemy file as Stage 2
-	std::string filename = std::string("Resource/enemy") + std::to_string(std::min(MapId, 2)) + ".txt";
-	Engine::LOG(Engine::INFO) << "Loaded Resource<text>: " << filename;
-
-	// Read enemy file.
-	int type, repeat;
-	float wait;
-	enemyWaveData.clear();
-	std::ifstream fin(filename);
-	while (fin >> type && fin >> wait && fin >> repeat)
-	{
-		for (int i = 0; i < 1.0 * repeat * difficulty; i++)
-			enemyWaveData.emplace_back(type, wait);
-	}
-	fin.close();
-}
-void NormalPlayScene::ConstructUI()
+void SurvivalPlayScene::ConstructUI()
 {
 	PlayScene::ConstructUI();
 
@@ -190,7 +184,7 @@ void NormalPlayScene::ConstructUI()
 		information_x, information_y,
 		0, 0, 0, 255,
 		MachineGunTurret::Price, MachineGunTurret::Range, MachineGunTurret::Damage, MachineGunTurret::Reload);
-	btn->SetOnClickCallback(std::bind(&NormalPlayScene::UIBtnClicked, this, 0));
+	btn->SetOnClickCallback(std::bind(&SurvivalPlayScene::UIBtnClicked, this, 0));
 	UIGroup->AddNewControlObject(btn);
 
 	// Turret 2
@@ -201,7 +195,7 @@ void NormalPlayScene::ConstructUI()
 		information_x, information_y,
 		0, 0, 0, 255,
 		LaserTurret::Price, LaserTurret::Range, LaserTurret::Damage, LaserTurret::Reload);
-	btn->SetOnClickCallback(std::bind(&NormalPlayScene::UIBtnClicked, this, 1));
+	btn->SetOnClickCallback(std::bind(&SurvivalPlayScene::UIBtnClicked, this, 1));
 	UIGroup->AddNewControlObject(btn);
 
 	// Turret 3
@@ -212,7 +206,7 @@ void NormalPlayScene::ConstructUI()
 		information_x, information_y,
 		0, 0, 0, 255,
 		MissileTurret::Price, MissileTurret::Range, MissileTurret::Damage, MissileTurret::Reload);
-	btn->SetOnClickCallback(std::bind(&NormalPlayScene::UIBtnClicked, this, 2));
+	btn->SetOnClickCallback(std::bind(&SurvivalPlayScene::UIBtnClicked, this, 2));
 	UIGroup->AddNewControlObject(btn);
 
 	// Turret 4
@@ -223,7 +217,7 @@ void NormalPlayScene::ConstructUI()
 		information_x, information_y,
 		0, 0, 0, 255,
 		AdvancedMissileTurret::Price, AdvancedMissileTurret::Range, AdvancedMissileTurret::Damage, AdvancedMissileTurret::Reload);
-	btn->SetOnClickCallback(std::bind(&NormalPlayScene::UIBtnClicked, this, 3));
+	btn->SetOnClickCallback(std::bind(&SurvivalPlayScene::UIBtnClicked, this, 3));
 	UIGroup->AddNewControlObject(btn);
 
 	// Tool 1
@@ -236,48 +230,11 @@ void NormalPlayScene::ConstructUI()
 		information_x, information_y,
 		0, 0, 0, 255,
 		details);
-	btn->SetOnClickCallback(std::bind(&NormalPlayScene::UIBtnClicked, this, 4));
+	btn->SetOnClickCallback(std::bind(&SurvivalPlayScene::UIBtnClicked, this, 4));
 	UIGroup->AddNewControlObject(btn);
-
-	details.clear();
-	details.push_back("freeze the enemies");
-	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
-		Engine::Sprite("play/potion.png", 1370, 252, 0, 0, 0, 0),
-		Engine::Sprite("play/potion.png", 1370, 252, 0, 0, 0, 0),
-		1370, 252,
-		information_x, information_y,
-		0, 0, 0, 255,
-		FrostPotion::Price, FrostPotion::Range, FrostPotion::Range,
-		details);
-	btn->SetOnClickCallback(std::bind(&NormalPlayScene::UIBtnClicked, this, 5));
-	UIGroup->AddNewControlObject(btn);
-
-	// Background
-	// UIGroup->AddNewObject(new Engine::Image("play/sand.png", 1280, 0, 320, 832));
-
-	// // Text
-	// UIGroup->AddNewObject(new Engine::Label(std::string("Stage ") + std::to_string(MapId), "pirulen.ttf", 32, 1294, 0));
-	// UIGroup->AddNewObject(UIMoney = new Engine::Label(std::string("$") + std::to_string(money), "pirulen.ttf", 24, 1294, 48));
-	// UIGroup->AddNewObject(UIScore = new Engine::Label(std::string("Score: ") + std::to_string(total_score), "pirulen.ttf", 24, 1294, 88));
-	// UIGroup->AddNewObject(UILives = new Engine::Label(std::string("Life ") + std::to_string(lives), "pirulen.ttf", 24, 1294, 128));
-
-	// // Exit button
-	// Engine::ImageButton *btn2;
-	// btn2 = new Engine::ImageButton("play/dirt.png", "play/floor.png", 1310, 750, 260, 75);
-	// btn2->SetOnClickCallback(std::bind(&NormalPlayScene::ExitOnClick, this));
-	// UIGroup->AddNewControlObject(btn2);
-	// UIGroup->AddNewObject(new Engine::Label("exit", "pirulen.ttf", 32, 1440, 750 + 75.0/2, 0, 0, 0, 255, 0.5, 0.5));
-
-	// Danger indicator
-	// int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
-	// int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
-	// int shift = 135 + 25;
-	// dangerIndicator = new Engine::Sprite("play/benjamin.png", w - shift, h - shift - 100);
-	// dangerIndicator->Tint.a = 0;
-	// UIGroup->AddNewObject(dangerIndicator);
 }
 
-void NormalPlayScene::UIBtnClicked(int id)
+void SurvivalPlayScene::UIBtnClicked(int id)
 {
 	if (preview)
 	{
@@ -295,8 +252,6 @@ void NormalPlayScene::UIBtnClicked(int id)
 		preview = new AdvancedMissileTurret(0, 0);
 	else if (id == 4)
 		preview = new Shovel(0, 0);
-	else if (id == 5 && money >= FrostPotion::Price)
-		preview = new FrostPotion(0, 0);
 
 
 	if (!preview)
@@ -309,7 +264,7 @@ void NormalPlayScene::UIBtnClicked(int id)
 	OnMouseMove(Engine::GameEngine::GetInstance().GetMousePosition().x, Engine::GameEngine::GetInstance().GetMousePosition().y);
 }
 
-void NormalPlayScene::PlaceTurret(const int &x, const int &y)
+void SurvivalPlayScene::PlaceTurret(const int &x, const int &y)
 {
 	if (!preview || preview->GetType() != TURRET)
 		return;
@@ -355,36 +310,7 @@ void NormalPlayScene::PlaceTurret(const int &x, const int &y)
 	// OnMouseMove(mx, my);
 }
 
- void NormalPlayScene::PlacePotion(const int &x, const int &y)
- {
-	if (!preview || preview->GetType() != POTION)
-		return;
-	EarnMoney(-preview->GetPrice());
-	
-	// Remove Preview.
-	preview->GetObjectIterator()->first = false;
-	UIGroup->RemoveObject(preview->GetObjectIterator());
-	
-	// Construct real turret.
-	preview->Position.x = x * BlockSize + BlockSize / 2;
-	preview->Position.y = y * BlockSize + BlockSize / 2;
-	preview->Enabled = true;
-	preview->Preview = false;
-	preview->Tint = al_map_rgba(255, 255, 255, 255);
-	TowerGroup->AddNewObject(preview);
-	
-	// To keep responding when paused.
-	preview->Update(0);
-	
-	// Remove Preview.
-	preview = nullptr;
-
-	// mapState[y][x] = TILE_OCCUPIED;
-	// OnMouseMove(mx, my);
-	
- }
-
-void NormalPlayScene::DeconstructTurret(const int &x, const int &y)
+void SurvivalPlayScene::DeconstructTurret(const int &x, const int &y)
 {
 	if (!preview || preview->GetType() != TOOL)
 		return;
@@ -427,13 +353,13 @@ void NormalPlayScene::DeconstructTurret(const int &x, const int &y)
 	mapState[y][x] = originalMapState[y][x];
 }
 
-void NormalPlayScene::Hit()
+void SurvivalPlayScene::Hit()
 {
 	PlayScene::Hit();
 	if (lives <= 0)
 	{
 		if(have_entered_revive_scene)
-			Engine::GameEngine::GetInstance().ChangeScene("lose");
+			Engine::GameEngine::GetInstance().ChangeScene("win");
 		else
 		{
 			have_entered_revive_scene = true;
@@ -443,8 +369,9 @@ void NormalPlayScene::Hit()
 	}
 }
 
-void NormalPlayScene::UpdateDangerIndicator()
+void SurvivalPlayScene::UpdateDangerIndicator()
 {
+	// Engine::LOG(Engine::INFO) << "alpha: " << dangerIndicator->Tint.a;
 	// If we use deltaTime directly, then we might have Bullet-through-paper problem.
 	// Reference: Bullet-Through-Paper
 	if (SpeedMult == 0)
@@ -497,67 +424,63 @@ void NormalPlayScene::UpdateDangerIndicator()
 		deathCountDown = -1;
 }
 
-void NormalPlayScene::UpdateSpawnEnemy(float deltaTime)
+void SurvivalPlayScene::UpdateSpawnEnemy(float deltaTime)
 {
-	// Check if we should create new enemy.
 	ticks += deltaTime;
-	if (enemyWaveData.empty() || DIRECT_WIN)
-	{
-		if (EnemyGroup->GetObjects().empty() || DIRECT_WIN)
-		{
-			// Free resources.
-			/*delete TileMapGroup;
-			delete GroundEffectGroup;
-			delete DebugIndicatorGroup;
-			delete TowerGroup;
-			delete EnemyGroup;
-			delete BulletGroup;
-			delete EffectGroup;
-			delete UIGroup;
-			delete imgTarget;*/
-			Engine::GameEngine::GetInstance().ChangeScene("win");
-		}
+    // Engine::LOG(Engine::INFO) << "computer money: " << computer_money;
+	// Check if we should create new enemy.
+
+    enemy_spawn_cd -= deltaTime;
+	if (ticks < EnemySpawnDuration)
 		return;
-	}
-	auto current = enemyWaveData.front();
-	if (ticks < current.second)
-		return;
-	ticks -= current.second;
-	enemyWaveData.pop_front();
+
+    if(enemy_spawn_cd > 0)
+        return;
+
+    enemy_spawn_cd = EnemySpawnDuration;
+	ticks -= EnemySpawnDuration;
+
 	const Engine::Point SpawnCoordinate = Engine::Point(SpawnGridPoint.x * BlockSize + BlockSize / 2, SpawnGridPoint.y * BlockSize + BlockSize / 2);
 	Enemy *enemy = nullptr;
-	switch (current.first)
-	{
-	case 1:
+
+    if(next_enemy_type == 1 && computer_money >= SoldierEnemy::Cost)
+    {
 		EnemyGroup->AddNewObject(enemy = new SoldierEnemy(SpawnCoordinate.x, SpawnCoordinate.y));
-		break;
-	case 2:
+        computer_money -= SoldierEnemy::Cost;
+    }
+    else if(next_enemy_type == 2 && computer_money >= PlaneEnemy::Cost)
+    {
 		EnemyGroup->AddNewObject(enemy = new PlaneEnemy(SpawnCoordinate.x, SpawnCoordinate.y));
-		break;
-	case 3:
-		EnemyGroup->AddNewObject(enemy = new TankEnemy(SpawnCoordinate.x, SpawnCoordinate.y));
-		break;
-	case 4:
-		EnemyGroup->AddNewObject(enemy = new AdvancedTankEnemy(SpawnCoordinate.x, SpawnCoordinate.y));
-		break;
-	// TODO: [CUSTOM-ENEMY]: You need to modify 'Resource/enemy1.txt', or 'Resource/enemy2.txt' to spawn the 4th enemy.
-	//         The format is "[EnemyId] [TimeDelay] [Repeat]".
-	// TODO: [CUSTOM-ENEMY]: Enable the creation of the enemy.
-	default:
-		return;;
-	}
-	enemy->UpdatePath(mapDistance);
-	// Compensate the time lost.
-	enemy->Update(ticks);
+        computer_money -= PlaneEnemy::Cost;
+    }
+    else if(next_enemy_type == 3 && computer_money >= TankEnemy::Cost)
+	{
+        EnemyGroup->AddNewObject(enemy = new TankEnemy(SpawnCoordinate.x, SpawnCoordinate.y));
+        computer_money -= TankEnemy::Cost;
+    }	
+    else if(next_enemy_type == 4 && computer_money >= AdvancedTankEnemy::Cost)
+	{
+        EnemyGroup->AddNewObject(enemy = new AdvancedTankEnemy(SpawnCoordinate.x, SpawnCoordinate.y));
+        computer_money -= AdvancedTankEnemy::Cost;
+    }	
+
+    if(enemy)
+    {
+        srand(time(NULL));
+        next_enemy_type = rand() % EnemyTypes + 1;
+        enemy->UpdatePath(mapDistance);
+        // Compensate the time lost.
+        enemy->Update(ticks);
+    }
 }
 
-void NormalPlayScene::ActivateCheatMode()
+void SurvivalPlayScene::ActivateCheatMode()
 {
 	EarnMoney(10000);
 	EffectGroup->AddNewObject(new Plane());
 }
 
-bool NormalPlayScene::handle_revive()
+bool SurvivalPlayScene::handle_revive()
 {
 	if(have_entered_revive_scene)
 	{
@@ -568,7 +491,7 @@ bool NormalPlayScene::handle_revive()
 	return false;
 }
 
-void NormalPlayScene::ClearCloseEnemy()
+void SurvivalPlayScene::ClearCloseEnemy()
 {
 	PlayScene *play_scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetActiveScene());
 	for(auto ptr : play_scene->EnemyGroup->GetObjects())
@@ -581,4 +504,14 @@ void NormalPlayScene::ClearCloseEnemy()
 		if(play_scene->mapDistance[y][x] <= 10)
 			enemy->Hit(INFINITY);
 	}
+}
+
+void SurvivalPlayScene::PlaceObject(const int &x, const int &y)
+{
+
+}
+
+void SurvivalPlayScene::PlacePotion(const int &x, const int &y)
+{
+	
 }
