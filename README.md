@@ -1,34 +1,8 @@
 # 2024 I2P Mini Project 2 - Tower Defense
 
-## Grading
-
-| **Hackathon Tasks**              | **Score** | **Check** |
-| :------------------------------- | :-------: | :-------: |
-| Add `StartScene`                 |    5%     |     -     |
-| Add `StageSelectScene`           |    5%     |     -     |
-| Move Controls to `SettingsScene` |    5%     |     -     |
-| Fix Bugs in Scene                |    15%    |     -     |
-
-| **Project Tasks**           | **Score** | **Check** |
-| :-------------------------- | :-------: | :-------: |
-| Add `ScoreboardScene`       |    40%    |     -     |
-| Enemy Pathfinding           |    10%    |     -     |
-| 2 New Turrets/Enemies/Tools |    20%    |     -     |
-
-<!-- Please describe the new turret/enemy/tool you have implemented in the above table. -->
-
-| **Bonus Functions**   | **Score** | **Check** |
-| :-------------------- | :-------: | :-------: |
-| Scoreboard Date Time  |    3%     |     -     |
-| Record User Name      |    7%     |     -     |
-| Other Bonus Functions |   ≤10%    |     -     |
-
-<!-- Please describe the bonus optimizations or features you have implemented in the above table. -->
-
----
-
-<style>
-table th{
-    width: 100%;
-}
-</style>
+## How to install mlpack
+* 安裝 [vcpkg](https://learn.microsoft.com/zh-tw/vcpkg/get_started/get-started?pivots=shell-cmd)
+* 將 `vcpkg` 放到環境變數 (整個資料夾)
+* command line 輸入： `vcpkg install openblas`
+* `vcpkg/packages` 下會有 `openblas_x64-windows`，將其中的 `bin` 資料夾放到環境變數
+* ![alt text](image.png)

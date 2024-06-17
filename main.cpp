@@ -17,12 +17,14 @@
 #include "Scene/ReviveScene.hpp"
 #include "Scene/SurvivalPlayScene.hpp"
 #include "DebugMacro.hpp"
+#include "ML_Macro.hpp"
 #include <iostream>
 using namespace std;
 
 int main(int argc, char **argv) {
 	Engine::LOG::SetConfig(true, PRINT_LOG_VERBOSE);
 	Engine::GameEngine& game = Engine::GameEngine::GetInstance();
+
 
     // TODO: [HACKATHON-1-SCENE] (3/4): Register Scenes here
 	game.AddNewScene("start", new StartScene());
@@ -50,3 +52,72 @@ int main(int argc, char **argv) {
 	return 0;
 }
 
+
+// ============ Run following code to see if mlpack can be used ============ //  
+
+// #define MLPACK_PRINT_INFO
+// #define MLPACK_PRINT_WARN
+// #include <mlpack.hpp>
+
+// using namespace arma;
+// using namespace mlpack;
+// using namespace std;
+// using namespace mlpack::rl;
+// using namespace ens;
+
+
+// int main()
+// {
+// 	FFN<MeanSquaredError, GaussianInitialization> network(MeanSquaredError(),
+//       GaussianInitialization(0, 0.001));
+//     network.Add<Linear>(128);
+//     network.Add<ReLU>();
+//     network.Add<Linear>(128);
+//     network.Add<ReLU>();
+//     network.Add<Linear>(2);
+//     // cout << "Before train Network parameters: " << network.Parameters() << "\n\n";
+//     SimpleDQN<> model(network);
+//     // SimpleDQN<> model(4, 64, 32, 2);
+
+//     GreedyPolicy<CartPole> policy(1.0, 1000, 0.1, 0.99);
+//     RandomReplay<CartPole> replayMethod(10, 10000);
+
+//     TrainingConfig config;
+//     config.StepSize() = 0.01;
+//     config.Discount() = 0.9;
+//     config.TargetNetworkSyncInterval() = 100;
+//     config.ExplorationSteps() = 100;
+//     config.DoubleQLearning() = false;
+//     config.StepLimit() = 200;
+
+//     QLearning<CartPole, decltype(model), AdamUpdate, decltype(policy)>
+//         agent(config, model, policy, replayMethod);
+
+//     arma::running_stat<double> averageReturn;
+//     size_t episodes = 0;
+//     bool converged = true;
+//     while (true)
+//     {
+//         double episodeReturn = agent.Episode();
+//         averageReturn(episodeReturn);
+//         episodes += 1;
+
+//         if (episodes > 10000)
+//         {
+//             std::cout << "Cart Pole with DQN failed." << std::endl;
+//             converged = false;
+//             break;
+//         }
+
+//         /**
+//          * Reaching running average return 35 is enough to show it works.
+//          */
+//         std::cout << "Average return: " << averageReturn.mean()
+//                   << " Episode return: " << episodeReturn << std::endl;
+//         if (averageReturn.mean() > 35 && episodes > 10)
+//             break;
+//     }
+//     if (converged)
+//         std::cout << "Hooray! Q-Learning agent successfully trained" << std::endl;
+//     return 0;
+// }

@@ -4,6 +4,13 @@ project(2024_I2P2_TowerDefense_with_answer)
 set(CMAKE_CXX_STANDARD 17)
 # set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -Wall -Wextra")
 
+# Use Clang Compiler!!!!!!!!
+# See README to see how to install mlpack
+# Set to false if you can't build the project with mlpack
+# If you see squiggles line for the first time, still build it, it is normal. After a successful build, the lines will disappear
+set(USE_ML true)
+configure_file(ML_Resource/ML_Macro.hpp.in ML_Macro.hpp)
+
 include_directories(.)
 include_directories(Resource)
 
@@ -77,19 +84,37 @@ add_executable(2024_I2P2_TowerDefense_with_answer
         Scene/NormalPlayScene.cpp
         Scene/ReviveScene.cpp
         Scene/SurvivalPlayScene.cpp
+        Scene/StageSelectHandWriteScene.cpp
     )
 
+target_include_directories(2024_I2P2_TowerDefense_with_answer PUBLIC "${PROJECT_BINARY_DIR}")
 
-# target_include_directories(2024_I2P2_TowerDefense_with_answer PRIVATE C:/vcpkg/packages/mlpack_x64-windows/include)
-# target_include_directories(2024_I2P2_TowerDefense_with_answer PRIVATE C:/vcpkg/packages/armadillo_x64-windows/include)
-# target_include_directories(2024_I2P2_TowerDefense_with_answer PRIVATE C:/vcpkg/packages/cereal_x64-windows/include)
-# target_include_directories(2024_I2P2_TowerDefense_with_answer PRIVATE C:/vcpkg/packages/ensmallen_x64-windows/include)
+
+if(USE_ML)
+    # May need to comment out these two lines if cmake can't configure
+    # There are these two lines in ML_Resource/armadillo/CMakeLists.txt also
+    set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -Wa,-mbig-obj")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wa,-mbig-obj")
+
+    find_package(Threads)
+    set(MLPACK_LIBRARIES ${MLPACK_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+
+    file(COPY "ML_Resource/CNNmodel.bin" DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
+    add_subdirectory("ML_Resource/armadillo")
+    target_link_libraries(2024_I2P2_TowerDefense_with_answer PUBLIC armadillo)
+    target_include_directories(2024_I2P2_TowerDefense_with_answer PUBLIC "${PROJECT_SOURCE_DIR}/ML_Resource/armadillo")
+    target_include_directories(2024_I2P2_TowerDefense_with_answer PUBLIC "${PROJECT_SOURCE_DIR}/ML_Resource/mlpack")
+    target_include_directories(2024_I2P2_TowerDefense_with_answer PUBLIC "${PROJECT_SOURCE_DIR}/ML_Resource/cereal_x64-windows/include")
+    target_include_directories(2024_I2P2_TowerDefense_with_answer PUBLIC "${PROJECT_SOURCE_DIR}/ML_Resource/ensmallen_x64-windows/include")
+endif()
+
 
 IF (WIN32)
     target_include_directories(2024_I2P2_TowerDefense_with_answer PUBLIC C:/allegro/include)
     target_link_directories(2024_I2P2_TowerDefense_with_answer PUBLIC C:/allegro/lib)
     target_compile_options(2024_I2P2_TowerDefense_with_answer PUBLIC ${ALLEGRO5_CFLAGS_OTHER})
-    target_link_libraries(2024_I2P2_TowerDefense_with_answer liballegro_monolith)
+    target_link_libraries(2024_I2P2_TowerDefense_with_answer PUBLIC liballegro_monolith)
 ELSE()
     find_package(PkgConfig)
     pkg_check_modules(ALLEGRO5 REQUIRED allegro-5 allegro_main-5 allegro_font-5 allegro_dialog-5 allegro_primitives-5 allegro_image-5 allegro_ttf-5 allegro_audio-5 allegro_acodec-5)

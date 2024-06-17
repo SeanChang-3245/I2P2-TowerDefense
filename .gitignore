@@ -5,3 +5,4 @@ build
 !allegro_monolith-5.2.dll
 log.txt
 Makefile
+.vscode
