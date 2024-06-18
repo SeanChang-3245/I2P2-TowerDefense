@@ -127,7 +127,7 @@ if(USE_ML)
     find_package(Threads)
     set(MLPACK_LIBRARIES ${MLPACK_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 
-    file(COPY "ML_Resource/CNNmodel.bin" DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+    file(COPY "ML_Resource/CNNmodel1.bin" DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
     add_subdirectory("ML_Resource/armadillo")
     target_link_libraries(2024_I2P2_TowerDefense_with_answer PUBLIC armadillo)
