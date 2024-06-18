@@ -7,3 +7,5 @@ build
 log.txt
 Makefile
 .vscode
+ML_Resource/train.csv
+ML_Resource/my_train.csv
