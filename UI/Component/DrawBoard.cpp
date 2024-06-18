@@ -46,7 +46,6 @@ DrawBoard::DrawBoard(int x, int y)
             pixel_ptr[i][j] = new Engine::Image("stage-select/white_tile.png", 
                         x + j * PixelWidth, y + i * PixelWidth, 
                         PixelWidth, PixelWidth);
-            pixel_ptr[i][j];
             PixelGroup->AddNewObject(pixel_ptr[i][j]);
         }
     }
@@ -115,9 +114,7 @@ void DrawBoard::DrawOnBoard(int x, int y)
 void DrawBoard::DrawOnBoard(int x, int y, PixelType ty)
 {
     if(pixel_status[y][x] == BLACK)
-    {
         return;
-    }
     
 
     if(ty == BLACK)
@@ -143,7 +140,9 @@ void DrawBoard::DrawOnBoard(int x, int y, PixelType ty)
 int DrawBoard::GetNumber() const
 {
     FFN<NegativeLogLikelihood, RandomInitialization> model;
-    data::Load("CNNmodel.bin", "CNNmodel", model, true);
+    const string fileName = GetModelName();
+
+    data::Load(fileName, "CNNmodel", model, true);
 
     arma::Col<double> input(PictureWidth * PictureWidth);
     for(int i = 0; i < PictureWidth * PictureWidth; ++i)
@@ -167,4 +166,56 @@ int DrawBoard::GetNumber() const
     return result.index_max();
 }
 
+std::string DrawBoard::GetModelName() const
+{
+    int version = static_cast<int>(CNN_MODEL_VERSION);
+    std::string fileName = "CNNmodel" + to_string(version) + ".bin";
+    return fileName;
+}
+
 #endif 
+
+
+void DrawBoard::ClearBoard()
+{
+    for(int i = 0; i < PictureWidth; ++i)
+    {
+        for(int j = 0; j < PictureWidth; ++j)
+        {
+            if(pixel_status[i][j] != WHITE)
+            {
+                pixel_status[i][j] = WHITE;
+                PixelGroup->RemoveObject(pixel_ptr[i][j]->GetObjectIterator());
+                pixel_ptr[i][j] = new Engine::Image("stage-select/white_tile.png", 
+                        Position.x + j * PixelWidth, Position.y + i * PixelWidth, 
+                        PixelWidth, PixelWidth);
+                PixelGroup->AddNewObject(pixel_ptr[i][j]);
+            }
+        }
+    }
+}
+
+void DrawBoard::SetFileOutput(const std::string &fileName)
+{
+    fout.open(fileName, std::ios_base::app);
+}
+
+void DrawBoard::OutputDataPoint(int label)
+{
+    string str;
+    str = to_string(label);
+
+    for(int i = 0; i < PictureWidth * PictureWidth; ++i)
+    {
+        PixelType ty = pixel_status[i / PictureWidth][i % PictureWidth];
+        if(ty == WHITE)
+            str += ",0";
+        else if(ty == BLACK)
+            str += ",255";
+        else if(ty == GRAY)
+            str += ",204";
+    }
+    str += "\n";
+    fout << str;
+}
+

@@ -21,11 +21,20 @@ file(COPY allegro_monolith-5.2.dll DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 # Set to false if you can't build the project with mlpack
 # If you see squiggles line for the first time, still build it, it is normal. After a successful build, the lines will disappear
 set(USE_ML true)
+
+# Declare the list that store the source files
 set(SRC_FILES)
 
 # Set to true only when you want to use the hand write scene, otherwise it will take a lot of time to build
 # Estimated build time: 3 minutes
-Set(SERIALIZATION true)
+set(SERIALIZATION true)
+
+# Decide which CNN model we want to use 
+set(CNN_MODEL_VERSION 1)
+
+# Set to true if you want to generate CNN training data 
+# Won't support any game
+set(GENERATE_TRAINING_DATA false)
 
 if(USE_ML AND SERIALIZATION)
     add_definitions(-DMLPACK_ENABLE_ANN_SERIALIZATION)
@@ -98,6 +107,7 @@ list(APPEND SRC_FILES
     Scene/ReviveScene.cpp
     Scene/SurvivalPlayScene.cpp
     Scene/StageSelectHandWriteScene.cpp
+    Scene/DataGeneratingScene.cpp
 )
 
 

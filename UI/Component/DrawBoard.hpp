@@ -2,6 +2,7 @@
 #define DRAWBOARD_HPP
 
 #include <vector>
+#include <fstream>
 #include "Engine/Group.hpp"
 #include "Image.hpp"
 #include "ML_Macro.hpp"
@@ -14,6 +15,7 @@ private:
     Group *PixelGroup;
     std::vector<std::vector<Engine::Image*>> pixel_ptr;
     std::vector<std::vector<PixelType>> pixel_status;
+    std::ofstream fout;
 
 public:
     static const int PixelWidth;
@@ -27,10 +29,13 @@ public:
     void OnMouseMove(int mx, int my) override;
     void DrawOnBoard(int x, int y);
     void DrawOnBoard(int x, int y, PixelType ty);
-
+    void ClearBoard();
+    void SetFileOutput(const std::string &fileName);
+    void OutputDataPoint(int label);
 
 #if USE_ML
     int GetNumber() const;
+    std::string GetModelName() const;
 #endif
 
 };

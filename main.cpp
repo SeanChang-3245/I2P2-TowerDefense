@@ -17,6 +17,7 @@
 #include "Scene/ReviveScene.hpp"
 #include "Scene/SurvivalPlayScene.hpp"
 #include "Scene/StageSelectHandWriteScene.hpp"
+#include "Scene/DataGeneratingScene.hpp"
 #include "DebugMacro.hpp"
 #include "ML_Macro.hpp"
 #include <iostream>
@@ -25,6 +26,12 @@ using namespace std;
 int main(int argc, char **argv) {
 	Engine::LOG::SetConfig(true, PRINT_LOG_VERBOSE);
 	Engine::GameEngine& game = Engine::GameEngine::GetInstance();
+
+#if GEN_TRAIN_DATA
+	game.AddNewScene("gen-data", new DataGeneratingScene());
+	game.Start("gen-data", 60, 1600, 832);
+	return 0;
+#endif
 
 
     // TODO: [HACKATHON-1-SCENE] (3/4): Register Scenes here
