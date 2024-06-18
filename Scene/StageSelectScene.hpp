@@ -6,6 +6,7 @@
 #include <utility>
 #include "Engine/IScene.hpp"
 #include "UI/Component/ImageButton.hpp"
+#include "ML_Macro.hpp"
 
 class StageSelectScene final : public Engine::IScene {
 private:
@@ -32,6 +33,11 @@ public:
 	void BackOnClick();
 	void PrevOnClick();
 	void NextOnClick();
+
+#if USE_ML
+	void HandWriteOnClick();
+#endif
+
 };
 
 #endif // STAGESELECTSCENE_HPP

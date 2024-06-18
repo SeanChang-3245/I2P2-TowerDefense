@@ -4,12 +4,6 @@ project(2024_I2P2_TowerDefense_with_answer)
 set(CMAKE_CXX_STANDARD 17)
 # set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -Wall -Wextra")
 
-# Use Clang Compiler!!!!!!!!
-# See README to see how to install mlpack
-# Set to false if you can't build the project with mlpack
-# If you see squiggles line for the first time, still build it, it is normal. After a successful build, the lines will disappear
-set(USE_ML true)
-configure_file(ML_Resource/ML_Macro.hpp.in ML_Macro.hpp)
 
 include_directories(.)
 include_directories(Resource)
@@ -20,73 +14,97 @@ file(COPY Resource/images DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 file(COPY Resource DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 file(COPY allegro_monolith-5.2.dll DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
-add_executable(2024_I2P2_TowerDefense_with_answer
-        main.cpp
-        
-        Engine/Allegro5Exception.cpp
-        Engine/AudioHelper.cpp
-        Engine/Collider.cpp
-        Engine/GameEngine.cpp
-        Engine/Group.cpp
-        Engine/IControl.cpp
-        Engine/IObject.cpp
-        Engine/IScene.cpp
-        Engine/LOG.cpp
-        Engine/Point.cpp
-        Engine/Resources.cpp
-        Engine/Sprite.cpp
-        
-        Bullet/Bullet.cpp
-        Bullet/FireBullet.cpp
-        Bullet/MissileBullet.cpp
-        Bullet/AdvancedMissileBullet.cpp
-        Bullet/LaserBullet.cpp
 
-        UI/Animation/ExplosionEffect.cpp
-        UI/Animation/DirtyEffect.cpp
-        UI/Component/Image.cpp
-        UI/Component/TextInput.cpp
-        UI/Component/ImageButton.cpp
-        UI/Component/HoverImageButton.cpp
-        UI/Component/EnemyButton.cpp
-        UI/Component/Label.cpp
-        UI/Animation/Plane.cpp
-        UI/Component/Slider.cpp
-        
-        Enemy/Enemy.cpp
-        Enemy/PlaneEnemy.cpp
-        Enemy/SoldierEnemy.cpp
-        Enemy/AdvancedTankEnemy.cpp
-        Enemy/TankEnemy.cpp
-        
-        Turret/Turret.cpp
-        Turret/LaserTurret.cpp
-        Turret/MachineGunTurret.cpp
-        Turret/MissileTurret.cpp
-        Turret/AdvancedMissileTurret.cpp
-        Turret/TurretButton.cpp
-        Turret/HoverTurretButton.cpp
-        Turret/Shovel.cpp
-        Turret/Potion.cpp
-        Turret/FrostPotion.cpp
-        
-        Scene/WinScene.cpp
-        Scene/MapCreateScene.cpp
-        Scene/ModeSelectScene.cpp
-        Scene/ReversePlayScene.cpp
-        Scene/StartScene.cpp
-        Scene/LoseScene.cpp
-        Scene/PlayScene.cpp
-        Scene/StageSelectScene.cpp
-        Scene/DifficultySelectScene.cpp
-        Scene/SettingsScene.cpp
-        Scene/ScoreBoardScene.cpp
-        Scene/NormalPlayScene.cpp
-        Scene/ReviveScene.cpp
-        Scene/SurvivalPlayScene.cpp
-        Scene/StageSelectHandWriteScene.cpp
-    )
+# Use Clang Compiler!!!!!!!!
+# Warning: May need a long time to build, and may need to set build configuration to MinSizeRel (in cmake extension)
+# See README to see how to install mlpack
+# Set to false if you can't build the project with mlpack
+# If you see squiggles line for the first time, still build it, it is normal. After a successful build, the lines will disappear
+set(USE_ML true)
+set(SRC_FILES)
 
+# Set to true only when you want to use the hand write scene, otherwise it will take a lot of time to build
+# Estimated build time: 3 minutes
+Set(SERIALIZATION true)
+
+if(USE_ML AND SERIALIZATION)
+    add_definitions(-DMLPACK_ENABLE_ANN_SERIALIZATION)
+endif()
+
+# Add your source file here
+list(APPEND SRC_FILES
+    main.cpp
+
+    Engine/Allegro5Exception.cpp
+    Engine/AudioHelper.cpp
+    Engine/Collider.cpp
+    Engine/GameEngine.cpp
+    Engine/Group.cpp
+    Engine/IControl.cpp
+    Engine/IObject.cpp
+    Engine/IScene.cpp
+    Engine/LOG.cpp
+    Engine/Point.cpp
+    Engine/Resources.cpp
+    Engine/Sprite.cpp
+    
+    Bullet/Bullet.cpp
+    Bullet/FireBullet.cpp
+    Bullet/MissileBullet.cpp
+    Bullet/AdvancedMissileBullet.cpp
+    Bullet/LaserBullet.cpp
+
+    UI/Animation/ExplosionEffect.cpp
+    UI/Animation/DirtyEffect.cpp
+    UI/Component/Image.cpp
+    UI/Component/TextInput.cpp
+    UI/Component/ImageButton.cpp
+    UI/Component/HoverImageButton.cpp
+    UI/Component/EnemyButton.cpp
+    UI/Component/Label.cpp
+    UI/Animation/Plane.cpp
+    UI/Component/Slider.cpp
+    UI/Component/DrawBoard.cpp
+    
+    Enemy/Enemy.cpp
+    Enemy/PlaneEnemy.cpp
+    Enemy/SoldierEnemy.cpp
+    Enemy/AdvancedTankEnemy.cpp
+    Enemy/TankEnemy.cpp
+    
+    Turret/Turret.cpp
+    Turret/LaserTurret.cpp
+    Turret/MachineGunTurret.cpp
+    Turret/MissileTurret.cpp
+    Turret/AdvancedMissileTurret.cpp
+    Turret/TurretButton.cpp
+    Turret/HoverTurretButton.cpp
+    Turret/Shovel.cpp
+    Turret/Potion.cpp
+    Turret/FrostPotion.cpp
+    
+    Scene/WinScene.cpp
+    Scene/MapCreateScene.cpp
+    Scene/ModeSelectScene.cpp
+    Scene/ReversePlayScene.cpp
+    Scene/StartScene.cpp
+    Scene/LoseScene.cpp
+    Scene/PlayScene.cpp
+    Scene/StageSelectScene.cpp
+    Scene/DifficultySelectScene.cpp
+    Scene/SettingsScene.cpp
+    Scene/ScoreBoardScene.cpp
+    Scene/NormalPlayScene.cpp
+    Scene/ReviveScene.cpp
+    Scene/SurvivalPlayScene.cpp
+    Scene/StageSelectHandWriteScene.cpp
+)
+
+
+add_executable(2024_I2P2_TowerDefense_with_answer ${SRC_FILES})
+
+# make #include"ML_Macro.hpp" possible
+configure_file(ML_Resource/ML_Macro.hpp.in ML_Macro.hpp)
 target_include_directories(2024_I2P2_TowerDefense_with_answer PUBLIC "${PROJECT_BINARY_DIR}")
 
 
@@ -107,6 +125,10 @@ if(USE_ML)
     target_include_directories(2024_I2P2_TowerDefense_with_answer PUBLIC "${PROJECT_SOURCE_DIR}/ML_Resource/mlpack")
     target_include_directories(2024_I2P2_TowerDefense_with_answer PUBLIC "${PROJECT_SOURCE_DIR}/ML_Resource/cereal_x64-windows/include")
     target_include_directories(2024_I2P2_TowerDefense_with_answer PUBLIC "${PROJECT_SOURCE_DIR}/ML_Resource/ensmallen_x64-windows/include")
+
+    # Use precompile headers to reduce compile time
+    # list(APPEND SRC_FILES ML_Resource/ml_pch.hpp)
+    # target_precompile_headers(2024_I2P2_TowerDefense_with_answer PRIVATE ML_Resource/ml_pch.hpp)
 endif()
 
 

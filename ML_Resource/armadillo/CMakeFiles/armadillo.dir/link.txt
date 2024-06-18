@@ -1,0 +1,2 @@
+C:\mingw64\bin\ar.exe qc libarmadillo.a CMakeFiles/armadillo.dir/wrapper1.cpp.obj CMakeFiles/armadillo.dir/wrapper2.cpp.obj
+C:\mingw64\bin\ranlib.exe libarmadillo.a

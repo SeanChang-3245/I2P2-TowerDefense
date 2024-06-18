@@ -13,13 +13,13 @@
 #include "UI/Component/Slider.hpp"
 #include "StageSelectHandWriteScene.hpp"
 #include "Engine/LOG.hpp"
+#include "UI/Component/DrawBoard.hpp"
 #include "ML_Macro.hpp"
 
-#ifdef USE_ML
-
+#if USE_ML
 static const int RowSpacing = 200;
 static const int ColSpacing = 450;
-
+const float StageSelectSceneHW::MaxErrorMessageCD = 1.5;
 
 void StageSelectSceneHW::Initialize() {
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
@@ -27,42 +27,38 @@ void StageSelectSceneHW::Initialize() {
     int halfW = w / 2;
     int halfH = h / 2;
 
-    ConstructStageButton();
-    update_button_accessibility();
 
     Engine::ImageButton *btn;
-    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 200, halfH * 3 / 2 - 50, 400, 100);
+    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 420, halfH * 3 / 2 + 50, 400, 100);
     btn->SetOnClickCallback(std::bind(&StageSelectSceneHW::BackOnClick, this));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Back", "pirulen.ttf", 48, halfW, halfH * 3 / 2, 0, 0, 0, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Back", "pirulen.ttf", 48, halfW - 220, halfH * 3 / 2 + 100, 0, 0, 0, 255, 0.5, 0.5));
 
-    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 200, halfH / 2 + 250, 400, 100);
-    btn->SetOnClickCallback(std::bind(&StageSelectSceneHW::ScoreboardOnClick, this));
+    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW + 20, halfH * 3 / 2 + 50, 400, 100);
+    btn->SetOnClickCallback(std::bind(&StageSelectSceneHW::SubmitOnClick, this));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Scoreboard", "pirulen.ttf", 36, halfW, halfH / 2 + 300, 0, 0, 0, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Submit", "pirulen.ttf", 48, halfW + 220, halfH * 3 / 2 + 100, 0, 0, 0, 255, 0.5, 0.5));
 
-    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 625, halfH * 3 / 2 - 50, 400, 100);
-    btn->SetOnClickCallback(std::bind(&StageSelectSceneHW::PrevOnClick, this));
-    AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Prev", "pirulen.ttf", 48, halfW - 425, halfH * 3 / 2, 0, 0, 0, 255, 0.5, 0.5));
+    TensDigitBoard = new DrawBoard(halfW - 580, 50);
+    AddNewObject(TensDigitBoard);
+    UnitsDigitBoard = new DrawBoard(halfW + 20, 50);
+    AddNewObject(UnitsDigitBoard);
 
-    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW + 225, halfH * 3 / 2 - 50, 400, 100);
-    btn->SetOnClickCallback(std::bind(&StageSelectSceneHW::NextOnClick, this));
-    AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Next", "pirulen.ttf", 48, halfW + 425, halfH * 3 / 2, 0, 0, 0, 255, 0.5, 0.5));
-
-    // Not safe if release resource while playing, however we only free while change scene, so it's fine.
-	bgmInstance = AudioHelper::PlaySample("select.ogg", true, AudioHelper::BGMVolume);
+    error_message = new Engine::Label("", "pirulen.ttf", 60, halfW, halfH, 255, 0, 0, 255, 0.5, 0.5);
+    AddNewObject(error_message);
+    error_message->Visible = false;
+    error_message_cd = 0;
 }
+
 void StageSelectSceneHW::Terminate() {
-    Engine::LOG(Engine::INFO) << "terminate stage select scene";
-	AudioHelper::StopSample(bgmInstance);
-	bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
+    Engine::LOG(Engine::INFO) << "terminate stage select hand write scene";
 	IScene::Terminate();
 }
+
 void StageSelectSceneHW::BackOnClick() {
-    Engine::GameEngine::GetInstance().ChangeScene("start");
+    Engine::GameEngine::GetInstance().ChangeScene("stage-select");
 }
+
 void StageSelectSceneHW::PlayOnClick(int stage) {
     PlayScene* scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play-normal"));
     scene->MapId = stage;
@@ -73,39 +69,7 @@ void StageSelectSceneHW::PlayOnClick(int stage) {
 
     Engine::GameEngine::GetInstance().ChangeScene("difficulty-select");
 }
-void StageSelectSceneHW::ScoreboardOnClick() {
-    Engine::GameEngine::GetInstance().ChangeScene("scoreboard");
-}
 
-void StageSelectSceneHW::NextOnClick() 
-{
-    int maxPage = (number_of_stages+5) / 6 - 1;
-    current_page = std::min(current_page + 1, maxPage);
-    update_button_accessibility();
-}
-
-void StageSelectSceneHW::PrevOnClick() 
-{
-    current_page = std::max(current_page - 1, 0);
-    update_button_accessibility();
-}
-
-void StageSelectSceneHW::update_button_accessibility()
-{
-    for(int i = 0; i < number_of_stages; ++i)
-    {
-        stage_buttons[i].first->Visible = false;
-        stage_buttons[i].first->Enabled = false;
-        stage_buttons[i].second->Visible = false;
-    }
-
-    for(int i = current_page*6; i < std::min(current_page*6+6, (int)stage_buttons.size()); ++i)
-    {
-        stage_buttons[i].first->Visible = true;
-        stage_buttons[i].first->Enabled = true;
-        stage_buttons[i].second->Visible = true;
-    }
-}
 
 int StageSelectSceneHW::get_total_stages_count()
 {
@@ -119,38 +83,69 @@ int StageSelectSceneHW::get_total_stages_count()
     return fileCount;  
 }
 
-void StageSelectSceneHW::ConstructStageButton()
+void StageSelectSceneHW::OnMouseUp(int button, int mx, int my)
 {
-    int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
-    int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
-    int halfW = w / 2;
-    int halfH = h / 2;
+    TensDigitBoard->OnMouseUp(button, mx, my);
+    UnitsDigitBoard->OnMouseUp(button, mx, my);
+    IScene::OnMouseUp(button, mx, my);
+}
 
-    current_page = 0;
+void StageSelectSceneHW::OnMouseDown(int button, int mx, int my)
+{
+    TensDigitBoard->OnMouseDown(button, mx, my);
+    UnitsDigitBoard->OnMouseDown(button, mx, my);
+    IScene::OnMouseDown(button, mx, my);
+}
+
+void StageSelectSceneHW::OnMouseMove(int mx, int my)
+{
+    TensDigitBoard->OnMouseMove(mx, my);
+    UnitsDigitBoard->OnMouseMove(mx, my);
+    IScene::OnMouseMove(mx, my);
+}
+
+void StageSelectSceneHW::SubmitOnClick()
+{
+    int ten = TensDigitBoard->GetNumber();
+    int one = UnitsDigitBoard->GetNumber();
+
     number_of_stages = get_total_stages_count();
-    stage_buttons.assign(number_of_stages, {nullptr, nullptr});
 
-    Engine::ImageButton* btn;
-    Engine::Label* label;
-    for(int i = 0; i < number_of_stages; ++i)
+    int choose_stage = ten*10 + one;
+
+    if(choose_stage <= 0 || choose_stage > number_of_stages)
     {
-        btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", 
-                    halfW - 650 + (i%3) * ColSpacing, halfH / 2 - 100 + ((i/3) % 2) * RowSpacing, 
-                    400, 100);
-        btn->SetOnClickCallback(std::bind(&StageSelectSceneHW::PlayOnClick, this, i+1));
-        AddNewControlObject(btn);
-
-        label = new Engine::Label(std::string("Stage ") + std::to_string(i+1), "pirulen.ttf", 48, 
-                    halfW - 450 + (i%3) * ColSpacing, halfH / 2 - 50 + ((i/3) % 2) * RowSpacing, 
-                    0, 0, 0, 255, 0.5, 0.5);
-        AddNewObject(label);
-
-        btn->Enabled = btn->Visible = label->Visible = false;
-
-        stage_buttons[i].first = btn;
-        stage_buttons[i].second = label;
+        PrintErrorMessage(choose_stage);
+        return;
     }
 
+    PlayScene* scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play-normal"));
+    scene->MapId = choose_stage;
+    scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play-reverse"));
+    scene->MapId = choose_stage;
+    scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play-survival"));
+    scene->MapId = choose_stage;
+
+    Engine::GameEngine::GetInstance().ChangeScene("difficulty-select");
+}
+
+void StageSelectSceneHW::PrintErrorMessage(int invalid_stage)
+{
+    error_message_cd = MaxErrorMessageCD;
+
+    std::string str = std::to_string(invalid_stage) + " is invalid";
+    error_message->Text = str;
+    error_message->Visible = true;
+}
+
+void StageSelectSceneHW::Update(float deltaTime)
+{
+    error_message_cd -= deltaTime;
+    if(error_message_cd <= 0)
+    {
+        error_message_cd = 0;
+        error_message->Visible = false;
+    }
 }
 
 #endif

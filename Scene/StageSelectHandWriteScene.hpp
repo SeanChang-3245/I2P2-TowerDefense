@@ -5,33 +5,34 @@
 #include <vector>
 #include <utility>
 #include "Engine/IScene.hpp"
-#include "UI/Component/ImageButton.hpp"
+#include "Engine/Group.hpp"
+#include "UI/Component/DrawBoard.hpp"
+#include "UI/Component/Label.hpp"
 
 class StageSelectSceneHW final : public Engine::IScene {
 private:
-	// store the pointer of each stage's entry button and its label
-	// use to manipulate visibility and accessibility when switching pages
-	std::vector<std::pair<Engine::ImageButton*, Engine::Label*>> stage_buttons;
+	static const float MaxErrorMessageCD;
 	int number_of_stages;
-	// one page contain 6 stages
-	// start from 0
-	int current_page;
-	std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
+	float error_message_cd;
+	DrawBoard *TensDigitBoard;
+	DrawBoard *UnitsDigitBoard;
+	Engine::Label *error_message;
+
 	
-	void ConstructStageButton();
 	int get_total_stages_count();
-	// update button based on current page
-	void update_button_accessibility();
 
 public:
 	explicit StageSelectSceneHW() = default;
 	void Initialize() override;
 	void Terminate() override;
 	void PlayOnClick(int stage);
-    void ScoreboardOnClick();
 	void BackOnClick();
-	void PrevOnClick();
-	void NextOnClick();
+	void SubmitOnClick();
+	void Update(float deltaTime) override;
+	void OnMouseUp(int button, int mx, int my) override;
+	void OnMouseDown(int button, int mx, int my) override;
+	void OnMouseMove(int mx, int my) override;
+	void PrintErrorMessage(int invalid_stage);
 };
 
 #endif 

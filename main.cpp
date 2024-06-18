@@ -16,6 +16,7 @@
 #include "Scene/MapCreateScene.hpp"
 #include "Scene/ReviveScene.hpp"
 #include "Scene/SurvivalPlayScene.hpp"
+#include "Scene/StageSelectHandWriteScene.hpp"
 #include "DebugMacro.hpp"
 #include "ML_Macro.hpp"
 #include <iostream>
@@ -32,6 +33,10 @@ int main(int argc, char **argv) {
 	game.AddNewScene("stage-select", new StageSelectScene());
 	game.AddNewScene("difficulty-select", new DifficultySelectScene());
 	game.AddNewScene("mode-select", new ModeSelectScene());
+
+#if USE_ML
+	game.AddNewScene("stage-select-hw", new StageSelectSceneHW());
+#endif
 	
 	game.AddNewScene("map-create", new MapCreateScene());
 	game.AddNewScene("settings", new SettingsScene());
@@ -45,9 +50,6 @@ int main(int argc, char **argv) {
 	game.AddNewScene("scoreboard", new ScoreboardScene());
 	game.AddNewScene("revive", new ReviveScene());
 
-    // TODO: [HACKATHON-1-SCENE] (4/4): Change the start scene
-
-	// game.Start("revive", 60, 1600, 832);
 	game.Start("start", 60, 1600, 832);
 	return 0;
 }
