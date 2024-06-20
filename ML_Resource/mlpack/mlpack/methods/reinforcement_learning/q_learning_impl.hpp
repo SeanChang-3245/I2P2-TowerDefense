@@ -50,9 +50,26 @@ QLearning<
   // To copy over the network structure.
   targetNetwork = learningNetwork;
 
+
+// =========== MY CHANGE BEGIN =========== //
+  
+#ifdef FIX_MLPACK_ERROR
+
   // Set up q-learning network.
-  if (learningNetwork.Parameters().n_elem != environment.InitialSample().Encode().n_elem)
+  // if (learningNetwork.Parameters().n_elem != environment.InitialSample().Encode().n_elem)
+  //   learningNetwork.Reset(environment.InitialSample().Encode().n_elem);
+
+
+  size_t networkDimensionality = 1;
+  for(const size_t &dim : learningNetwork.InputDimension())
+    networkDimensionality *= dim;
+
+  if (networkDimensionality != environment.InitialSample().Encode().n_elem)
     learningNetwork.Reset(environment.InitialSample().Encode().n_elem);
+
+#endif
+
+// =========== MY CHANGE END =========== //
 
   // Initialize the target network with the parameters of learning network.
   targetNetwork.Parameters() = learningNetwork.Parameters();

@@ -7,11 +7,12 @@
 
 #if USE_ML
 
-// #include "ML_Resource/ml_pch.hpp"
-#include <mlpack/base.hpp>
-#include <mlpack/config.hpp>
-#include <mlpack/core.hpp>
-#include <mlpack/methods/ann/ffn.hpp>
+// #include "ML_Resource/ml_pch.hpp.gch"
+#include "ML_Resource/ml_pch.hpp"
+// #include <mlpack/base.hpp>
+// #include <mlpack/config.hpp>
+// #include <mlpack/core.hpp>
+// #include <mlpack/methods/ann/ffn.hpp>
 #include <armadillo>
 using namespace mlpack;
 using namespace arma;
@@ -82,6 +83,7 @@ void DrawBoard::OnMouseMove(int mx, int my)
             if(newX < 0 || newX >= PictureWidth || newY < 0 || newY >= PictureWidth)
                 continue;
             DrawOnBoard(newX, newY, BLACK);
+        
         }
 
         for(int i = 4; i < 9; ++i)
@@ -102,7 +104,6 @@ void DrawBoard::DrawOnBoard(int x, int y)
 {
     if(pixel_status[y][x] == BLACK)
         return;
-    
     pixel_status[y][x] = BLACK;
     PixelGroup->RemoveObject(pixel_ptr[y][x]->GetObjectIterator());
     pixel_ptr[y][x] = new Engine::Image("stage-select/black_tile.png", 

@@ -5,7 +5,6 @@
 #include <mlpack/config.hpp>
 #include <mlpack/core.hpp>
 #include <mlpack/methods/ann/ffn.hpp>
-#include <armadillo>
 
 
 #endif

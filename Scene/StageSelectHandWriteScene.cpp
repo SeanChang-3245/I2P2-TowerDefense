@@ -22,6 +22,7 @@ static const int ColSpacing = 450;
 const float StageSelectSceneHW::MaxErrorMessageCD = 1.5;
 
 void StageSelectSceneHW::Initialize() {
+    Engine::LOG(Engine::INFO) << "enter stage select hand write scene init";
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;
@@ -29,15 +30,20 @@ void StageSelectSceneHW::Initialize() {
 
 
     Engine::ImageButton *btn;
-    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 420, halfH * 3 / 2 + 50, 400, 100);
+    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 710, halfH * 3 / 2 + 50, 400, 100);
     btn->SetOnClickCallback(std::bind(&StageSelectSceneHW::BackOnClick, this));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Back", "pirulen.ttf", 48, halfW - 220, halfH * 3 / 2 + 100, 0, 0, 0, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Back", "pirulen.ttf", 48, halfW - 510, halfH * 3 / 2 + 100, 0, 0, 0, 255, 0.5, 0.5));
 
-    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW + 20, halfH * 3 / 2 + 50, 400, 100);
+    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW + 310, halfH * 3 / 2 + 50, 400, 100);
     btn->SetOnClickCallback(std::bind(&StageSelectSceneHW::SubmitOnClick, this));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Submit", "pirulen.ttf", 48, halfW + 220, halfH * 3 / 2 + 100, 0, 0, 0, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Submit", "pirulen.ttf", 48, halfW + 510, halfH * 3 / 2 + 100, 0, 0, 0, 255, 0.5, 0.5));
+
+    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 200, halfH * 3 / 2 + 50, 400, 100);
+    btn->SetOnClickCallback(std::bind(&StageSelectSceneHW::ClearOnClick, this));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("clear", "pirulen.ttf", 48, halfW, halfH * 3 / 2 + 100, 0, 0, 0, 255, 0.5, 0.5));
 
     TensDigitBoard = new DrawBoard(halfW - 580, 50);
     AddNewObject(TensDigitBoard);
@@ -68,6 +74,12 @@ void StageSelectSceneHW::PlayOnClick(int stage) {
     scene->MapId = stage;
 
     Engine::GameEngine::GetInstance().ChangeScene("difficulty-select");
+}
+
+void StageSelectSceneHW::ClearOnClick()
+{
+    TensDigitBoard->ClearBoard();
+	UnitsDigitBoard->ClearBoard();
 }
 
 

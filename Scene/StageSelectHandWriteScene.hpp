@@ -28,6 +28,7 @@ public:
 	void PlayOnClick(int stage);
 	void BackOnClick();
 	void SubmitOnClick();
+	void ClearOnClick();
 	void Update(float deltaTime) override;
 	void OnMouseUp(int button, int mx, int my) override;
 	void OnMouseDown(int button, int mx, int my) override;

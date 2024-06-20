@@ -33,8 +33,6 @@ int main(int argc, char **argv) {
 	return 0;
 #endif
 
-
-    // TODO: [HACKATHON-1-SCENE] (3/4): Register Scenes here
 	game.AddNewScene("start", new StartScene());
 
 	game.AddNewScene("stage-select", new StageSelectScene());

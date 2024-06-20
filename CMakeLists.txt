@@ -16,7 +16,7 @@ file(COPY allegro_monolith-5.2.dll DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 
 # Use Clang Compiler!!!!!!!!
-# Warning: May need a long time to build, and may need to set build configuration to MinSizeRel (in cmake extension)
+# Warning: May need a long time to build, and may need to set build configuration to MinSizeRel (in vscode cmake extension)
 # See README to see how to install mlpack
 # Set to false if you can't build the project with mlpack
 # If you see squiggles line for the first time, still build it, it is normal. After a successful build, the lines will disappear
@@ -27,17 +27,32 @@ set(SRC_FILES)
 
 # Set to true only when you want to use the hand write scene, otherwise it will take a lot of time to build
 # Estimated build time: 3 minutes
-set(SERIALIZATION false)
+set(SERIALIZATION true)
 
 # Decide which CNN model we want to use 
-set(CNN_MODEL_VERSION 1)
+set(CNN_MODEL_VERSION 2)
 
 # Set to true if you want to generate CNN training data 
 # Won't support any game
 set(GENERATE_TRAINING_DATA false)
 
+# Should set to be true if you want to use AI enemy path finding 
+# Modification in mlpack/methods/reinforcement_learning/q_learning_impl.hpp QLearning's constructor
+set(FIX_QLEARNING_ERROR true)
+
+# Set to true if you want to precompile mlpack headers
+# Warning: It will take a very long time to build
+# Estimated time: at least 3 hour
+# Don't use
+set(BUILD_PCH false)
+
 if(USE_ML AND SERIALIZATION)
     add_definitions(-DMLPACK_ENABLE_ANN_SERIALIZATION)
+endif()
+    
+    
+if(FIX_QLEARNING_ERROR)
+    add_definitions(-DFIX_MLPACK_ERROR)
 endif()
 
 # Add your source file here
@@ -110,6 +125,9 @@ list(APPEND SRC_FILES
     Scene/DataGeneratingScene.cpp
 )
 
+if(BUILD_PCH)
+    list(APPEND SRC_FILES ML_Resource/ml_pch.hpp)
+endif()
 
 add_executable(2024_I2P2_TowerDefense_with_answer ${SRC_FILES})
 
@@ -128,6 +146,7 @@ if(USE_ML)
     set(MLPACK_LIBRARIES ${MLPACK_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 
     file(COPY "ML_Resource/CNNmodel1.bin" DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+    file(COPY "ML_Resource/CNNmodel2.bin" DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
     add_subdirectory("ML_Resource/armadillo")
     target_link_libraries(2024_I2P2_TowerDefense_with_answer PUBLIC armadillo)
@@ -136,11 +155,13 @@ if(USE_ML)
     target_include_directories(2024_I2P2_TowerDefense_with_answer PUBLIC "${PROJECT_SOURCE_DIR}/ML_Resource/cereal_x64-windows/include")
     target_include_directories(2024_I2P2_TowerDefense_with_answer PUBLIC "${PROJECT_SOURCE_DIR}/ML_Resource/ensmallen_x64-windows/include")
 
-    # Use precompile headers to reduce compile time
-    # list(APPEND SRC_FILES ML_Resource/ml_pch.hpp)
-    # target_precompile_headers(2024_I2P2_TowerDefense_with_answer PRIVATE ML_Resource/ml_pch.hpp)
 endif()
 
+# Use precompile headers to reduce compile time in later compilation
+if(USE_ML AND BUILD_PCH)
+    list(APPEND SRC_FILES ML_Resource/ml_pch.hpp)
+    target_precompile_headers(2024_I2P2_TowerDefense_with_answer PRIVATE ML_Resource/ml_pch.hpp)
+endif()
 
 IF (WIN32)
     target_include_directories(2024_I2P2_TowerDefense_with_answer PUBLIC C:/allegro/include)
