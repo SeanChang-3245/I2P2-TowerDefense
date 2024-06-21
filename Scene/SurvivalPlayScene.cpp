@@ -505,3 +505,13 @@ void SurvivalPlayScene::ClearCloseEnemy()
 			enemy->Hit(INFINITY);
 	}
 }
+
+void SurvivalPlayScene::PlaceObject(const int &x, const int &y)
+{
+
+}
+
+void SurvivalPlayScene::PlacePotion(const int &x, const int &y)
+{
+	
+}

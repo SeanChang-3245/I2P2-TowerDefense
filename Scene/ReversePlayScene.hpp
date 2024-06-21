@@ -83,7 +83,7 @@ public:
 	// Engine::Label* UIMoney;
 	// Engine::Label* UIScore;
 	// Engine::Label* UILives;
-	// Turret* preview;
+	Turret* preview;
 	// std::vector<std::vector<TileType>> mapState;
 	// std::vector<std::vector<TileType>> originalMapState;
 	// std::vector<std::vector<int>> mapDistance;

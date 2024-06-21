@@ -35,6 +35,7 @@
 #include "UI/Component/ImageButton.hpp"
 #include "Turret/Potion.hpp"
 #include "Turret/FrostPotion.hpp"
+#include "Turret/BerserkPotion.hpp"
 
 
 void NormalPlayScene::Initialize()
@@ -112,7 +113,7 @@ void NormalPlayScene::OnMouseUp(int button, int mx, int my)
 	// left click
 	if (button == 1)
 	{ 
-		if (mapState[y][x] != TILE_OCCUPIED)
+		if (mapState[y][x] != TILE_OCCUPIED || preview->GetType()==POTION)
 		{
 			PlaceObject(x, y);
 		}
@@ -252,6 +253,31 @@ void NormalPlayScene::ConstructUI()
 	btn->SetOnClickCallback(std::bind(&NormalPlayScene::UIBtnClicked, this, 5));
 	UIGroup->AddNewControlObject(btn);
 
+	details.clear();
+	details.push_back("freeze the enemies");
+	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
+		Engine::Sprite("play/potion.png", 1370, 252, 0, 0, 0, 0),
+		Engine::Sprite("play/potion.png", 1370, 252, 0, 0, 0, 0),
+		1370, 252,
+		information_x, information_y,
+		0, 0, 0, 255,
+		FrostPotion::Price, FrostPotion::Range, FrostPotion::Range,
+		details);
+	btn->SetOnClickCallback(std::bind(&NormalPlayScene::UIBtnClicked, this, 5));
+	UIGroup->AddNewControlObject(btn);
+
+	details.clear();
+	details.push_back("Berserk!!");
+	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
+		Engine::Sprite("play/potion.png", 1444, 252, 0, 0, 0, 0),
+		Engine::Sprite("play/potion.png", 1444, 252, 0, 0, 0, 0),
+		1444, 252,
+		information_x, information_y,
+		0, 0, 0, 255,
+		BerserkPotion::Price, BerserkPotion::Range, BerserkPotion::Range,
+		details);
+	btn->SetOnClickCallback(std::bind(&NormalPlayScene::UIBtnClicked, this, 6));
+	UIGroup->AddNewControlObject(btn);
 	// Background
 	// UIGroup->AddNewObject(new Engine::Image("play/sand.png", 1280, 0, 320, 832));
 
@@ -297,6 +323,8 @@ void NormalPlayScene::UIBtnClicked(int id)
 		preview = new Shovel(0, 0);
 	else if (id == 5 && money >= FrostPotion::Price)
 		preview = new FrostPotion(0, 0);
+	else if (id == 6 && money >= BerserkPotion::Price)
+		preview = new BerserkPotion(0, 0);
 
 
 	if (!preview)
