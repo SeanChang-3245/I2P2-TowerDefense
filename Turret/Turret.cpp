@@ -21,14 +21,14 @@ Turret::Turret(std::string imgBase, std::string imgTurret, float x, float y, flo
 
 {
 	CollisionRadius = radius;
+	Freeze=0;
+	Berserker=0;
 }
 
-#include <iostream>
 void Turret::Update(float deltaTime) {
 	Sprite::Update(deltaTime);
-	if (type==TURRET) std::cout << "TURRET UPDATE\n";
-	else if (type==POTION) std::cout << "POTION UPDATE\n";
 	PlayScene* scene = getPlayScene();
+	if (Freeze) return;
 	imgBase.Position = Position;
 	imgBase.Tint = Tint;
 	if (!Enabled)
@@ -105,6 +105,7 @@ void Turret::Update(float deltaTime) {
 		Rotation = atan2(rotation.y, rotation.x) + ALLEGRO_PI / 2;
 		// Shoot reload.
 		reload -= deltaTime;
+		if (Berserker) reload-=deltaTime;
 		if (reload <= 0) {
 			// shoot.
 			reload = coolDown;

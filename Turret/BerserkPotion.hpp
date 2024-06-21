@@ -1,16 +1,16 @@
-#ifndef FROSTPOTION_HPP
-#define FROSTPOTION_HPP
+#ifndef BERSERKPOTION_HPP
+#define BERSERKPOTION_HPP
 #include "Potion.hpp"
 #include <string>
 
-class FrostPotion: public Potion {
+class BerserkPotion: public Potion {
 public:
     static const std::string Potionbase;
     static const std::string Potionimg;
     static const int Range;
     static const int Duration;
     static const int Price;
-    FrostPotion(float x, float y);
+    BerserkPotion(float x, float y);
 	// void Update(float deltaTime) override;
     void effectenemy(Enemy *enemy) override;
     void resumeenemy(Enemy *enemy) override;
@@ -19,4 +19,4 @@ public:
     void CreateBullet() override;
 };
 
-#endif // FROSTPOTION_HPP
+#endif // BERSERKPOTION_HPP

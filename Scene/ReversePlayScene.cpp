@@ -38,6 +38,10 @@ using namespace std;
 #include "DebugMacro.hpp"
 #include "Bullet/FireBullet.hpp"
 #include "UI/Component/ImageButton.hpp"
+#include "Turret/BerserkPotion.hpp"
+#include "Turret/HoverTurretButton.hpp"
+#include "Turret/ShieldPotion.hpp"
+#include "Turret/FrostPotion.hpp"
 
 // bool ReversePlayScene::DebugMode = false;
 // const std::vector<Engine::Point> ReversePlayScene::directions = {Engine::Point(-1, 0), Engine::Point(0, -1), Engine::Point(1, 0), Engine::Point(0, 1)};
@@ -74,6 +78,7 @@ void ReversePlayScene::Initialize()
 	intermediate_point.x = intermediate_point.y = -1;
 
 	SetChooseTurretPositionFunc(std::bind(&ReversePlayScene::TurretPosision_RandomPosOnRandomPath, this));
+	preview = nullptr;
 }
 
 void ReversePlayScene::Update(float deltaTime)
@@ -101,6 +106,12 @@ void ReversePlayScene::Update(float deltaTime)
 			}
 		}
 	}	
+	if (preview)
+	{
+		preview->Position = Engine::GameEngine::GetInstance().GetMousePosition();
+		// To keep responding when paused.
+		preview->Update(deltaTime);
+	}
 }
 
 void ReversePlayScene::OnMouseDown(int button, int mx, int my)
@@ -109,7 +120,12 @@ void ReversePlayScene::OnMouseDown(int button, int mx, int my)
 	const int y = my / BlockSize;
 	if(button == 2)
 		set_intermediate_point(x, y);
-
+	if ((button == 1) && !imgTarget->Visible && preview)
+	{
+		// Cancel turret construct.
+		UIGroup->RemoveObject(preview->GetObjectIterator());
+		preview = nullptr;
+	}
 	IScene::OnMouseDown(button, mx, my);
 }
 
@@ -118,7 +134,7 @@ void ReversePlayScene::OnMouseMove(int mx, int my)
 	IScene::OnMouseMove(mx, my);
 	const int x = mx / BlockSize;
 	const int y = my / BlockSize;
-	if (x < 0 || x >= MapWidth || y < 0 || y >= MapHeight)
+	if (!preview || x < 0 || x >= MapWidth || y < 0 || y >= MapHeight)
 	{
 		imgTarget->Visible = false;
 		return;
@@ -134,6 +150,7 @@ void ReversePlayScene::OnMouseUp(int button, int mx, int my)
 		return;
 	const int x = mx / BlockSize;
 	const int y = my / BlockSize;
+	if (button == 1 && preview) PlaceObject(x, y);
 	OnMouseMove(mx, my);
 }
 void ReversePlayScene::OnKeyDown(int keyCode)
@@ -161,13 +178,14 @@ void ReversePlayScene::OnKeyDown(int keyCode)
 	}
 }
 
+
 void ReversePlayScene::ConstructUI()
 {
 	PlayScene::ConstructUI();
 
 	// Text
 	UIGroup->AddNewObject(UITime = new Engine::Label(std::string("time") + std::to_string(remain_time), "pirulen.ttf", 24, 1294, 168));
-
+	std::vector<std::string> details;
 	Engine::EnemyButton *btn;
 	const int information_x = 1294;
 	const int information_y = 400;
@@ -225,6 +243,45 @@ void ReversePlayScene::ConstructUI()
 	btn->SetCostValue(AdvancedTankEnemy::Cost);
 	UIGroup->AddNewControlObject(btn);
 
+	HoverTurretButton *pbtn;
+	details.clear();
+	details.push_back("Berserk!!");
+	pbtn = new HoverTurretButton("play/floor.png", "play/dirt.png",
+		Engine::Sprite("play/potion.png", 1294, 292, 0, 0, 0, 0),
+		Engine::Sprite("play/potion.png", 1294, 292, 0, 0, 0, 0),
+		1294, 292,
+		information_x, information_y,
+		0, 0, 0, 255,
+		BerserkPotion::Price, BerserkPotion::Range, BerserkPotion::Range,
+		details);
+	pbtn->SetOnClickCallback(std::bind(&ReversePlayScene::UIBtnClicked, this, 5));
+	UIGroup->AddNewControlObject(pbtn);
+
+	details.clear();
+	details.push_back("Shiled Up!");
+	pbtn = new HoverTurretButton("play/floor.png", "play/dirt.png",
+		Engine::Sprite("play/potion.png", 1370, 292, 0, 0, 0, 0),
+		Engine::Sprite("play/potion.png", 1370, 292, 0, 0, 0, 0),
+		1370, 292,
+		information_x, information_y,
+		0, 0, 0, 255,
+		ShieldPotion::Price, ShieldPotion::Range, ShieldPotion::Range,
+		details);
+	pbtn->SetOnClickCallback(std::bind(&ReversePlayScene::UIBtnClicked, this, 6));
+	UIGroup->AddNewControlObject(pbtn);
+
+	details.clear();
+	details.push_back("freeze the enemies");
+	pbtn = new HoverTurretButton("play/floor.png", "play/dirt.png",
+		Engine::Sprite("play/potion.png", 1446, 292, 0, 0, 0, 0),
+		Engine::Sprite("play/potion.png", 1446, 292, 0, 0, 0, 0),
+		1446, 292,
+		information_x, information_y,
+		0, 0, 0, 255,
+		FrostPotion::Price, FrostPotion::Range, FrostPotion::Range,
+		details);
+	pbtn->SetOnClickCallback(std::bind(&ReversePlayScene::UIBtnClicked, this, 7));
+	UIGroup->AddNewControlObject(pbtn);
 
 	// Background
 	// UIGroup->AddNewObject(new Engine::Image("play/sand.png", 1280, 0, 320, 832));
@@ -247,7 +304,11 @@ void ReversePlayScene::UIBtnClicked(int id)
 {
     const Engine::Point SpawnCoordinate = Engine::Point(SpawnGridPoint.x * BlockSize + BlockSize / 2, SpawnGridPoint.y * BlockSize + BlockSize / 2);
 	Enemy* enemy = nullptr;
-    
+    if (preview)
+	{
+		UIGroup->RemoveObject(preview->GetObjectIterator());
+		preview = nullptr;
+	}
     int cost = 0;
     if (id == 0 && money >= SoldierEnemy::Cost)
     {
@@ -269,16 +330,43 @@ void ReversePlayScene::UIBtnClicked(int id)
         EnemyGroup->AddNewObject(enemy = new AdvancedTankEnemy(SpawnCoordinate.x, SpawnCoordinate.y));
         cost = AdvancedTankEnemy::Cost;
     }
+	else if (id == 5 && money >= BerserkPotion::Price)
+	{
+		
+		preview = new BerserkPotion(0, 0);
+		cost=BerserkPotion::Price;
+	}
+	else if (id == 6 && money >= ShieldPotion::Price)
+	{
+		
+		preview = new ShieldPotion(0, 0);
+		cost=ShieldPotion::Price;
+	}
+	else if (id == 7 && money >= FrostPotion::Price)
+	{
+		
+		preview = new FrostPotion(0, 0);
+		cost=FrostPotion::Price;
+	}
+    if(enemy)
+    {
+		EarnMoney(-cost);
 
-    if(!enemy)
-        return;
-    EarnMoney(-cost);
-
-	// Check if there is a valid intermediate point
-	if(intermediateMapDistance.size())
-		enemy->UpdateIntermediatePath(intermediateMapDistance);
-    enemy->UpdatePath(mapDistance);
-    enemy->Update(ticks);
+		// Check if there is a valid intermediate point
+		if(intermediateMapDistance.size())
+			enemy->UpdateIntermediatePath(intermediateMapDistance);
+		enemy->UpdatePath(mapDistance);
+		enemy->Update(ticks);
+	}
+	if (preview)
+	{
+		preview->Position = Engine::GameEngine::GetInstance().GetMousePosition();
+		preview->Tint = al_map_rgba(255, 255, 255, 200);
+		preview->Enabled = false;
+		preview->Preview = true;
+		UIGroup->AddNewObject(preview);
+		OnMouseMove(Engine::GameEngine::GetInstance().GetMousePosition().x, Engine::GameEngine::GetInstance().GetMousePosition().y);
+	}
 
 	// check pass intermediate point
 }
@@ -391,12 +479,32 @@ void ReversePlayScene::ChooseTurretType()
 
 void ReversePlayScene::PlaceObject(const int &x, const int &y)
 {
-
+	if (preview->GetType()==POTION) PlacePotion(x, y);
 }
 
 void ReversePlayScene::PlacePotion(const int &x, const int &y)
 {
-
+	if (!preview || preview->GetType() != POTION)
+		return;
+	EarnMoney(-preview->GetPrice());
+	
+	// Remove Preview.
+	preview->GetObjectIterator()->first = false;
+	UIGroup->RemoveObject(preview->GetObjectIterator());
+	
+	// Construct real turret.
+	preview->Position.x = x * BlockSize + BlockSize / 2;
+	preview->Position.y = y * BlockSize + BlockSize / 2;
+	preview->Enabled = true;
+	preview->Preview = false;
+	preview->Tint = al_map_rgba(255, 255, 255, 255);
+	TowerGroup->AddNewObject(preview);
+	
+	// To keep responding when paused.
+	preview->Update(0);
+	
+	// Remove Preview.
+	preview = nullptr;
 }
 
 void ReversePlayScene::PlaceTurret(const int &x, const int &y)

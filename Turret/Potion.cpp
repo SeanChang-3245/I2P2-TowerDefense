@@ -34,7 +34,12 @@ void Potion::Update(float deltaTime)
     for (auto& it : scene->EnemyGroup->GetObjects())
     {
       Target = dynamic_cast<Enemy*>(it);
-      resume(Target);
+      resumeenemy(Target);
+    }
+    for (auto& it : scene->TowerGroup->GetObjects())
+    {
+      Target_tower = dynamic_cast<Turret*>(it);
+      resumeturret(Target_tower);
     }
     // scene->mapState[Position.y][Position.x]=scene->originalMapState[Position.y][Position.x];
     scene->TowerGroup->RemoveObject(this->GetObjectIterator());
@@ -44,8 +49,15 @@ void Potion::Update(float deltaTime)
   for (auto& it : scene->EnemyGroup->GetObjects()) {
 			Engine::Point diff = it->Position - Position;
       Target = dynamic_cast<Enemy*>(it);
-			if (diff.Magnitude() <= CollisionRadius) effect(Target);
-      else resume(Target);
+			if (diff.Magnitude() <= CollisionRadius) effectenemy(Target);
+      else resumeenemy(Target);
+		}
+  for (auto& it : scene->TowerGroup->GetObjects()) {
+			Engine::Point diff = it->Position - Position;
+      Target_tower = dynamic_cast<Turret*>(it);
+      if (Target_tower->GetType()!=TURRET) continue;
+			if (diff.Magnitude() <= CollisionRadius) effectturret(Target_tower);
+      else resumeturret(Target_tower);
 		}
 }
 

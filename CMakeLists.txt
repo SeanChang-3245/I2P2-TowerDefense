@@ -121,6 +121,8 @@ list(APPEND SRC_FILES
     Turret/Shovel.cpp
     Turret/Potion.cpp
     Turret/FrostPotion.cpp
+    Turret/BerserkPotion.cpp
+    Turret/ShieldPotion.cpp
     
     Scene/WinScene.cpp
     Scene/MapCreateScene.cpp
