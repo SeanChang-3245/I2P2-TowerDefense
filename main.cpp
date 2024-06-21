@@ -6,6 +6,7 @@
 #include "Scene/LoseScene.hpp"
 #include "Scene/NormalPlayScene.hpp"
 #include "Scene/ReversePlayScene.hpp"
+#include "Scene/BlackPlayScene.hpp"
 #include "Scene/StageSelectScene.hpp"
 #include "Scene/DifficultySelectScene.hpp"
 #include "Scene/ModeSelectScene.hpp"
@@ -38,6 +39,7 @@ int main(int argc, char **argv) {
 	
 	game.AddNewScene("play-normal", new NormalPlayScene());
 	game.AddNewScene("play-reverse", new ReversePlayScene());
+    game.AddNewScene("play-black", new BlackPlayScene());
 	
 	game.AddNewScene("lose", new LoseScene());
 	game.AddNewScene("scoreboard", new ScoreboardScene());

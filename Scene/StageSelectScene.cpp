@@ -65,6 +65,8 @@ void StageSelectScene::PlayOnClick(int stage) {
     scene->MapId = stage;
     scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play-reverse"));
     scene->MapId = stage;
+    scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play-black"));
+    scene->MapId = stage;
 
     Engine::GameEngine::GetInstance().ChangeScene("difficulty-select");
 }
