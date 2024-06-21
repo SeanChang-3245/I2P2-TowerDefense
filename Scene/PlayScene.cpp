@@ -57,6 +57,11 @@ void PlayScene::Initialize()
 {
 	Engine::LOG(Engine::INFO) << "enter PlayScene::initialize\n";
 
+    int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
+    int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
+    int halfW = w / 2;
+    int halfH = h / 2;
+
 	mapState.clear();
 	keyStrokes.clear();
 	ticks = 0;
@@ -77,11 +82,9 @@ void PlayScene::Initialize()
 	AddNewControlObject(UIGroup = new Group());
 
 	ConstructUI();
-	
 	// Read map data and initialize distance
 	ReadMap();
 	mapDistance = CalculateBFSDistance();
-
 	// Preload Lose Scene
 	deathBGMInstance = Engine::Resources::GetInstance().GetSampleInstance("astronomia.ogg");
 	Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");

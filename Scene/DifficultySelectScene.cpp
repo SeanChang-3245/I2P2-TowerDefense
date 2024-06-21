@@ -62,6 +62,8 @@ void DifficultySelectScene::PlayOnClick(float difficulty) {
     scene->difficulty = difficulty;
     scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play-reverse"));
     scene->difficulty = difficulty;
+    scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play-black"));
+    scene->difficulty = difficulty;
     
     // Engine::GameEngine::GetInstance().ChangeScene("play-normal");
     Engine::GameEngine::GetInstance().ChangeScene("mode-select");
