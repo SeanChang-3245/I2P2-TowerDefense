@@ -2,6 +2,7 @@
 #include <cmath>
 #include <string>
 
+#include "Engine/GameEngine.hpp"
 #include "Engine/Group.hpp"
 #include "Scene/PlayScene.hpp"
 #include "Engine/Point.hpp"
@@ -10,8 +11,8 @@
 
 const std::string BerserkPotion::Potionbase="play/potion.png";
 const std::string BerserkPotion::Potionimg="play/potion.png";
-const int BerserkPotion::Range=100;
-const int BerserkPotion::Duration=100;
+const int BerserkPotion::Range=200;
+const int BerserkPotion::Duration=200;
 const int BerserkPotion::Price=50;
 
 BerserkPotion::BerserkPotion(float x, float y) : Potion(Potionbase, Potionimg, Range, 0, Duration, Price, x, y)
@@ -19,15 +20,29 @@ BerserkPotion::BerserkPotion(float x, float y) : Potion(Potionbase, Potionimg, R
 
 }
 
-void BerserkPotion::effect(Enemy *enemy)
+void BerserkPotion::effectenemy(Enemy *enemy)
 {
-	enemy->Berserk=1;
+	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())!="play-reverse") return;
+	enemy->Berserk=500;
 	// std::cout << "Freeze!\n";
 }
 
-void BerserkPotion::resume(Enemy* enemy)
+void BerserkPotion::resumeenemy(Enemy* enemy)
 {
+	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())!="play-reverse") return;
 	enemy->Berserk=0;
+}
+
+void BerserkPotion::effectturret(Turret *turret)
+{
+	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())!="play-normal") return;
+	turret->Berserker=500;
+}
+
+void BerserkPotion::resumeturret(Turret *turret)
+{
+	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())!="play-normal") return;
+	turret->Berserker=0;
 }
 
 void BerserkPotion::CreateBullet() {}

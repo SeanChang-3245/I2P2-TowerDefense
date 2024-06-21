@@ -12,8 +12,10 @@ public:
     static const int Price;
     BerserkPotion(float x, float y);
 	// void Update(float deltaTime) override;
-    void effect(Enemy *enemy) override;
-    void resume(Enemy *enemy) override;
+    void effectenemy(Enemy *enemy) override;
+    void resumeenemy(Enemy *enemy) override;
+    void effectturret(Turret *turret) override;
+    void resumeturret(Turret *turret) override;
     void CreateBullet() override;
 };
 

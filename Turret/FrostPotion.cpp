@@ -2,6 +2,7 @@
 #include <cmath>
 #include <string>
 
+#include "Engine/GameEngine.hpp"
 #include "Engine/Group.hpp"
 #include "Scene/PlayScene.hpp"
 #include "Engine/Point.hpp"
@@ -19,15 +20,29 @@ FrostPotion::FrostPotion(float x, float y) : Potion(Potionbase, Potionimg, Range
 
 }
 
-void FrostPotion::effect(Enemy *enemy)
+void FrostPotion::effectenemy(Enemy *enemy)
 {
+	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())=="play-reverse") return;
 	enemy->Frozen=1;
-	// std::cout << "Freeze!\n";
 }
 
-void FrostPotion::resume(Enemy* enemy)
+void FrostPotion::resumeenemy(Enemy* enemy)
 {
+	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())=="play-reverse") return;
 	enemy->Frozen=0;
+}
+
+#include <iostream>
+void FrostPotion::effectturret(Turret *turret)
+{
+	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())=="play-normal") return;
+	turret->Freeze=1;
+}
+
+void FrostPotion::resumeturret(Turret *turret)
+{
+	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())=="play-normal") return;
+	turret->Freeze=0;
 }
 
 void FrostPotion::CreateBullet() {}

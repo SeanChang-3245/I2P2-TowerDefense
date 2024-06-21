@@ -50,9 +50,17 @@ Enemy::Enemy(std::string img, float x, float y, float radius, float speed, float
 	reachEndTime = 0;
 	froze_count_down = 0;
 	Frozen=0;
+	ResetShield=0;
+	Shield=0;
 }
 
 void Enemy::Hit(float damage) {
+	if (Berserk) damage*2/3;
+	if (Shield>0)
+	{
+		Shield-=damage;
+		return;
+	}
 	hp -= damage;
 	if (hp <= 0) {
 		OnExplode();
@@ -155,7 +163,7 @@ void Enemy::UpdateIntermediatePath(const std::vector<std::vector<int>>& mapDista
 	// for(int i = intermediate_path.size()-1; i >= 0; --i)
 	// 	std::cout << intermediate_path[i].x << ' ' << intermediate_path[i].y << '\n';
 }
-
+#include <iostream>
 void Enemy::Update(float deltaTime) {
 	// Pre-calculate the velocity.
 	if (Frozen) return;
@@ -222,13 +230,13 @@ void Enemy::Update(float deltaTime) {
 				remainSpeed -= vec.Magnitude();
 			}
 			else {
-				Velocity = normalized * remainSpeed / deltaTime;
-				if (Berserk) Velocity * 2;
+				Velocity = normalized * remainSpeed / deltaTime;				// if (Berserk) std::cout << "Berserk!!\n";
 				remainSpeed = 0;
 			}
 		}
 
 	}
+	if (Berserk) Velocity.x*=3, Velocity.y*=3, Berserk-=1;
 	Rotation = atan2(Velocity.y, Velocity.x);
 	Sprite::Update(deltaTime);
 }
@@ -280,6 +288,7 @@ void Enemy::Draw() const {
 		// Draw collision radius.
 		al_draw_circle(Position.x, Position.y, CollisionRadius, al_map_rgb(255, 0, 0), 2);
 	}
+	if (Shield>0) al_draw_filled_circle(Position.x, Position.y, CollisionRadius*2, al_map_rgba(0, 0, 255, 50));
 }
 
 int Enemy::get_kill_score() const

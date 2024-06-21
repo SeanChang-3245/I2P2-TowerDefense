@@ -63,6 +63,7 @@ add_executable(2024_I2P2_TowerDefense_with_answer
         Turret/Potion.cpp
         Turret/FrostPotion.cpp
         Turret/BerserkPotion.cpp
+        Turret/ShieldPotion.cpp
         
         Scene/WinScene.cpp
         Scene/MapCreateScene.cpp
