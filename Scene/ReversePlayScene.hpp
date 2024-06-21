@@ -19,9 +19,10 @@ namespace Engine {
 	class Sprite;
 }  // namespace Engine
 
-class ReversePlayScene final : public PlayScene {
-
+class ReversePlayScene final : public PlayScene 
+{
 private:
+
 	bool playing_danger_bgm;
 	Engine::Point intermediate_point;
 
@@ -39,6 +40,7 @@ private:
 	Engine::Point closet_valid_space(Engine::Point p);
 
 public:
+	static const float MaxTimeSpan;
 	// remaining time to play this round, lose if run out
 	float remain_time;
 	// the time interval between placing two turrets
@@ -81,7 +83,7 @@ public:
 	// Engine::Label* UIMoney;
 	// Engine::Label* UIScore;
 	// Engine::Label* UILives;
-	// Turret* preview;
+	Turret* preview;
 	// std::vector<std::vector<TileType>> mapState;
 	// std::vector<std::vector<TileType>> originalMapState;
 	// std::vector<std::vector<int>> mapDistance;
@@ -105,6 +107,7 @@ public:
 	virtual void OnMouseUp(int button, int mx, int my) override final;
 	virtual void UpdateDangerIndicator() override final;
 	virtual void ActivateCheatMode() override final;
+	virtual bool handle_revive() override final;  
 
 	virtual void PlaceTurret(const int &x, const int &y) override final;
 	virtual void DeconstructTurret(const int &x, const int &y) override final;
@@ -116,6 +119,8 @@ public:
 	void ChooseTurretType();
 	// Check if need to add a new turret, if yes, then add
 	void UpdatePlaceTurret(float deltaTime);
+	virtual void PlaceObject(const int &x, const int &y) override final;
+	virtual void PlacePotion(const int &x, const int &y) override final;
 	// After placing new turret, update all enemies' path and intermediate_path
 	void UpdateAllEnemyPath();
 	void SetChooseTurretPositionFunc(std::function<void(void)> selectFunc);

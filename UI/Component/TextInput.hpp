@@ -31,6 +31,9 @@ namespace Engine {
 		void save_input_to_file(int score);
 		void save_input_to_file(int score, std::string date);
 		int get_text_length() const;
+		void set_default_message(std::string str);
+		std::string get_text_inputed() const;
+		void clear_text_inputed();
     };
 }
 

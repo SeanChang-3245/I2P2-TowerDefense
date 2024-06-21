@@ -3,5 +3,9 @@ build
 .idea
 *.dll
 !allegro_monolith-5.2.dll
+!openblas.dll
 log.txt
 Makefile
+.vscode
+ML_Resource/train.csv
+ML_Resource/my_train.csv

@@ -25,6 +25,7 @@ private:
 
 public:
 	Turret* preview;
+	std::list<std::pair<int, float>> enemyWaveData;
 	// static bool DebugMode;
 	// static const std::vector<Engine::Point> directions;
 	// static const int MapWidth, MapHeight;
@@ -77,16 +78,20 @@ public:
 	virtual void OnKeyDown(int keyCode) override final;
 	// place turret at (x,y) if possible
 	virtual void PlaceTurret(const int &x, const int &y) override final;
+	virtual void PlacePotion(const int &x, const int &y) override final;
+	virtual void PlaceObject(const int &x, const int &y) override final;
 	// delete turret (x,y) and return half of its price if exist
 	virtual void DeconstructTurret(const int &x, const int &y) override final;
 	virtual void UpdateDangerIndicator() override final;
 	virtual void ActivateCheatMode() override final;
+	virtual bool handle_revive() override final;
 
 // ========= Non-Virtual Functions ============ // 	
 
 	explicit NormalPlayScene() = default;
 	void ReadEnemyWave();
 	void UpdateSpawnEnemy(float deltaTime);
+	void ClearCloseEnemy();
 
 	// static Engine::Point GetClientSize();
 	// virtual void Draw() const override;
