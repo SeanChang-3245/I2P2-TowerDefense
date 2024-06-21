@@ -38,7 +38,15 @@ void BlackPlayScene::Initialize()
 {
     Engine::LOG(Engine::INFO) << "enter BlackPlayScene::initialize\n";
     PlayScene::Initialize();
-    Engine::Sprite *blackSquare[MapHeight][MapWidth];
+    
+    if(have_entered_revive_scene)
+	{
+		ClearCloseEnemy();
+		return;
+	}
+    
+    std::vector<std::vector<Engine::Sprite*>> blackSquare(MapHeight, std::vector<Engine::Sprite*>(MapWidth));
+
     for(int i=0; i<MapHeight; ++ i)
     {
         for(int j=0; j<MapWidth; ++j)
@@ -382,9 +390,16 @@ void BlackPlayScene::Hit()
 {
     PlayScene::Hit();
     if (lives <= 0)
-    {
-        Engine::GameEngine::GetInstance().ChangeScene("lose");
-    }
+	{
+		if(have_entered_revive_scene)
+			Engine::GameEngine::GetInstance().ChangeScene("lose");
+		else
+		{
+			have_entered_revive_scene = true;
+			entering_revive_scene = true;
+			Engine::GameEngine::GetInstance().ChangeScene("revive");
+		}
+	}
 }
 
 void BlackPlayScene::UpdateDangerIndicator()
@@ -499,4 +514,40 @@ void BlackPlayScene::ActivateCheatMode()
 {
     EarnMoney(10000);
     EffectGroup->AddNewObject(new Plane());
+}
+
+bool BlackPlayScene::handle_revive()
+{
+	if(have_entered_revive_scene)
+	{
+		lives = 5;
+		UILives->Text = std::string("Life ") + std::to_string(lives);
+		return true;
+	}
+	return false;
+}
+
+void BlackPlayScene::PlaceObject(const int &x, const int &t)
+{
+    
+}
+
+void BlackPlayScene::PlacePotion(const int &x, const int &t)
+{
+
+}
+
+void BlackPlayScene::ClearCloseEnemy()
+{
+	PlayScene *play_scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetActiveScene());
+	for(auto ptr : play_scene->EnemyGroup->GetObjects())
+	{
+		Enemy* enemy = dynamic_cast<Enemy*>(ptr);
+		Engine::Point pos = enemy->Position;
+		const int x = pos.x / PlayScene::BlockSize;
+		const int y = pos.y / PlayScene::BlockSize;
+
+		if(play_scene->mapDistance[y][x] <= 10)
+			enemy->Hit(INFINITY);
+	}
 }
