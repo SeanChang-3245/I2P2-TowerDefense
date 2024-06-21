@@ -31,9 +31,12 @@ protected:
 
 public:
     bool Enabled = true;
+    bool Freeze;
+    int Berserker;
     // decide whether the turret is preview or a real one
     bool Preview = false;
     Enemy* Target = nullptr;
+    Turret *Target_tower;
     Turret(std::string imgBase, std::string imgTurret, float x, float y, float radius, int price, float coolDown, Turret_Type type);
     void Update(float deltaTime) override;
     void Draw() const override;
