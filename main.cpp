@@ -6,6 +6,7 @@
 #include "Scene/LoseScene.hpp"
 #include "Scene/NormalPlayScene.hpp"
 #include "Scene/ReversePlayScene.hpp"
+#include "Scene/BlackPlayScene.hpp"
 #include "Scene/StageSelectScene.hpp"
 #include "Scene/DifficultySelectScene.hpp"
 #include "Scene/ModeSelectScene.hpp"
@@ -26,6 +27,7 @@ using namespace std;
 int main(int argc, char **argv) {
 	Engine::LOG::SetConfig(true, PRINT_LOG_VERBOSE);
 	Engine::GameEngine& game = Engine::GameEngine::GetInstance();
+
 
 #if GEN_TRAIN_DATA
 	game.AddNewScene("gen-data", new DataGeneratingScene());
@@ -54,6 +56,7 @@ int main(int argc, char **argv) {
 	
 	game.AddNewScene("play-normal", new NormalPlayScene());
 	game.AddNewScene("play-reverse", new ReversePlayScene());
+  game.AddNewScene("play-black", new BlackPlayScene());
 	game.AddNewScene("play-survival", new SurvivalPlayScene());
 	
 	game.AddNewScene("lose", new LoseScene());

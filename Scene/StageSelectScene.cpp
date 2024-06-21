@@ -72,8 +72,13 @@ void StageSelectScene::BackOnClick() {
 void StageSelectScene::PlayOnClick(int stage) {
     PlayScene* scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play-normal"));
     scene->MapId = stage;
+    
     scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play-reverse"));
     scene->MapId = stage;
+
+    scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play-black"));
+    scene->MapId = stage;
+
     scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play-survival"));
     scene->MapId = stage;
 
