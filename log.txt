@@ -60,42 +60,13 @@
 [INFO] Loaded Resource<image>: Resource/images/play/explosion-3.png
 [INFO] Loaded Resource<image>: Resource/images/play/explosion-4.png
 [INFO] Loaded Resource<image>: Resource/images/play/explosion-5.png
-[INFO] Loaded Resource<image>: Resource/images/play/dirty-3.png
 [INFO] Loaded Resource<image>: Resource/images/play/dirty-2.png
+[INFO] Loaded Resource<image>: Resource/images/play/dirty-3.png
 [INFO] Loaded Resource<audio>: Resource/audios/explosion.wav
-[INFO] Loaded Resource<image>: Resource/images/play/enemy-2.png
-[INFO] enter ExitOnClick
-[INFO] stopped audio (bgm)
-[INFO] enter lose scene init
-[INFO] Loaded Resource<image>: Resource/images/win/dirt.png scaled to 400x100
-[INFO] Loaded Resource<image>: Resource/images/win/dirt.png
-[INFO] Loaded Resource<image>: Resource/images/win/floor.png
-[INFO] Created<sample_instance>: Resource/audios/astronomia.ogg
-[INFO] Changed to lose scene
-[INFO] stopped audio (sample)
-[INFO] Created<sample_instance>: Resource/audios/select.ogg
-[INFO] Changed to stage-select scene
-[INFO] terminate stage select scene
-[INFO] stopped audio (sample)
-[INFO] Created<sample_instance>: Resource/audios/select.ogg
-[INFO] Changed to difficulty-select scene
-[INFO] terminate difficulty select scene
-[INFO] stopped audio (sample)
-[INFO] Changed to mode-select scene
-[INFO] terminate mode select scene
-[INFO] enter NormalPlayScene::initialize
-
-[INFO] enter PlayScene::initialize
-
-[INFO] Created<sample_instance>: Resource/audios/astronomia.ogg
-[INFO] Loaded Resource<text>: Resource/enemy1.txt
-[INFO] Changed to play-normal scene
 [INFO] Game Terminating...
 [INFO] stopped audio (bgm)
 [INFO] Game terminated
 [INFO] Game end
-[INFO] Destroyed Resource<image>: win/floor.png
-[INFO] Destroyed Resource<image>: win/dirt.png
 [INFO] Destroyed Resource<image>: play/dirty-2.png
 [INFO] Destroyed Resource<image>: play/explosion-5.png
 [INFO] Destroyed Resource<image>: play/explosion-4.png
@@ -113,8 +84,6 @@
 [INFO] Destroyed Resource<image>: play/turret-3.png
 [INFO] Destroyed Resource<image>: play/enemy-1.png
 [INFO] Destroyed Resource<image>: play/potion.png
-[INFO] Destroyed Resource<image>: win/dirt.png?400x100
-[INFO] Destroyed Resource<image>: play/enemy-2.png
 [INFO] Destroyed Resource<image>: play/tower-base.png
 [INFO] Destroyed Resource<image>: play/turret-2.png
 [INFO] Destroyed Resource<image>: play/target.png

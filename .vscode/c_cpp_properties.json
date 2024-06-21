@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/allegro/include/",
+                "C:/vcpkg/packages/mlpack_x64-windows/include",
+                "C:/vcpkg/packages/armadillo_x64-windows/include",
+                "C:/vcpkg/packages/cereal_x64-windows/include",
+                "C:/vcpkg/packages/ensmallen_x64-windows/include"
+            ],
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

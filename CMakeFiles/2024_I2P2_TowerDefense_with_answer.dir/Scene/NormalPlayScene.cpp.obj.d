@@ -931,4 +931,5 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/NormalPlayScene.cpp.obj:
   C:/mycode/I2P2-TowerDefense/./Bullet/FireBullet.hpp \
   C:/mycode/I2P2-TowerDefense/./Bullet/Bullet.hpp \
   C:/mycode/I2P2-TowerDefense/./Turret/Potion.hpp \
-  C:/mycode/I2P2-TowerDefense/./Turret/FrostPotion.hpp
+  C:/mycode/I2P2-TowerDefense/./Turret/FrostPotion.hpp \
+  C:/mycode/I2P2-TowerDefense/./Turret/BerserkPotion.hpp

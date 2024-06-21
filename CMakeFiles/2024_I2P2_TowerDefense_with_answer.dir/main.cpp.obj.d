@@ -920,4 +920,6 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/main.cpp.obj: \
   C:/mycode/I2P2-TowerDefense/Scene/SettingsScene.hpp \
   C:/mycode/I2P2-TowerDefense/Scene/ScoreboardScene.hpp \
   C:/mycode/I2P2-TowerDefense/Scene/MapCreateScene.hpp \
+  C:/mycode/I2P2-TowerDefense/Scene/ReviveScene.hpp \
+  C:/mycode/I2P2-TowerDefense/Scene/SurvivalPlayScene.hpp \
   C:/mycode/I2P2-TowerDefense/DebugMacro.hpp

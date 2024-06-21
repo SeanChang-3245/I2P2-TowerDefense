@@ -259,6 +259,18 @@
 },
 {
   "directory": "C:/mycode/I2P2-TowerDefense/build",
+  "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Turret\\BerserkPotion.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Turret\\BerserkPotion.cpp",
+  "file": "C:/mycode/I2P2-TowerDefense/Turret/BerserkPotion.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/BerserkPotion.cpp.obj"
+},
+{
+  "directory": "C:/mycode/I2P2-TowerDefense/build",
+  "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Turret\\ShieldPotion.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Turret\\ShieldPotion.cpp",
+  "file": "C:/mycode/I2P2-TowerDefense/Turret/ShieldPotion.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ShieldPotion.cpp.obj"
+},
+{
+  "directory": "C:/mycode/I2P2-TowerDefense/build",
   "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Scene\\WinScene.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Scene\\WinScene.cpp",
   "file": "C:/mycode/I2P2-TowerDefense/Scene/WinScene.cpp",
   "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/WinScene.cpp.obj"
@@ -328,5 +340,17 @@
   "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Scene\\NormalPlayScene.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Scene\\NormalPlayScene.cpp",
   "file": "C:/mycode/I2P2-TowerDefense/Scene/NormalPlayScene.cpp",
   "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/NormalPlayScene.cpp.obj"
+},
+{
+  "directory": "C:/mycode/I2P2-TowerDefense/build",
+  "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Scene\\ReviveScene.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Scene\\ReviveScene.cpp",
+  "file": "C:/mycode/I2P2-TowerDefense/Scene/ReviveScene.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReviveScene.cpp.obj"
+},
+{
+  "directory": "C:/mycode/I2P2-TowerDefense/build",
+  "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Scene\\SurvivalPlayScene.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Scene\\SurvivalPlayScene.cpp",
+  "file": "C:/mycode/I2P2-TowerDefense/Scene/SurvivalPlayScene.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.obj"
 }
 ]

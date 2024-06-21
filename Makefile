@@ -824,6 +824,30 @@ Scene/ReversePlayScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReversePlayScene.cpp.s
 .PHONY : Scene/ReversePlayScene.cpp.s
 
+Scene/ReviveScene.obj: Scene/ReviveScene.cpp.obj
+.PHONY : Scene/ReviveScene.obj
+
+# target to build an object file
+Scene/ReviveScene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReviveScene.cpp.obj
+.PHONY : Scene/ReviveScene.cpp.obj
+
+Scene/ReviveScene.i: Scene/ReviveScene.cpp.i
+.PHONY : Scene/ReviveScene.i
+
+# target to preprocess a source file
+Scene/ReviveScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReviveScene.cpp.i
+.PHONY : Scene/ReviveScene.cpp.i
+
+Scene/ReviveScene.s: Scene/ReviveScene.cpp.s
+.PHONY : Scene/ReviveScene.s
+
+# target to generate assembly for a file
+Scene/ReviveScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReviveScene.cpp.s
+.PHONY : Scene/ReviveScene.cpp.s
+
 Scene/ScoreboardScene.obj: Scene/ScoreboardScene.cpp.obj
 .PHONY : Scene/ScoreboardScene.obj
 
@@ -920,6 +944,30 @@ Scene/StartScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StartScene.cpp.s
 .PHONY : Scene/StartScene.cpp.s
 
+Scene/SurvivalPlayScene.obj: Scene/SurvivalPlayScene.cpp.obj
+.PHONY : Scene/SurvivalPlayScene.obj
+
+# target to build an object file
+Scene/SurvivalPlayScene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.obj
+.PHONY : Scene/SurvivalPlayScene.cpp.obj
+
+Scene/SurvivalPlayScene.i: Scene/SurvivalPlayScene.cpp.i
+.PHONY : Scene/SurvivalPlayScene.i
+
+# target to preprocess a source file
+Scene/SurvivalPlayScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.i
+.PHONY : Scene/SurvivalPlayScene.cpp.i
+
+Scene/SurvivalPlayScene.s: Scene/SurvivalPlayScene.cpp.s
+.PHONY : Scene/SurvivalPlayScene.s
+
+# target to generate assembly for a file
+Scene/SurvivalPlayScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.s
+.PHONY : Scene/SurvivalPlayScene.cpp.s
+
 Scene/WinScene.obj: Scene/WinScene.cpp.obj
 .PHONY : Scene/WinScene.obj
 
@@ -967,6 +1015,30 @@ Turret/AdvancedMissileTurret.s: Turret/AdvancedMissileTurret.cpp.s
 Turret/AdvancedMissileTurret.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/AdvancedMissileTurret.cpp.s
 .PHONY : Turret/AdvancedMissileTurret.cpp.s
+
+Turret/BerserkPotion.obj: Turret/BerserkPotion.cpp.obj
+.PHONY : Turret/BerserkPotion.obj
+
+# target to build an object file
+Turret/BerserkPotion.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/BerserkPotion.cpp.obj
+.PHONY : Turret/BerserkPotion.cpp.obj
+
+Turret/BerserkPotion.i: Turret/BerserkPotion.cpp.i
+.PHONY : Turret/BerserkPotion.i
+
+# target to preprocess a source file
+Turret/BerserkPotion.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/BerserkPotion.cpp.i
+.PHONY : Turret/BerserkPotion.cpp.i
+
+Turret/BerserkPotion.s: Turret/BerserkPotion.cpp.s
+.PHONY : Turret/BerserkPotion.s
+
+# target to generate assembly for a file
+Turret/BerserkPotion.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/BerserkPotion.cpp.s
+.PHONY : Turret/BerserkPotion.cpp.s
 
 Turret/FrostPotion.obj: Turret/FrostPotion.cpp.obj
 .PHONY : Turret/FrostPotion.obj
@@ -1111,6 +1183,30 @@ Turret/Potion.s: Turret/Potion.cpp.s
 Turret/Potion.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Potion.cpp.s
 .PHONY : Turret/Potion.cpp.s
+
+Turret/ShieldPotion.obj: Turret/ShieldPotion.cpp.obj
+.PHONY : Turret/ShieldPotion.obj
+
+# target to build an object file
+Turret/ShieldPotion.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ShieldPotion.cpp.obj
+.PHONY : Turret/ShieldPotion.cpp.obj
+
+Turret/ShieldPotion.i: Turret/ShieldPotion.cpp.i
+.PHONY : Turret/ShieldPotion.i
+
+# target to preprocess a source file
+Turret/ShieldPotion.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ShieldPotion.cpp.i
+.PHONY : Turret/ShieldPotion.cpp.i
+
+Turret/ShieldPotion.s: Turret/ShieldPotion.cpp.s
+.PHONY : Turret/ShieldPotion.s
+
+# target to generate assembly for a file
+Turret/ShieldPotion.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ShieldPotion.cpp.s
+.PHONY : Turret/ShieldPotion.cpp.s
 
 Turret/Shovel.obj: Turret/Shovel.cpp.obj
 .PHONY : Turret/Shovel.obj
@@ -1544,6 +1640,9 @@ help:
 	@echo ... Scene/ReversePlayScene.obj
 	@echo ... Scene/ReversePlayScene.i
 	@echo ... Scene/ReversePlayScene.s
+	@echo ... Scene/ReviveScene.obj
+	@echo ... Scene/ReviveScene.i
+	@echo ... Scene/ReviveScene.s
 	@echo ... Scene/ScoreboardScene.obj
 	@echo ... Scene/ScoreboardScene.i
 	@echo ... Scene/ScoreboardScene.s
@@ -1556,12 +1655,18 @@ help:
 	@echo ... Scene/StartScene.obj
 	@echo ... Scene/StartScene.i
 	@echo ... Scene/StartScene.s
+	@echo ... Scene/SurvivalPlayScene.obj
+	@echo ... Scene/SurvivalPlayScene.i
+	@echo ... Scene/SurvivalPlayScene.s
 	@echo ... Scene/WinScene.obj
 	@echo ... Scene/WinScene.i
 	@echo ... Scene/WinScene.s
 	@echo ... Turret/AdvancedMissileTurret.obj
 	@echo ... Turret/AdvancedMissileTurret.i
 	@echo ... Turret/AdvancedMissileTurret.s
+	@echo ... Turret/BerserkPotion.obj
+	@echo ... Turret/BerserkPotion.i
+	@echo ... Turret/BerserkPotion.s
 	@echo ... Turret/FrostPotion.obj
 	@echo ... Turret/FrostPotion.i
 	@echo ... Turret/FrostPotion.s
@@ -1580,6 +1685,9 @@ help:
 	@echo ... Turret/Potion.obj
 	@echo ... Turret/Potion.i
 	@echo ... Turret/Potion.s
+	@echo ... Turret/ShieldPotion.obj
+	@echo ... Turret/ShieldPotion.i
+	@echo ... Turret/ShieldPotion.s
 	@echo ... Turret/Shovel.obj
 	@echo ... Turret/Shovel.i
 	@echo ... Turret/Shovel.s
