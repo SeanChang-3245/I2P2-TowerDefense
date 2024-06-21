@@ -33,6 +33,11 @@ int main(int argc, char **argv) {
 	return 0;
 #endif
 
+#ifdef TRAINING_AGENT
+
+
+#endif
+
 	game.AddNewScene("start", new StartScene());
 
 	game.AddNewScene("stage-select", new StageSelectScene());

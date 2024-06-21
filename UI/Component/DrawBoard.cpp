@@ -143,6 +143,7 @@ int DrawBoard::GetNumber() const
     FFN<NegativeLogLikelihood, RandomInitialization> model;
     const string fileName = GetModelName();
 
+    LOG(INFO) << "Loading CNN model: " << fileName << '\n';
     data::Load(fileName, "CNNmodel", model, true);
 
     arma::Col<double> input(PictureWidth * PictureWidth);
@@ -170,7 +171,7 @@ int DrawBoard::GetNumber() const
 std::string DrawBoard::GetModelName() const
 {
     int version = static_cast<int>(CNN_MODEL_VERSION);
-    std::string fileName = "CNNmodel" + to_string(version) + ".bin";
+    std::string fileName = "CNN_models/CNNmodel" + to_string(version) + ".bin";
     return fileName;
 }
 

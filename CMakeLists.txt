@@ -38,13 +38,20 @@ set(GENERATE_TRAINING_DATA false)
 
 # Should set to be true if you want to use AI enemy path finding 
 # Modification in mlpack/methods/reinforcement_learning/q_learning_impl.hpp QLearning's constructor
-set(FIX_QLEARNING_ERROR true)
+set(FIX_QLEARNING_ERROR false)
 
 # Set to true if you want to precompile mlpack headers
 # Warning: It will take a very long time to build
 # Estimated time: at least 3 hour
 # Don't use
 set(BUILD_PCH false)
+
+# Set to true only if you want to train the RL agent
+# Won't support any game and any Draw() functions
+set(TRAIN_AGENT false)
+
+# Set to true when you want to train an agent from the beginning, not based on previous model
+set(RETRAIN_AGENT false)
 
 if(USE_ML AND SERIALIZATION)
     add_definitions(-DMLPACK_ENABLE_ANN_SERIALIZATION)
@@ -53,6 +60,14 @@ endif()
     
 if(FIX_QLEARNING_ERROR)
     add_definitions(-DFIX_MLPACK_ERROR)
+endif()
+
+if(USE_ML AND TRAIN_AGENT)
+    add_definitions(-DTRAINING_AGENT)
+    list(APPEND SRC_FILES 
+        Scene/TrainAgentScene.cpp 
+        Scene/TrainingEnv.cpp
+    )
 endif()
 
 # Add your source file here
@@ -145,8 +160,7 @@ if(USE_ML)
     find_package(Threads)
     set(MLPACK_LIBRARIES ${MLPACK_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 
-    file(COPY "ML_Resource/CNNmodel1.bin" DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
-    file(COPY "ML_Resource/CNNmodel2.bin" DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+    file(COPY "ML_Resource/CNN_models" DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
     add_subdirectory("ML_Resource/armadillo")
     target_link_libraries(2024_I2P2_TowerDefense_with_answer PUBLIC armadillo)
