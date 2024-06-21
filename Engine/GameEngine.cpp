@@ -284,4 +284,8 @@ namespace Engine {
 		}
 		return "no such scene";
 	}
+	int GameEngine::GetFPS() const
+	{
+		return this->fps;
+	}
 }

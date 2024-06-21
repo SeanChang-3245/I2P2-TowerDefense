@@ -105,3 +105,9 @@ void Engine::TextInputBlock::set_default_message(std::string str)
 {
     default_message->Text = str;
 }
+
+void Engine::TextInputBlock::clear_text_inputed()
+{
+    user_entered_text->Text.clear();
+    default_message->Visible = true;
+}

@@ -39,8 +39,14 @@ bool PlayScene::DebugMode = false;
 const std::vector<Engine::Point> PlayScene::directions = {Engine::Point(-1, 0), Engine::Point(0, -1), Engine::Point(1, 0), Engine::Point(0, 1)};
 const int PlayScene::MapWidth = 20, PlayScene::MapHeight = 13;
 const int PlayScene::BlockSize = 64;
+
 const Engine::Point PlayScene::SpawnGridPoint = Engine::Point(-1, 0);
 const Engine::Point PlayScene::EndGridPoint = Engine::Point(MapWidth, MapHeight - 1);
+
+const Engine::Point PlayScene::SpawnPoint = Engine::Point(-1.0/2 * BlockSize, 1.0/2 * BlockSize);
+const Engine::Point PlayScene::EndPoint = Engine::Point((MapWidth + 0.5) * BlockSize, (MapHeight - 0.5) * BlockSize);
+const Engine::Point PlayScene::MapSize = Engine::Point(MapWidth * BlockSize, MapHeight * BlockSize);
+
 const float PlayScene::DangerTime = 7.61;
 const int PlayScene::EnemyTypes = 4;
 

@@ -13,6 +13,7 @@
 #include "UI/Component/Slider.hpp"
 #include "StageSelectScene.hpp"
 #include "Engine/LOG.hpp"
+#include "ML_Macro.hpp"
 
 static const int RowSpacing = 200;
 static const int ColSpacing = 450;
@@ -47,6 +48,14 @@ void StageSelectScene::Initialize() {
     btn->SetOnClickCallback(std::bind(&StageSelectScene::NextOnClick, this));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("Next", "pirulen.ttf", 48, halfW + 425, halfH * 3 / 2, 0, 0, 0, 255, 0.5, 0.5));
+
+
+#if USE_ML
+    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png",halfW - 200, halfH * 3 / 2 + 70, 400, 100);
+    btn->SetOnClickCallback(std::bind(&StageSelectScene::HandWriteOnClick, this));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("Hand Write", "pirulen.ttf", 36, halfW, halfH * 3 / 2 + 120, 0, 0, 0, 255, 0.5, 0.5));   
+#endif
 
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
 	bgmInstance = AudioHelper::PlaySample("select.ogg", true, AudioHelper::BGMVolume);
@@ -147,17 +156,13 @@ void StageSelectScene::ConstructStageButton()
         stage_buttons[i].first = btn;
         stage_buttons[i].second = label;
     }
-
-
-
-
-    // btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 200, halfH / 2 - 50, 400, 100);
-    // btn->SetOnClickCallback(std::bind(&StageSelectScene::PlayOnClick, this, 1));
-    // AddNewControlObject(btn);
-    // AddNewObject(new Engine::Label("Stage 1", "pirulen.ttf", 48, halfW, halfH / 2, 0, 0, 0, 255, 0.5, 0.5));
-
-    // btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 200, halfH /2 + 100, 400, 100);
-    // btn->SetOnClickCallback(std::bind(&StageSelectScene::PlayOnClick, this, 2));
-    // AddNewControlObject(btn);
-    // AddNewObject(new Engine::Label("Stage 2", "pirulen.ttf", 48, halfW, halfH / 2 + 150, 0, 0, 0, 255, 0.5, 0.5));
 }
+
+#if USE_ML
+
+void StageSelectScene::HandWriteOnClick()
+{
+    Engine::GameEngine::GetInstance().ChangeScene("stage-select-hw");
+}
+
+#endif
