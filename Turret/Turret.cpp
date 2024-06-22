@@ -10,6 +10,7 @@
 #include "Engine/IObject.hpp"
 #include "Engine/IScene.hpp"
 #include "Scene/PlayScene.hpp"
+#include "Scene/NormalPlayScene.hpp"
 #include "Engine/Point.hpp"
 #include "Turret.hpp"
 #include "Engine/Collider.hpp"
@@ -116,6 +117,16 @@ void Turret::Update(float deltaTime) {
 			CreateBullet();
 		}
 	}
+	if (Reloadbtn)
+	{
+		if (scene->GetMoney()>=25) Reloadbtn->Enabled=1;
+		else Reloadbtn->Enabled=0;
+	}
+	if (Rangebtn)
+	{
+		if (scene->GetMoney()>=25) Rangebtn->Enabled=1;
+		else Rangebtn->Enabled=0;
+	}
 }
 void Turret::Draw() const {
 	if (Preview) {
@@ -152,6 +163,8 @@ void Turret::OnMouseMove(int mx, int my)
 }
 
 void Turret::OnMouseDown(int button, int mx, int my) {
+	NormalPlayScene* scene = dynamic_cast<NormalPlayScene*>(getPlayScene());
+	if (scene->preview) return ;
 	if ((button == 1) && mouseIn) {
 		if (!MenuVisible)
 		{
@@ -164,7 +177,7 @@ void Turret::OnMouseDown(int button, int mx, int my) {
 			MenuVisible=0;
 		}
 	}
-	else if (!mouseIn && MenuVisible)
+	else if (!mouseIn && MenuVisible && !(Reloadbtn->GetMouseIn() || Rangebtn->GetMouseIn()))
 	{
 		DestroyMenu();
 		MenuVisible=0;
@@ -182,21 +195,45 @@ void Turret::ShowMenu()
 {
 	PlayScene* scene = getPlayScene();
 	int BlockSize=scene->BlockSize;
-	Atkbtn = new Engine::ImageButton("play/AtkUp.png", "play/AtkUp_Hovered.png", Position.x + BlockSize/2, Position.y + BlockSize/2, scene->BlockSize, scene->BlockSize);
-	// Atkbtn->SetOnClickCallback(std::bind(&PlayScene::ExitOnClick, this));
-	scene->UIGroup->AddNewControlObject(Atkbtn);
-	Rangebtn = new Engine::ImageButton("play/RangeUp.png", "play/RangeUp_Hovered.png", Position.x - BlockSize/2, Position.y + BlockSize/2, scene->BlockSize, scene->BlockSize);
-	// Rangebtn->SetOnClickCallback(std::bind(&PlayScene::ExitOnClick, this));
+	// Atkbtn = new Engine::ImageButton("play/AtkUp.png", "play/AtkUp_Hovered.png", Position.x + BlockSize/2, Position.y + BlockSize/2, scene->BlockSize, scene->BlockSize);
+	// Atkbtn->SetOnClickCallback(std::bind(&Turret::AtkUpClick, this));
+	// scene->UIGroup->AddNewControlObject(Atkbtn);
+	Rangebtn = new Engine::ImageButton("play/RangeUp.png", "play/RangeUp_Hovered.png", Position.x + BlockSize/2, Position.y + BlockSize/2, scene->BlockSize, scene->BlockSize);
+	Rangebtn->SetOnClickCallback(std::bind(&Turret::RangeUpClick, this));
+	Rangebtn->Enabled=1;
 	scene->UIGroup->AddNewControlObject(Rangebtn);
 	Reloadbtn = new Engine::ImageButton("play/ReloadUp.png", "play/ReloadUp_Hovered.png", Position.x - BlockSize/2*3, Position.y + BlockSize/2, scene->BlockSize, scene->BlockSize);
-	// Reloadbtn->SetOnClickCallback(std::bind(&PlayScene::ExitOnClick, this));
+	Reloadbtn->Enabled=1;
+	Reloadbtn->SetOnClickCallback(std::bind(&Turret::ReloadUpClick, this));
 	scene->UIGroup->AddNewControlObject(Reloadbtn);
 }
 
 void Turret::DestroyMenu()
 {
 	PlayScene* scene = getPlayScene();
-	scene->UIGroup->RemoveControlObject(Atkbtn->GetControlIterator(), Atkbtn->GetObjectIterator());
-	scene->UIGroup->RemoveControlObject(Rangebtn->GetControlIterator(), Rangebtn->GetObjectIterator());
-	scene->UIGroup->RemoveControlObject(Reloadbtn->GetControlIterator(), Reloadbtn->GetObjectIterator());
+	// if (Atkbtn) scene->UIGroup->RemoveControlObject(Atkbtn->GetControlIterator(), Atkbtn->GetObjectIterator());
+	if (Rangebtn)
+	{
+		scene->UIGroup->RemoveControlObject(Rangebtn->GetControlIterator(), Rangebtn->GetObjectIterator());
+		Rangebtn=nullptr;
+	}
+	if (Reloadbtn)
+	{
+		scene->UIGroup->RemoveControlObject(Reloadbtn->GetControlIterator(), Reloadbtn->GetObjectIterator());
+		Reloadbtn=nullptr;
+	}
+}
+
+void Turret::ReloadUpClick()
+{
+	PlayScene* scene = getPlayScene();
+	coolDown=coolDown/3*2;
+	scene->EarnMoney(-1*25);
+}
+
+void Turret::RangeUpClick()
+{
+	PlayScene* scene = getPlayScene();
+	CollisionRadius=CollisionRadius/2*3;
+	scene->EarnMoney(-1*25);
 }

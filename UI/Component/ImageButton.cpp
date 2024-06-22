@@ -34,4 +34,6 @@ namespace Engine {
 		if (!mouseIn || !Enabled) bmp = imgOut;
 		else bmp = imgIn;
 	}
+
+	bool ImageButton::GetMouseIn() {return mouseIn;}
 }

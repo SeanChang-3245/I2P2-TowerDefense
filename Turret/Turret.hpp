@@ -52,5 +52,8 @@ public:
     void TurretClicked();
     void ShowMenu();
     void DestroyMenu();
+    void AtkUpClick();
+    void RangeUpClick();
+    void ReloadUpClick();
 };
 #endif // TURRET_HPP
