@@ -23,20 +23,20 @@ BerserkPotion::BerserkPotion(float x, float y) : Potion(Potionbase, Potionimg, R
 void BerserkPotion::effectenemy(Enemy *enemy)
 {
 	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())!="play-reverse") return;
-	enemy->Berserk=500;
+	enemy->Berserk=100;
 	// std::cout << "Freeze!\n";
 }
 
 void BerserkPotion::resumeenemy(Enemy* enemy)
 {
 	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())!="play-reverse") return;
-	enemy->Berserk=0;
+	// enemy->Berserk=0;
 }
 
 void BerserkPotion::effectturret(Turret *turret)
 {
 	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())!="play-normal") return;
-	turret->Berserker=500;
+	turret->Berserker=1;
 }
 
 void BerserkPotion::resumeturret(Turret *turret)

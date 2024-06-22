@@ -52,10 +52,11 @@ Enemy::Enemy(std::string img, float x, float y, float radius, float speed, float
 	Frozen=0;
 	ResetShield=0;
 	Shield=0;
+	Berserk=0;
 }
 
 void Enemy::Hit(float damage) {
-	if (Berserk) damage*2/3;
+	if (Berserk) damage*2 / 3;
 	if (Shield>0)
 	{
 		Shield-=damage;
@@ -163,11 +164,12 @@ void Enemy::UpdateIntermediatePath(const std::vector<std::vector<int>>& mapDista
 	// for(int i = intermediate_path.size()-1; i >= 0; --i)
 	// 	std::cout << intermediate_path[i].x << ' ' << intermediate_path[i].y << '\n';
 }
-#include <iostream>
+
 void Enemy::Update(float deltaTime) {
 	// Pre-calculate the velocity.
 	if (Frozen) return;
 	float remainSpeed = speed * deltaTime;
+	if (Berserk-->0) remainSpeed *= 2;
 	froze_count_down -= deltaTime;
 	if(froze_count_down > 0)
 		remainSpeed = 0.001;
@@ -236,7 +238,7 @@ void Enemy::Update(float deltaTime) {
 		}
 
 	}
-	if (Berserk) Velocity.x*=3, Velocity.y*=3, Berserk-=1;
+	// if (Berserk) Velocity.x*=3, Velocity.y*=3, Berserk-=1;
 	Rotation = atan2(Velocity.y, Velocity.x);
 	Sprite::Update(deltaTime);
 }

@@ -98,6 +98,7 @@ namespace Engine {
 	void Group::InsertNewObject(IObject* obj, std::list<std::pair<bool, IObject*>>::iterator it) {
 		insertObject(true, obj, it);
 	}
+
 	void Group::AddNewControl(IControl* ctrl) {
 		addControl(true, ctrl);
 	}
