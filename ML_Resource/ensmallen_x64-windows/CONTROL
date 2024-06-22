@@ -1,0 +1,7 @@
+Package: ensmallen
+Version: 2.19.1
+Depends: armadillo, blas, lapack, vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 175778e7cec1670d5d6297f1c0740d317ea1fa08f346993b69366eab04c4ddff
+Description: A header-only C++ library for mathematical optimization

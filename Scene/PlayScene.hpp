@@ -19,11 +19,6 @@ namespace Engine {
 
 class PlayScene : public Engine::IScene {
 protected:
-	enum TileType {
-		TILE_DIRT, // enemy can walk     
-		TILE_FLOOR, // enemy can not walk 
-		TILE_OCCUPIED, // tile occupied by turret
-	};
 	ALLEGRO_SAMPLE_ID bgmId;
 	std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
 	int lives;
@@ -35,6 +30,12 @@ protected:
 	
 
 public:
+	enum TileType {
+		TILE_DIRT, // enemy can walk     
+		TILE_FLOOR, // enemy can not walk 
+		TILE_OCCUPIED, // tile occupied by turret
+	};
+	
 	static bool DebugMode;
 	static const std::vector<Engine::Point> directions;
 	static const int MapWidth, MapHeight;
@@ -42,6 +43,9 @@ public:
 	static const float DangerTime;
 	static const Engine::Point SpawnGridPoint;
 	static const Engine::Point EndGridPoint;
+	static const Engine::Point SpawnPoint;
+	static const Engine::Point EndPoint;
+	static const Engine::Point MapSize;
 	static const std::vector<int> code;
 	static const int EnemyTypes;
 	// multiplier for enemy count

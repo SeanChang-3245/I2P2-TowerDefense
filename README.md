@@ -1,34 +1,35 @@
 # 2024 I2P Mini Project 2 - Tower Defense
 
-## Grading
+## Features
 
-| **Hackathon Tasks**              | **Score** | **Check** |
-| :------------------------------- | :-------: | :-------: |
-| Add `StartScene`                 |    5%     |     -     |
-| Add `StageSelectScene`           |    5%     |     -     |
-| Move Controls to `SettingsScene` |    5%     |     -     |
-| Fix Bugs in Scene                |    15%    |     -     |
 
-| **Project Tasks**           | **Score** | **Check** |
-| :-------------------------- | :-------: | :-------: |
-| Add `ScoreboardScene`       |    40%    |     -     |
-| Enemy Pathfinding           |    10%    |     -     |
-| 2 New Turrets/Enemies/Tools |    20%    |     -     |
+## Contribution
 
-<!-- Please describe the new turret/enemy/tool you have implemented in the above table. -->
+| **Features**                              | **張立璿**  | **郭明懿** | **陳廷森** |
+| :---------------------------------------- | :-------:  | :-------: | :-------: |
+| Potion Class: `Frozen Spell`              |     -      |     -     |      -    |
+| Landmine Class: `To Do`                   |     -      |     -     |      -    |
+| New UI: `Hover Image Button`              |     -      |     -     |      -    |
+| New UI: `Draw Board`                      |     -      |     -     |      -    |
+| New Game Mode: `Survival Play Mode`       |     -      |     -     |      -    |
+| New Game Mode: `Reverse Play Mode`        |     -      |     -     |      -    |
+| New Game Feature: `Dark Mode`             |     -      |     -     |      -    |
+| New Game Feature: `Better Turret Aiming`  |     -      |     -     |      -    |
+| New Game Feature: `Difficulty Selection`  |     -      |     -     |      -    |
+| New Enemy: `To Do`                        |     -      |     -     |      -    |
+| New Turret: `To Do`                       |     -      |     -     |      -    |
+| New Scene: `Map Create Scene`             |     -      |     -     |      -    |
+| New Scene: `Revive Scene`                 |     -      |     -     |      -    |
+| New Scene: `Data Generating Scene`        |     -      |     -     |      -    |
+| Stage Select: `AI Digit Classification`   |     -      |     -     |      -    |
 
-| **Bonus Functions**   | **Score** | **Check** |
-| :-------------------- | :-------: | :-------: |
-| Scoreboard Date Time  |    3%     |     -     |
-| Record User Name      |    7%     |     -     |
-| Other Bonus Functions |   ≤10%    |     -     |
-
-<!-- Please describe the bonus optimizations or features you have implemented in the above table. -->
-
----
-
-<style>
-table th{
-    width: 100%;
-}
-</style>
+## Appendix: How to install mlpack
+* tested under the following environment
+    * windows
+    * compiler: llvm-mingw-20231128-urct-x86_64
+    * vscode
+* 安裝 [vcpkg](https://learn.microsoft.com/zh-tw/vcpkg/get_started/get-started?pivots=shell-cmd)
+* 將 `vcpkg` 放到環境變數 (整個資料夾)
+* command line 輸入： `vcpkg install openblas`
+* `vcpkg/packages` 下會有 `openblas_x64-windows`，將其中的 `bin` 資料夾放到環境變數
+![alt text](image.png)

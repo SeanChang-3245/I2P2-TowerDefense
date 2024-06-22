@@ -40,6 +40,11 @@ void ModeSelectScene::Initialize() {
     btn->SetOnClickCallback(std::bind(&ModeSelectScene::PlayOnClick, this, REVERSE));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("Reverse", "pirulen.ttf", 48, halfW, halfH / 2 + 300, 0, 0, 0, 255, 0.5, 0.5));
+
+    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW + 200, halfH /2 + 250, 400, 100);
+    btn->SetOnClickCallback(std::bind(&ModeSelectScene::PlayOnClick, this, BLACK));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("Black", "pirulen.ttf", 48, halfW + 400, halfH / 2 + 300, 0, 0, 0, 255, 0.5, 0.5));
 }
 
 void ModeSelectScene::Terminate() {
@@ -59,4 +64,6 @@ void ModeSelectScene::PlayOnClick(PlayMode mode) {
         Engine::GameEngine::GetInstance().ChangeScene("play-reverse");
     else if(mode == SURVIVAL)
         Engine::GameEngine::GetInstance().ChangeScene("play-survival");
+    else if(mode == BLACK)
+        Engine::GameEngine::GetInstance().ChangeScene("play-black");
 }

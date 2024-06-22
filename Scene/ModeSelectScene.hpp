@@ -8,7 +8,7 @@ class ModeSelectScene final : public Engine::IScene {
 private:
     enum PlayMode
     {
-        NORMAL, SURVIVAL, REVERSE
+        NORMAL, SURVIVAL, REVERSE, BLACK
     };
 
 public:
