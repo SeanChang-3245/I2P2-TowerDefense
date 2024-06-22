@@ -343,7 +343,8 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Turret.cpp.obj: \
   C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/swprintf.inl \
   C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/sec_api/wchar_s.h \
   C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/wchar.h \
-  C:/mycode/I2P2-TowerDefense/./Enemy/Enemy.hpp \
+  C:/mycode/I2P2-TowerDefense/./Engine/IScene.hpp \
+  C:/mycode/I2P2-TowerDefense/./Engine/Group.hpp \
   C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/list \
   C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__algorithm/comp.h \
   C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__type_traits/operation_traits.h \
@@ -847,15 +848,43 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Turret.cpp.obj: \
   C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/pointer_to_binary_function.h \
   C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/pointer_to_unary_function.h \
   C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/unary_negate.h \
-  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/deque \
+  C:/mycode/I2P2-TowerDefense/./Engine/IControl.hpp \
+  C:/mycode/I2P2-TowerDefense/./Engine/IObject.hpp \
   C:/mycode/I2P2-TowerDefense/./Engine/Point.hpp \
+  C:/mycode/I2P2-TowerDefense/./Enemy/Enemy.hpp \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/deque \
   C:/mycode/I2P2-TowerDefense/./Engine/Sprite.hpp \
   C:/mycode/I2P2-TowerDefense/./UI/Component/Image.hpp \
-  C:/mycode/I2P2-TowerDefense/./Engine/IObject.hpp \
-  C:/mycode/I2P2-TowerDefense/./Engine/IScene.hpp \
-  C:/mycode/I2P2-TowerDefense/./Engine/Group.hpp \
-  C:/mycode/I2P2-TowerDefense/./Engine/IControl.hpp \
   C:/mycode/I2P2-TowerDefense/./Engine/GameEngine.hpp \
   C:/mycode/I2P2-TowerDefense/./Scene/PlayScene.hpp \
   C:/allegro/include/allegro5/allegro_audio.h \
-  C:/mycode/I2P2-TowerDefense/Turret/Turret.hpp
+  C:/mycode/I2P2-TowerDefense/Turret/Turret.hpp \
+  C:/mycode/I2P2-TowerDefense/./UI/Component/ImageButton.hpp \
+  C:/mycode/I2P2-TowerDefense/./Engine/Collider.hpp \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/iostream \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/istream \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/ostream \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/bitset \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/format \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/container_adaptor.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/range_default_formatter.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__chrono/statically_widen.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/range_formatter.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_context.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_arg_store.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_args.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__ranges/ref_view.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/queue \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/stack \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_functions.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_char.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/write_escaped.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/escaped_output_table.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_floating_point.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__charconv/chars_format.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__charconv/to_chars_floating_point.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_integer.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_pointer.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_string.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_tuple.h \
+  C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/print

@@ -892,6 +892,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/NormalPlayScene.cpp.obj:
   C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/path_iterator.h \
   C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/u8path.h \
+  C:/mycode/I2P2-TowerDefense/./Engine/Point.hpp \
   C:/mycode/I2P2-TowerDefense/./Engine/AudioHelper.hpp \
   C:/allegro/include/allegro5/allegro_audio.h \
   C:/mycode/I2P2-TowerDefense/./UI/Animation/DirtyEffect.hpp \
@@ -899,7 +900,6 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/NormalPlayScene.cpp.obj:
   C:/mycode/I2P2-TowerDefense/./UI/Component/Image.hpp \
   C:/mycode/I2P2-TowerDefense/./Engine/IObject.hpp \
   C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/list \
-  C:/mycode/I2P2-TowerDefense/./Engine/Point.hpp \
   C:/mycode/I2P2-TowerDefense/./Enemy/Enemy.hpp \
   C:/mycode/I2P2-TowerDefense/./Engine/IScene.hpp \
   C:/mycode/I2P2-TowerDefense/./Engine/Group.hpp \
@@ -909,6 +909,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/NormalPlayScene.cpp.obj:
   C:/allegro/include/allegro5/allegro_font.h \
   C:/mycode/I2P2-TowerDefense/./Turret/LaserTurret.hpp \
   C:/mycode/I2P2-TowerDefense/./Turret/Turret.hpp \
+  C:/mycode/I2P2-TowerDefense/./UI/Component/ImageButton.hpp \
   C:/mycode/I2P2-TowerDefense/./Turret/MachineGunTurret.hpp \
   C:/mycode/I2P2-TowerDefense/./Turret/MissileTurret.hpp \
   C:/mycode/I2P2-TowerDefense/./Turret/AdvancedMissileTurret.hpp \
@@ -921,7 +922,6 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/NormalPlayScene.cpp.obj:
   C:/mycode/I2P2-TowerDefense/./Enemy/TankEnemy.hpp \
   C:/mycode/I2P2-TowerDefense/./Enemy/AdvancedTankEnemy.hpp \
   C:/mycode/I2P2-TowerDefense/./Turret/TurretButton.hpp \
-  C:/mycode/I2P2-TowerDefense/./UI/Component/ImageButton.hpp \
   C:/mycode/I2P2-TowerDefense/./Engine/LOG.hpp \
   C:/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/iostream \
   C:/mycode/I2P2-TowerDefense/./Turret/HoverTurretButton.hpp \

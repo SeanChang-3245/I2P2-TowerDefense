@@ -52,29 +52,32 @@
 [INFO] Loaded Resource<text>: Resource/enemy1.txt
 [INFO] Changed to play-normal scene
 [INFO] Loaded Resource<image>: Resource/images/play/enemy-1.png
+[INFO] Loaded Resource<image>: Resource/images/play/AtkUp.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/play/AtkUp.png
+[INFO] Loaded Resource<image>: Resource/images/play/AtkUp_Hovered.png
+[INFO] Loaded Resource<image>: Resource/images/play/RangeUp.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/play/RangeUp.png
+[INFO] Loaded Resource<image>: Resource/images/play/RangeUp_Hovered.png
+[INFO] Loaded Resource<image>: Resource/images/play/ReloadUp.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/play/ReloadUp.png
+[INFO] Loaded Resource<image>: Resource/images/play/ReloadUp_Hovered.png
 [INFO] Loaded Resource<image>: Resource/images/play/bullet-1.png
 [INFO] Loaded Resource<audio>: Resource/audios/gun.wav
 [INFO] Loaded Resource<image>: Resource/images/play/dirty-1.png
-[INFO] Loaded Resource<image>: Resource/images/play/explosion-1.png
-[INFO] Loaded Resource<image>: Resource/images/play/explosion-2.png
-[INFO] Loaded Resource<image>: Resource/images/play/explosion-3.png
-[INFO] Loaded Resource<image>: Resource/images/play/explosion-4.png
-[INFO] Loaded Resource<image>: Resource/images/play/explosion-5.png
-[INFO] Loaded Resource<image>: Resource/images/play/dirty-2.png
-[INFO] Loaded Resource<image>: Resource/images/play/dirty-3.png
-[INFO] Loaded Resource<audio>: Resource/audios/explosion.wav
 [INFO] Game Terminating...
 [INFO] stopped audio (bgm)
 [INFO] Game terminated
 [INFO] Game end
-[INFO] Destroyed Resource<image>: play/dirty-2.png
-[INFO] Destroyed Resource<image>: play/explosion-5.png
-[INFO] Destroyed Resource<image>: play/explosion-4.png
-[INFO] Destroyed Resource<image>: play/explosion-2.png
-[INFO] Destroyed Resource<image>: play/explosion-1.png
-[INFO] Destroyed Resource<image>: play/dirt.png?260x75
-[INFO] Destroyed Resource<image>: play/dirty-1.png
 [INFO] Destroyed Resource<image>: play/bullet-1.png
+[INFO] Destroyed Resource<image>: play/ReloadUp_Hovered.png
+[INFO] Destroyed Resource<image>: play/ReloadUp.png
+[INFO] Destroyed Resource<image>: play/ReloadUp.png?64x64
+[INFO] Destroyed Resource<image>: play/RangeUp.png
+[INFO] Destroyed Resource<image>: play/RangeUp.png?64x64
+[INFO] Destroyed Resource<image>: play/AtkUp_Hovered.png
+[INFO] Destroyed Resource<image>: icon.png
+[INFO] Destroyed Resource<image>: play/AtkUp.png
+[INFO] Destroyed Resource<image>: play/AtkUp.png?64x64
 [INFO] Destroyed Resource<image>: play/turret-6.png
 [INFO] Destroyed Resource<image>: play/sand.png?320x832
 [INFO] Destroyed Resource<image>: lose/benjamin-happy.png
@@ -85,18 +88,18 @@
 [INFO] Destroyed Resource<image>: play/enemy-1.png
 [INFO] Destroyed Resource<image>: play/potion.png
 [INFO] Destroyed Resource<image>: play/tower-base.png
+[INFO] Destroyed Resource<image>: play/RangeUp_Hovered.png
 [INFO] Destroyed Resource<image>: play/turret-2.png
 [INFO] Destroyed Resource<image>: play/target.png
-[INFO] Destroyed Resource<image>: play/explosion-3.png
 [INFO] Destroyed Resource<image>: play/benjamin.png
 [INFO] Destroyed Resource<image>: play/floor.png
+[INFO] Destroyed Resource<image>: play/dirty-1.png
+[INFO] Destroyed Resource<image>: play/dirt.png?260x75
 [INFO] Destroyed Resource<image>: stage-select/dirt.png?400x100
 [INFO] Destroyed Resource<image>: stage-select/dirt.png
 [INFO] Destroyed Resource<image>: play/dirt.png
 [INFO] Destroyed Resource<image>: play/dirt.png?64x64
 [INFO] Destroyed Resource<image>: play/turret-1.png
-[INFO] Destroyed Resource<image>: play/dirty-3.png
-[INFO] Destroyed Resource<image>: icon.png
 [INFO] Destroyed Resource<font>: pirulen.ttf?120
 [INFO] Destroyed Resource<font>: pirulen.ttf?24
 [INFO] Destroyed Resource<font>: pirulen.ttf?32
@@ -106,6 +109,5 @@
 [INFO] Destroyed<sample_instance>: select.ogg
 [INFO] Destroyed Resource<audio>: gun.wav
 [INFO] Destroyed Resource<audio>: play.ogg
-[INFO] Destroyed Resource<audio>: explosion.wav
 [INFO] Destroyed Resource<audio>: astronomia.ogg
 [INFO] Destroyed Resource<audio>: select.ogg

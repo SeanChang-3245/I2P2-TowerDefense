@@ -855,5 +855,6 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Shovel.cpp.obj: \
   C:/mycode/I2P2-TowerDefense/./Engine/IScene.hpp \
   C:/mycode/I2P2-TowerDefense/Turret/Shovel.hpp \
   C:/mycode/I2P2-TowerDefense/Turret/Turret.hpp \
-  C:/mycode/I2P2-TowerDefense/./Engine/Sprite.hpp \
-  C:/mycode/I2P2-TowerDefense/./UI/Component/Image.hpp
+  C:/mycode/I2P2-TowerDefense/./UI/Component/ImageButton.hpp \
+  C:/mycode/I2P2-TowerDefense/./UI/Component/Image.hpp \
+  C:/mycode/I2P2-TowerDefense/./Engine/Sprite.hpp
