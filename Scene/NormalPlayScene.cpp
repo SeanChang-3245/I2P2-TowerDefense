@@ -8,6 +8,7 @@
 #include <string>
 #include <memory>
 
+#include "Engine/Point.hpp"
 #include "Engine/AudioHelper.hpp"
 #include "UI/Animation/DirtyEffect.hpp"
 #include "Enemy/Enemy.hpp"
@@ -95,6 +96,7 @@ void NormalPlayScene::OnMouseMove(int mx, int my)
 	imgTarget->Visible = true;
 	imgTarget->Position.x = x * BlockSize;
 	imgTarget->Position.y = y * BlockSize;
+
 }
 
 void NormalPlayScene::PlaceObject(const int &x, const int &y)
@@ -364,15 +366,14 @@ void NormalPlayScene::PlaceTurret(const int &x, const int &y)
 	// Remove Preview.
 	preview->GetObjectIterator()->first = false;
 	UIGroup->RemoveObject(preview->GetObjectIterator());
-	
+
 	// Construct real turret.
 	preview->Position.x = x * BlockSize + BlockSize / 2;
 	preview->Position.y = y * BlockSize + BlockSize / 2;
 	preview->Enabled = true;
 	preview->Preview = false;
 	preview->Tint = al_map_rgba(255, 255, 255, 255);
-	TowerGroup->AddNewObject(preview);
-	
+	TowerGroup->AddNewControlObject(preview);
 	// To keep responding when paused.
 	preview->Update(0);
 	
@@ -399,8 +400,8 @@ void NormalPlayScene::PlaceTurret(const int &x, const int &y)
 	preview->Enabled = true;
 	preview->Preview = false;
 	preview->Tint = al_map_rgba(255, 255, 255, 255);
-	TowerGroup->AddNewObject(preview);
-	
+	TowerGroup->AddNewControlObject(preview);
+
 	// To keep responding when paused.
 	preview->Update(0);
 	
@@ -443,8 +444,7 @@ void NormalPlayScene::DeconstructTurret(const int &x, const int &y)
 	UIGroup->RemoveObject(preview->GetObjectIterator());
 
 	// Delete target turret.
-	TowerGroup->RemoveObject(target_turret->GetObjectIterator());
-
+	TowerGroup->RemoveControlObject(target_turret->GetControlIterator(), target_turret->GetObjectIterator());
 	// To keep responding when paused.
 	preview->Update(0);
 	
