@@ -656,6 +656,54 @@ Engine/Sprite.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/Sprite.cpp.s
 .PHONY : Engine/Sprite.cpp.s
 
+Scene/BlackPlayScene.obj: Scene/BlackPlayScene.cpp.obj
+.PHONY : Scene/BlackPlayScene.obj
+
+# target to build an object file
+Scene/BlackPlayScene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/BlackPlayScene.cpp.obj
+.PHONY : Scene/BlackPlayScene.cpp.obj
+
+Scene/BlackPlayScene.i: Scene/BlackPlayScene.cpp.i
+.PHONY : Scene/BlackPlayScene.i
+
+# target to preprocess a source file
+Scene/BlackPlayScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/BlackPlayScene.cpp.i
+.PHONY : Scene/BlackPlayScene.cpp.i
+
+Scene/BlackPlayScene.s: Scene/BlackPlayScene.cpp.s
+.PHONY : Scene/BlackPlayScene.s
+
+# target to generate assembly for a file
+Scene/BlackPlayScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/BlackPlayScene.cpp.s
+.PHONY : Scene/BlackPlayScene.cpp.s
+
+Scene/DataGeneratingScene.obj: Scene/DataGeneratingScene.cpp.obj
+.PHONY : Scene/DataGeneratingScene.obj
+
+# target to build an object file
+Scene/DataGeneratingScene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DataGeneratingScene.cpp.obj
+.PHONY : Scene/DataGeneratingScene.cpp.obj
+
+Scene/DataGeneratingScene.i: Scene/DataGeneratingScene.cpp.i
+.PHONY : Scene/DataGeneratingScene.i
+
+# target to preprocess a source file
+Scene/DataGeneratingScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DataGeneratingScene.cpp.i
+.PHONY : Scene/DataGeneratingScene.cpp.i
+
+Scene/DataGeneratingScene.s: Scene/DataGeneratingScene.cpp.s
+.PHONY : Scene/DataGeneratingScene.s
+
+# target to generate assembly for a file
+Scene/DataGeneratingScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DataGeneratingScene.cpp.s
+.PHONY : Scene/DataGeneratingScene.cpp.s
+
 Scene/DifficultySelectScene.obj: Scene/DifficultySelectScene.cpp.obj
 .PHONY : Scene/DifficultySelectScene.obj
 
@@ -896,6 +944,30 @@ Scene/SettingsScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SettingsScene.cpp.s
 .PHONY : Scene/SettingsScene.cpp.s
 
+Scene/StageSelectHandWriteScene.obj: Scene/StageSelectHandWriteScene.cpp.obj
+.PHONY : Scene/StageSelectHandWriteScene.obj
+
+# target to build an object file
+Scene/StageSelectHandWriteScene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectHandWriteScene.cpp.obj
+.PHONY : Scene/StageSelectHandWriteScene.cpp.obj
+
+Scene/StageSelectHandWriteScene.i: Scene/StageSelectHandWriteScene.cpp.i
+.PHONY : Scene/StageSelectHandWriteScene.i
+
+# target to preprocess a source file
+Scene/StageSelectHandWriteScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectHandWriteScene.cpp.i
+.PHONY : Scene/StageSelectHandWriteScene.cpp.i
+
+Scene/StageSelectHandWriteScene.s: Scene/StageSelectHandWriteScene.cpp.s
+.PHONY : Scene/StageSelectHandWriteScene.s
+
+# target to generate assembly for a file
+Scene/StageSelectHandWriteScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectHandWriteScene.cpp.s
+.PHONY : Scene/StageSelectHandWriteScene.cpp.s
+
 Scene/StageSelectScene.obj: Scene/StageSelectScene.cpp.obj
 .PHONY : Scene/StageSelectScene.obj
 
@@ -1040,6 +1112,30 @@ Turret/BerserkPotion.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/BerserkPotion.cpp.s
 .PHONY : Turret/BerserkPotion.cpp.s
 
+Turret/ExplosionMine.obj: Turret/ExplosionMine.cpp.obj
+.PHONY : Turret/ExplosionMine.obj
+
+# target to build an object file
+Turret/ExplosionMine.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ExplosionMine.cpp.obj
+.PHONY : Turret/ExplosionMine.cpp.obj
+
+Turret/ExplosionMine.i: Turret/ExplosionMine.cpp.i
+.PHONY : Turret/ExplosionMine.i
+
+# target to preprocess a source file
+Turret/ExplosionMine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ExplosionMine.cpp.i
+.PHONY : Turret/ExplosionMine.cpp.i
+
+Turret/ExplosionMine.s: Turret/ExplosionMine.cpp.s
+.PHONY : Turret/ExplosionMine.s
+
+# target to generate assembly for a file
+Turret/ExplosionMine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ExplosionMine.cpp.s
+.PHONY : Turret/ExplosionMine.cpp.s
+
 Turret/FrostPotion.obj: Turret/FrostPotion.cpp.obj
 .PHONY : Turret/FrostPotion.obj
 
@@ -1136,6 +1232,30 @@ Turret/MachineGunTurret.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/MachineGunTurret.cpp.s
 .PHONY : Turret/MachineGunTurret.cpp.s
 
+Turret/Mine.obj: Turret/Mine.cpp.obj
+.PHONY : Turret/Mine.obj
+
+# target to build an object file
+Turret/Mine.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Mine.cpp.obj
+.PHONY : Turret/Mine.cpp.obj
+
+Turret/Mine.i: Turret/Mine.cpp.i
+.PHONY : Turret/Mine.i
+
+# target to preprocess a source file
+Turret/Mine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Mine.cpp.i
+.PHONY : Turret/Mine.cpp.i
+
+Turret/Mine.s: Turret/Mine.cpp.s
+.PHONY : Turret/Mine.s
+
+# target to generate assembly for a file
+Turret/Mine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Mine.cpp.s
+.PHONY : Turret/Mine.cpp.s
+
 Turret/MissileTurret.obj: Turret/MissileTurret.cpp.obj
 .PHONY : Turret/MissileTurret.obj
 
@@ -1231,6 +1351,30 @@ Turret/Shovel.s: Turret/Shovel.cpp.s
 Turret/Shovel.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Shovel.cpp.s
 .PHONY : Turret/Shovel.cpp.s
+
+Turret/TeleportMine.obj: Turret/TeleportMine.cpp.obj
+.PHONY : Turret/TeleportMine.obj
+
+# target to build an object file
+Turret/TeleportMine.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TeleportMine.cpp.obj
+.PHONY : Turret/TeleportMine.cpp.obj
+
+Turret/TeleportMine.i: Turret/TeleportMine.cpp.i
+.PHONY : Turret/TeleportMine.i
+
+# target to preprocess a source file
+Turret/TeleportMine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TeleportMine.cpp.i
+.PHONY : Turret/TeleportMine.cpp.i
+
+Turret/TeleportMine.s: Turret/TeleportMine.cpp.s
+.PHONY : Turret/TeleportMine.s
+
+# target to generate assembly for a file
+Turret/TeleportMine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TeleportMine.cpp.s
+.PHONY : Turret/TeleportMine.cpp.s
 
 Turret/Turret.obj: Turret/Turret.cpp.obj
 .PHONY : Turret/Turret.obj
@@ -1351,6 +1495,30 @@ UI/Animation/Plane.s: UI/Animation/Plane.cpp.s
 UI/Animation/Plane.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Animation/Plane.cpp.s
 .PHONY : UI/Animation/Plane.cpp.s
+
+UI/Component/DrawBoard.obj: UI/Component/DrawBoard.cpp.obj
+.PHONY : UI/Component/DrawBoard.obj
+
+# target to build an object file
+UI/Component/DrawBoard.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/DrawBoard.cpp.obj
+.PHONY : UI/Component/DrawBoard.cpp.obj
+
+UI/Component/DrawBoard.i: UI/Component/DrawBoard.cpp.i
+.PHONY : UI/Component/DrawBoard.i
+
+# target to preprocess a source file
+UI/Component/DrawBoard.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/DrawBoard.cpp.i
+.PHONY : UI/Component/DrawBoard.cpp.i
+
+UI/Component/DrawBoard.s: UI/Component/DrawBoard.cpp.s
+.PHONY : UI/Component/DrawBoard.s
+
+# target to generate assembly for a file
+UI/Component/DrawBoard.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/DrawBoard.cpp.s
+.PHONY : UI/Component/DrawBoard.cpp.s
 
 UI/Component/EnemyButton.obj: UI/Component/EnemyButton.cpp.obj
 .PHONY : UI/Component/EnemyButton.obj
@@ -1619,6 +1787,12 @@ help:
 	@echo ... Engine/Sprite.obj
 	@echo ... Engine/Sprite.i
 	@echo ... Engine/Sprite.s
+	@echo ... Scene/BlackPlayScene.obj
+	@echo ... Scene/BlackPlayScene.i
+	@echo ... Scene/BlackPlayScene.s
+	@echo ... Scene/DataGeneratingScene.obj
+	@echo ... Scene/DataGeneratingScene.i
+	@echo ... Scene/DataGeneratingScene.s
 	@echo ... Scene/DifficultySelectScene.obj
 	@echo ... Scene/DifficultySelectScene.i
 	@echo ... Scene/DifficultySelectScene.s
@@ -1649,6 +1823,9 @@ help:
 	@echo ... Scene/SettingsScene.obj
 	@echo ... Scene/SettingsScene.i
 	@echo ... Scene/SettingsScene.s
+	@echo ... Scene/StageSelectHandWriteScene.obj
+	@echo ... Scene/StageSelectHandWriteScene.i
+	@echo ... Scene/StageSelectHandWriteScene.s
 	@echo ... Scene/StageSelectScene.obj
 	@echo ... Scene/StageSelectScene.i
 	@echo ... Scene/StageSelectScene.s
@@ -1667,6 +1844,9 @@ help:
 	@echo ... Turret/BerserkPotion.obj
 	@echo ... Turret/BerserkPotion.i
 	@echo ... Turret/BerserkPotion.s
+	@echo ... Turret/ExplosionMine.obj
+	@echo ... Turret/ExplosionMine.i
+	@echo ... Turret/ExplosionMine.s
 	@echo ... Turret/FrostPotion.obj
 	@echo ... Turret/FrostPotion.i
 	@echo ... Turret/FrostPotion.s
@@ -1679,6 +1859,9 @@ help:
 	@echo ... Turret/MachineGunTurret.obj
 	@echo ... Turret/MachineGunTurret.i
 	@echo ... Turret/MachineGunTurret.s
+	@echo ... Turret/Mine.obj
+	@echo ... Turret/Mine.i
+	@echo ... Turret/Mine.s
 	@echo ... Turret/MissileTurret.obj
 	@echo ... Turret/MissileTurret.i
 	@echo ... Turret/MissileTurret.s
@@ -1691,6 +1874,9 @@ help:
 	@echo ... Turret/Shovel.obj
 	@echo ... Turret/Shovel.i
 	@echo ... Turret/Shovel.s
+	@echo ... Turret/TeleportMine.obj
+	@echo ... Turret/TeleportMine.i
+	@echo ... Turret/TeleportMine.s
 	@echo ... Turret/Turret.obj
 	@echo ... Turret/Turret.i
 	@echo ... Turret/Turret.s
@@ -1706,6 +1892,9 @@ help:
 	@echo ... UI/Animation/Plane.obj
 	@echo ... UI/Animation/Plane.i
 	@echo ... UI/Animation/Plane.s
+	@echo ... UI/Component/DrawBoard.obj
+	@echo ... UI/Component/DrawBoard.i
+	@echo ... UI/Component/DrawBoard.s
 	@echo ... UI/Component/EnemyButton.obj
 	@echo ... UI/Component/EnemyButton.i
 	@echo ... UI/Component/EnemyButton.s

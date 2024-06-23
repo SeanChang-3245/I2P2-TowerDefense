@@ -164,6 +164,9 @@
 			"isCMake" : true,
 			"isExternal" : true,
 			"path" : "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"path" : "ML_Resource/ML_Macro.hpp.in"
 		}
 	],
 	"kind" : "cmakeFiles",

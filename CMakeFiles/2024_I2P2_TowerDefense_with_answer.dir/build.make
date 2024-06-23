@@ -488,11 +488,26 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/Slider.cpp.s: cma
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/Slider.cpp.s"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\mycode\I2P2-TowerDefense\UI\Component\Slider.cpp -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\UI\Component\Slider.cpp.s
 
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/DrawBoard.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/flags.make
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/DrawBoard.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/DrawBoard.cpp.obj: C:/mycode/I2P2-TowerDefense/UI/Component/DrawBoard.cpp
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/DrawBoard.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/DrawBoard.cpp.obj"
+	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/DrawBoard.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\UI\Component\DrawBoard.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\UI\Component\DrawBoard.cpp.obj -c C:\mycode\I2P2-TowerDefense\UI\Component\DrawBoard.cpp
+
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/DrawBoard.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/DrawBoard.cpp.i"
+	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\mycode\I2P2-TowerDefense\UI\Component\DrawBoard.cpp > CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\UI\Component\DrawBoard.cpp.i
+
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/DrawBoard.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/DrawBoard.cpp.s"
+	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\mycode\I2P2-TowerDefense\UI\Component\DrawBoard.cpp -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\UI\Component\DrawBoard.cpp.s
+
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/Enemy.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/flags.make
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/Enemy.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/Enemy.cpp.obj: C:/mycode/I2P2-TowerDefense/Enemy/Enemy.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/Enemy.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/Enemy.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/Enemy.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/Enemy.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Enemy\Enemy.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Enemy\Enemy.cpp.obj -c C:\mycode\I2P2-TowerDefense\Enemy\Enemy.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/Enemy.cpp.i: cmake_force
@@ -507,7 +522,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/PlaneEnemy.cpp.obj: CMak
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/PlaneEnemy.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/PlaneEnemy.cpp.obj: C:/mycode/I2P2-TowerDefense/Enemy/PlaneEnemy.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/PlaneEnemy.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/PlaneEnemy.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/PlaneEnemy.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/PlaneEnemy.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Enemy\PlaneEnemy.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Enemy\PlaneEnemy.cpp.obj -c C:\mycode\I2P2-TowerDefense\Enemy\PlaneEnemy.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/PlaneEnemy.cpp.i: cmake_force
@@ -522,7 +537,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/SoldierEnemy.cpp.obj: CM
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/SoldierEnemy.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/SoldierEnemy.cpp.obj: C:/mycode/I2P2-TowerDefense/Enemy/SoldierEnemy.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/SoldierEnemy.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/SoldierEnemy.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/SoldierEnemy.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/SoldierEnemy.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Enemy\SoldierEnemy.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Enemy\SoldierEnemy.cpp.obj -c C:\mycode\I2P2-TowerDefense\Enemy\SoldierEnemy.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/SoldierEnemy.cpp.i: cmake_force
@@ -537,7 +552,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/AdvancedTankEnemy.cpp.ob
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/AdvancedTankEnemy.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/AdvancedTankEnemy.cpp.obj: C:/mycode/I2P2-TowerDefense/Enemy/AdvancedTankEnemy.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/AdvancedTankEnemy.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/AdvancedTankEnemy.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/AdvancedTankEnemy.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/AdvancedTankEnemy.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Enemy\AdvancedTankEnemy.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Enemy\AdvancedTankEnemy.cpp.obj -c C:\mycode\I2P2-TowerDefense\Enemy\AdvancedTankEnemy.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/AdvancedTankEnemy.cpp.i: cmake_force
@@ -552,7 +567,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/TankEnemy.cpp.obj: CMake
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/TankEnemy.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/TankEnemy.cpp.obj: C:/mycode/I2P2-TowerDefense/Enemy/TankEnemy.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/TankEnemy.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/TankEnemy.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/TankEnemy.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/TankEnemy.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Enemy\TankEnemy.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Enemy\TankEnemy.cpp.obj -c C:\mycode\I2P2-TowerDefense\Enemy\TankEnemy.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/TankEnemy.cpp.i: cmake_force
@@ -567,7 +582,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Turret.cpp.obj: CMakeFi
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Turret.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Turret.cpp.obj: C:/mycode/I2P2-TowerDefense/Turret/Turret.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Turret.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Turret.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Turret.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Turret.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\Turret.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\Turret.cpp.obj -c C:\mycode\I2P2-TowerDefense\Turret\Turret.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Turret.cpp.i: cmake_force
@@ -582,7 +597,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/LaserTurret.cpp.obj: CM
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/LaserTurret.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/LaserTurret.cpp.obj: C:/mycode/I2P2-TowerDefense/Turret/LaserTurret.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/LaserTurret.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/LaserTurret.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/LaserTurret.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/LaserTurret.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\LaserTurret.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\LaserTurret.cpp.obj -c C:\mycode\I2P2-TowerDefense\Turret\LaserTurret.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/LaserTurret.cpp.i: cmake_force
@@ -597,7 +612,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/MachineGunTurret.cpp.ob
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/MachineGunTurret.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/MachineGunTurret.cpp.obj: C:/mycode/I2P2-TowerDefense/Turret/MachineGunTurret.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/MachineGunTurret.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/MachineGunTurret.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/MachineGunTurret.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/MachineGunTurret.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\MachineGunTurret.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\MachineGunTurret.cpp.obj -c C:\mycode\I2P2-TowerDefense\Turret\MachineGunTurret.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/MachineGunTurret.cpp.i: cmake_force
@@ -612,7 +627,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/MissileTurret.cpp.obj: 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/MissileTurret.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/MissileTurret.cpp.obj: C:/mycode/I2P2-TowerDefense/Turret/MissileTurret.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/MissileTurret.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/MissileTurret.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/MissileTurret.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/MissileTurret.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\MissileTurret.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\MissileTurret.cpp.obj -c C:\mycode\I2P2-TowerDefense\Turret\MissileTurret.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/MissileTurret.cpp.i: cmake_force
@@ -627,7 +642,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/AdvancedMissileTurret.c
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/AdvancedMissileTurret.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/AdvancedMissileTurret.cpp.obj: C:/mycode/I2P2-TowerDefense/Turret/AdvancedMissileTurret.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/AdvancedMissileTurret.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/AdvancedMissileTurret.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/AdvancedMissileTurret.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/AdvancedMissileTurret.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\AdvancedMissileTurret.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\AdvancedMissileTurret.cpp.obj -c C:\mycode\I2P2-TowerDefense\Turret\AdvancedMissileTurret.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/AdvancedMissileTurret.cpp.i: cmake_force
@@ -642,7 +657,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TurretButton.cpp.obj: C
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TurretButton.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TurretButton.cpp.obj: C:/mycode/I2P2-TowerDefense/Turret/TurretButton.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TurretButton.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TurretButton.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TurretButton.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TurretButton.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\TurretButton.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\TurretButton.cpp.obj -c C:\mycode\I2P2-TowerDefense\Turret\TurretButton.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TurretButton.cpp.i: cmake_force
@@ -657,7 +672,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/HoverTurretButton.cpp.o
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/HoverTurretButton.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/HoverTurretButton.cpp.obj: C:/mycode/I2P2-TowerDefense/Turret/HoverTurretButton.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/HoverTurretButton.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/HoverTurretButton.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/HoverTurretButton.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/HoverTurretButton.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\HoverTurretButton.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\HoverTurretButton.cpp.obj -c C:\mycode\I2P2-TowerDefense\Turret\HoverTurretButton.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/HoverTurretButton.cpp.i: cmake_force
@@ -672,7 +687,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Shovel.cpp.obj: CMakeFi
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Shovel.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Shovel.cpp.obj: C:/mycode/I2P2-TowerDefense/Turret/Shovel.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Shovel.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Shovel.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Shovel.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Shovel.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\Shovel.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\Shovel.cpp.obj -c C:\mycode\I2P2-TowerDefense\Turret\Shovel.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Shovel.cpp.i: cmake_force
@@ -687,7 +702,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Potion.cpp.obj: CMakeFi
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Potion.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Potion.cpp.obj: C:/mycode/I2P2-TowerDefense/Turret/Potion.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Potion.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Potion.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Potion.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Potion.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\Potion.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\Potion.cpp.obj -c C:\mycode\I2P2-TowerDefense\Turret\Potion.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Potion.cpp.i: cmake_force
@@ -702,7 +717,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/FrostPotion.cpp.obj: CM
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/FrostPotion.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/FrostPotion.cpp.obj: C:/mycode/I2P2-TowerDefense/Turret/FrostPotion.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/FrostPotion.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/FrostPotion.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/FrostPotion.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/FrostPotion.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\FrostPotion.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\FrostPotion.cpp.obj -c C:\mycode\I2P2-TowerDefense\Turret\FrostPotion.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/FrostPotion.cpp.i: cmake_force
@@ -717,7 +732,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/BerserkPotion.cpp.obj: 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/BerserkPotion.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/BerserkPotion.cpp.obj: C:/mycode/I2P2-TowerDefense/Turret/BerserkPotion.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/BerserkPotion.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/BerserkPotion.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/BerserkPotion.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/BerserkPotion.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\BerserkPotion.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\BerserkPotion.cpp.obj -c C:\mycode\I2P2-TowerDefense\Turret\BerserkPotion.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/BerserkPotion.cpp.i: cmake_force
@@ -732,7 +747,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ShieldPotion.cpp.obj: C
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ShieldPotion.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ShieldPotion.cpp.obj: C:/mycode/I2P2-TowerDefense/Turret/ShieldPotion.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ShieldPotion.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ShieldPotion.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ShieldPotion.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ShieldPotion.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\ShieldPotion.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\ShieldPotion.cpp.obj -c C:\mycode\I2P2-TowerDefense\Turret\ShieldPotion.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ShieldPotion.cpp.i: cmake_force
@@ -743,11 +758,56 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ShieldPotion.cpp.s: cma
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ShieldPotion.cpp.s"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\mycode\I2P2-TowerDefense\Turret\ShieldPotion.cpp -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\ShieldPotion.cpp.s
 
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Mine.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/flags.make
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Mine.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Mine.cpp.obj: C:/mycode/I2P2-TowerDefense/Turret/Mine.cpp
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Mine.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Mine.cpp.obj"
+	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Mine.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\Mine.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\Mine.cpp.obj -c C:\mycode\I2P2-TowerDefense\Turret\Mine.cpp
+
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Mine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Mine.cpp.i"
+	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\mycode\I2P2-TowerDefense\Turret\Mine.cpp > CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\Mine.cpp.i
+
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Mine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Mine.cpp.s"
+	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\mycode\I2P2-TowerDefense\Turret\Mine.cpp -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\Mine.cpp.s
+
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ExplosionMine.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/flags.make
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ExplosionMine.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ExplosionMine.cpp.obj: C:/mycode/I2P2-TowerDefense/Turret/ExplosionMine.cpp
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ExplosionMine.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ExplosionMine.cpp.obj"
+	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ExplosionMine.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\ExplosionMine.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\ExplosionMine.cpp.obj -c C:\mycode\I2P2-TowerDefense\Turret\ExplosionMine.cpp
+
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ExplosionMine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ExplosionMine.cpp.i"
+	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\mycode\I2P2-TowerDefense\Turret\ExplosionMine.cpp > CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\ExplosionMine.cpp.i
+
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ExplosionMine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ExplosionMine.cpp.s"
+	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\mycode\I2P2-TowerDefense\Turret\ExplosionMine.cpp -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\ExplosionMine.cpp.s
+
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TeleportMine.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/flags.make
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TeleportMine.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TeleportMine.cpp.obj: C:/mycode/I2P2-TowerDefense/Turret/TeleportMine.cpp
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TeleportMine.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TeleportMine.cpp.obj"
+	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TeleportMine.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\TeleportMine.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\TeleportMine.cpp.obj -c C:\mycode\I2P2-TowerDefense\Turret\TeleportMine.cpp
+
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TeleportMine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TeleportMine.cpp.i"
+	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\mycode\I2P2-TowerDefense\Turret\TeleportMine.cpp > CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\TeleportMine.cpp.i
+
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TeleportMine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TeleportMine.cpp.s"
+	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\mycode\I2P2-TowerDefense\Turret\TeleportMine.cpp -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Turret\TeleportMine.cpp.s
+
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/WinScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/flags.make
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/WinScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/WinScene.cpp.obj: C:/mycode/I2P2-TowerDefense/Scene/WinScene.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/WinScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/WinScene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/WinScene.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/WinScene.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\WinScene.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\WinScene.cpp.obj -c C:\mycode\I2P2-TowerDefense\Scene\WinScene.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/WinScene.cpp.i: cmake_force
@@ -762,7 +822,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/MapCreateScene.cpp.obj: 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/MapCreateScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/MapCreateScene.cpp.obj: C:/mycode/I2P2-TowerDefense/Scene/MapCreateScene.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/MapCreateScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/MapCreateScene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/MapCreateScene.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/MapCreateScene.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\MapCreateScene.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\MapCreateScene.cpp.obj -c C:\mycode\I2P2-TowerDefense\Scene\MapCreateScene.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/MapCreateScene.cpp.i: cmake_force
@@ -777,7 +837,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ModeSelectScene.cpp.obj:
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ModeSelectScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ModeSelectScene.cpp.obj: C:/mycode/I2P2-TowerDefense/Scene/ModeSelectScene.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ModeSelectScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ModeSelectScene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ModeSelectScene.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ModeSelectScene.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\ModeSelectScene.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\ModeSelectScene.cpp.obj -c C:\mycode\I2P2-TowerDefense\Scene\ModeSelectScene.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ModeSelectScene.cpp.i: cmake_force
@@ -792,7 +852,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReversePlayScene.cpp.obj
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReversePlayScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReversePlayScene.cpp.obj: C:/mycode/I2P2-TowerDefense/Scene/ReversePlayScene.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReversePlayScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReversePlayScene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReversePlayScene.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReversePlayScene.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\ReversePlayScene.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\ReversePlayScene.cpp.obj -c C:\mycode\I2P2-TowerDefense\Scene\ReversePlayScene.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReversePlayScene.cpp.i: cmake_force
@@ -807,7 +867,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StartScene.cpp.obj: CMak
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StartScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StartScene.cpp.obj: C:/mycode/I2P2-TowerDefense/Scene/StartScene.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StartScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StartScene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StartScene.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StartScene.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\StartScene.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\StartScene.cpp.obj -c C:\mycode\I2P2-TowerDefense\Scene\StartScene.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StartScene.cpp.i: cmake_force
@@ -822,7 +882,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/LoseScene.cpp.obj: CMake
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/LoseScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/LoseScene.cpp.obj: C:/mycode/I2P2-TowerDefense/Scene/LoseScene.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/LoseScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/LoseScene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/LoseScene.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/LoseScene.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\LoseScene.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\LoseScene.cpp.obj -c C:\mycode\I2P2-TowerDefense\Scene\LoseScene.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/LoseScene.cpp.i: cmake_force
@@ -837,7 +897,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/PlayScene.cpp.obj: CMake
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/PlayScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/PlayScene.cpp.obj: C:/mycode/I2P2-TowerDefense/Scene/PlayScene.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/PlayScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/PlayScene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/PlayScene.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/PlayScene.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\PlayScene.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\PlayScene.cpp.obj -c C:\mycode\I2P2-TowerDefense\Scene\PlayScene.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/PlayScene.cpp.i: cmake_force
@@ -852,7 +912,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectScene.cpp.obj
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectScene.cpp.obj: C:/mycode/I2P2-TowerDefense/Scene/StageSelectScene.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectScene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectScene.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectScene.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\StageSelectScene.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\StageSelectScene.cpp.obj -c C:\mycode\I2P2-TowerDefense\Scene\StageSelectScene.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectScene.cpp.i: cmake_force
@@ -867,7 +927,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DifficultySelectScene.cp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DifficultySelectScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DifficultySelectScene.cpp.obj: C:/mycode/I2P2-TowerDefense/Scene/DifficultySelectScene.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DifficultySelectScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DifficultySelectScene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DifficultySelectScene.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DifficultySelectScene.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\DifficultySelectScene.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\DifficultySelectScene.cpp.obj -c C:\mycode\I2P2-TowerDefense\Scene\DifficultySelectScene.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DifficultySelectScene.cpp.i: cmake_force
@@ -882,7 +942,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SettingsScene.cpp.obj: C
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SettingsScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SettingsScene.cpp.obj: C:/mycode/I2P2-TowerDefense/Scene/SettingsScene.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SettingsScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SettingsScene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SettingsScene.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SettingsScene.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\SettingsScene.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\SettingsScene.cpp.obj -c C:\mycode\I2P2-TowerDefense\Scene\SettingsScene.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SettingsScene.cpp.i: cmake_force
@@ -897,7 +957,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ScoreboardScene.cpp.obj:
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ScoreboardScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ScoreboardScene.cpp.obj: C:/mycode/I2P2-TowerDefense/Scene/ScoreboardScene.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ScoreboardScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ScoreboardScene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ScoreboardScene.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ScoreboardScene.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\ScoreboardScene.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\ScoreboardScene.cpp.obj -c C:\mycode\I2P2-TowerDefense\Scene\ScoreboardScene.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ScoreboardScene.cpp.i: cmake_force
@@ -912,7 +972,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/NormalPlayScene.cpp.obj:
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/NormalPlayScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/NormalPlayScene.cpp.obj: C:/mycode/I2P2-TowerDefense/Scene/NormalPlayScene.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/NormalPlayScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/NormalPlayScene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/NormalPlayScene.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/NormalPlayScene.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\NormalPlayScene.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\NormalPlayScene.cpp.obj -c C:\mycode\I2P2-TowerDefense\Scene\NormalPlayScene.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/NormalPlayScene.cpp.i: cmake_force
@@ -927,7 +987,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReviveScene.cpp.obj: CMa
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReviveScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReviveScene.cpp.obj: C:/mycode/I2P2-TowerDefense/Scene/ReviveScene.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReviveScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReviveScene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReviveScene.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReviveScene.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\ReviveScene.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\ReviveScene.cpp.obj -c C:\mycode\I2P2-TowerDefense\Scene\ReviveScene.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReviveScene.cpp.i: cmake_force
@@ -942,7 +1002,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.ob
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.obj: C:/mycode/I2P2-TowerDefense/Scene/SurvivalPlayScene.cpp
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.obj"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\SurvivalPlayScene.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\SurvivalPlayScene.cpp.obj -c C:\mycode\I2P2-TowerDefense\Scene\SurvivalPlayScene.cpp
 
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.i: cmake_force
@@ -952,6 +1012,51 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.i:
 CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.s"
 	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\mycode\I2P2-TowerDefense\Scene\SurvivalPlayScene.cpp -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\SurvivalPlayScene.cpp.s
+
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectHandWriteScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/flags.make
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectHandWriteScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectHandWriteScene.cpp.obj: C:/mycode/I2P2-TowerDefense/Scene/StageSelectHandWriteScene.cpp
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectHandWriteScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectHandWriteScene.cpp.obj"
+	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectHandWriteScene.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\StageSelectHandWriteScene.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\StageSelectHandWriteScene.cpp.obj -c C:\mycode\I2P2-TowerDefense\Scene\StageSelectHandWriteScene.cpp
+
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectHandWriteScene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectHandWriteScene.cpp.i"
+	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\mycode\I2P2-TowerDefense\Scene\StageSelectHandWriteScene.cpp > CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\StageSelectHandWriteScene.cpp.i
+
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectHandWriteScene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectHandWriteScene.cpp.s"
+	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\mycode\I2P2-TowerDefense\Scene\StageSelectHandWriteScene.cpp -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\StageSelectHandWriteScene.cpp.s
+
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DataGeneratingScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/flags.make
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DataGeneratingScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DataGeneratingScene.cpp.obj: C:/mycode/I2P2-TowerDefense/Scene/DataGeneratingScene.cpp
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DataGeneratingScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DataGeneratingScene.cpp.obj"
+	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DataGeneratingScene.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\DataGeneratingScene.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\DataGeneratingScene.cpp.obj -c C:\mycode\I2P2-TowerDefense\Scene\DataGeneratingScene.cpp
+
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DataGeneratingScene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DataGeneratingScene.cpp.i"
+	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\mycode\I2P2-TowerDefense\Scene\DataGeneratingScene.cpp > CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\DataGeneratingScene.cpp.i
+
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DataGeneratingScene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DataGeneratingScene.cpp.s"
+	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\mycode\I2P2-TowerDefense\Scene\DataGeneratingScene.cpp -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\DataGeneratingScene.cpp.s
+
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/BlackPlayScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/flags.make
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/BlackPlayScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/BlackPlayScene.cpp.obj: C:/mycode/I2P2-TowerDefense/Scene/BlackPlayScene.cpp
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/BlackPlayScene.cpp.obj: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building CXX object CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/BlackPlayScene.cpp.obj"
+	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/BlackPlayScene.cpp.obj -MF CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\BlackPlayScene.cpp.obj.d -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\BlackPlayScene.cpp.obj -c C:\mycode\I2P2-TowerDefense\Scene\BlackPlayScene.cpp
+
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/BlackPlayScene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/BlackPlayScene.cpp.i"
+	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\mycode\I2P2-TowerDefense\Scene\BlackPlayScene.cpp > CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\BlackPlayScene.cpp.i
+
+CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/BlackPlayScene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/BlackPlayScene.cpp.s"
+	C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\mycode\I2P2-TowerDefense\Scene\BlackPlayScene.cpp -o CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\Scene\BlackPlayScene.cpp.s
 
 # Object files for target 2024_I2P2_TowerDefense_with_answer
 2024_I2P2_TowerDefense_with_answer_OBJECTS = \
@@ -983,6 +1088,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.s:
 "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/Label.cpp.obj" \
 "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Animation/Plane.cpp.obj" \
 "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/Slider.cpp.obj" \
+"CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/DrawBoard.cpp.obj" \
 "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/Enemy.cpp.obj" \
 "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/PlaneEnemy.cpp.obj" \
 "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/SoldierEnemy.cpp.obj" \
@@ -1000,6 +1106,9 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.s:
 "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/FrostPotion.cpp.obj" \
 "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/BerserkPotion.cpp.obj" \
 "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ShieldPotion.cpp.obj" \
+"CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Mine.cpp.obj" \
+"CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ExplosionMine.cpp.obj" \
+"CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TeleportMine.cpp.obj" \
 "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/WinScene.cpp.obj" \
 "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/MapCreateScene.cpp.obj" \
 "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ModeSelectScene.cpp.obj" \
@@ -1013,7 +1122,10 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.s:
 "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ScoreboardScene.cpp.obj" \
 "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/NormalPlayScene.cpp.obj" \
 "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReviveScene.cpp.obj" \
-"CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.obj"
+"CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.obj" \
+"CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectHandWriteScene.cpp.obj" \
+"CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DataGeneratingScene.cpp.obj" \
+"CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/BlackPlayScene.cpp.obj"
 
 # External object files for target 2024_I2P2_TowerDefense_with_answer
 2024_I2P2_TowerDefense_with_answer_EXTERNAL_OBJECTS =
@@ -1046,6 +1158,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.s:
 2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/Label.cpp.obj
 2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Animation/Plane.cpp.obj
 2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/Slider.cpp.obj
+2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/DrawBoard.cpp.obj
 2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/Enemy.cpp.obj
 2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/PlaneEnemy.cpp.obj
 2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/SoldierEnemy.cpp.obj
@@ -1063,6 +1176,9 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.s:
 2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/FrostPotion.cpp.obj
 2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/BerserkPotion.cpp.obj
 2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ShieldPotion.cpp.obj
+2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Mine.cpp.obj
+2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ExplosionMine.cpp.obj
+2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TeleportMine.cpp.obj
 2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/WinScene.cpp.obj
 2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/MapCreateScene.cpp.obj
 2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ModeSelectScene.cpp.obj
@@ -1077,11 +1193,14 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.s:
 2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/NormalPlayScene.cpp.obj
 2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/ReviveScene.cpp.obj
 2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.obj
+2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectHandWriteScene.cpp.obj
+2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DataGeneratingScene.cpp.obj
+2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/BlackPlayScene.cpp.obj
 2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/build.make
 2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/linkLibs.rsp
 2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/objects1.rsp
 2024_I2P2_TowerDefense_with_answer.exe: CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Linking CXX executable 2024_I2P2_TowerDefense_with_answer.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\mycode\I2P2-TowerDefense\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Linking CXX executable 2024_I2P2_TowerDefense_with_answer.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -1,1 +1,1 @@
--I"C:/mycode/I2P2-TowerDefense/." -I"C:/mycode/I2P2-TowerDefense/Resource" -IC:/allegro/include
+-I"C:/mycode/I2P2-TowerDefense/." -I"C:/mycode/I2P2-TowerDefense/Resource" -I"C:/mycode/I2P2-TowerDefense/build" -IC:/allegro/include

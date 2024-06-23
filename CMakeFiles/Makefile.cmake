@@ -32,6 +32,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/CMake/share/cmake-3.29/Modules/Platform/Windows.cmake"
   "C:/Program Files/CMake/share/cmake-3.29/Modules/Platform/WindowsPaths.cmake"
   "C:/mycode/I2P2-TowerDefense/CMakeLists.txt"
+  "C:/mycode/I2P2-TowerDefense/ML_Resource/ML_Macro.hpp.in"
   "CMakeFiles/3.29.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.29.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.29.2/CMakeRCCompiler.cmake"
@@ -46,6 +47,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "ML_Macro.hpp"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 

@@ -907,9 +907,11 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/main.cpp.obj: \
   C:/mycode/I2P2-TowerDefense/Scene/NormalPlayScene.hpp \
   C:/mycode/I2P2-TowerDefense/./Scene/PlayScene.hpp \
   C:/mycode/I2P2-TowerDefense/Scene/ReversePlayScene.hpp \
+  C:/mycode/I2P2-TowerDefense/Scene/BlackPlayScene.hpp \
   C:/mycode/I2P2-TowerDefense/Scene/StageSelectScene.hpp \
   C:/mycode/I2P2-TowerDefense/./UI/Component/ImageButton.hpp \
   C:/mycode/I2P2-TowerDefense/./UI/Component/Image.hpp \
+  C:/mycode/I2P2-TowerDefense/build/ML_Macro.hpp \
   C:/mycode/I2P2-TowerDefense/Scene/DifficultySelectScene.hpp \
   C:/mycode/I2P2-TowerDefense/Scene/ModeSelectScene.hpp \
   C:/mycode/I2P2-TowerDefense/Scene/WinScene.hpp \
@@ -922,4 +924,7 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/main.cpp.obj: \
   C:/mycode/I2P2-TowerDefense/Scene/MapCreateScene.hpp \
   C:/mycode/I2P2-TowerDefense/Scene/ReviveScene.hpp \
   C:/mycode/I2P2-TowerDefense/Scene/SurvivalPlayScene.hpp \
+  C:/mycode/I2P2-TowerDefense/Scene/StageSelectHandWriteScene.hpp \
+  C:/mycode/I2P2-TowerDefense/./UI/Component/DrawBoard.hpp \
+  C:/mycode/I2P2-TowerDefense/Scene/DataGeneratingScene.hpp \
   C:/mycode/I2P2-TowerDefense/DebugMacro.hpp

@@ -169,6 +169,12 @@
 },
 {
   "directory": "C:/mycode/I2P2-TowerDefense/build",
+  "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\UI\\Component\\DrawBoard.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\UI\\Component\\DrawBoard.cpp",
+  "file": "C:/mycode/I2P2-TowerDefense/UI/Component/DrawBoard.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/DrawBoard.cpp.obj"
+},
+{
+  "directory": "C:/mycode/I2P2-TowerDefense/build",
   "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Enemy\\Enemy.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Enemy\\Enemy.cpp",
   "file": "C:/mycode/I2P2-TowerDefense/Enemy/Enemy.cpp",
   "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Enemy/Enemy.cpp.obj"
@@ -271,6 +277,24 @@
 },
 {
   "directory": "C:/mycode/I2P2-TowerDefense/build",
+  "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Turret\\Mine.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Turret\\Mine.cpp",
+  "file": "C:/mycode/I2P2-TowerDefense/Turret/Mine.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Mine.cpp.obj"
+},
+{
+  "directory": "C:/mycode/I2P2-TowerDefense/build",
+  "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Turret\\ExplosionMine.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Turret\\ExplosionMine.cpp",
+  "file": "C:/mycode/I2P2-TowerDefense/Turret/ExplosionMine.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/ExplosionMine.cpp.obj"
+},
+{
+  "directory": "C:/mycode/I2P2-TowerDefense/build",
+  "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Turret\\TeleportMine.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Turret\\TeleportMine.cpp",
+  "file": "C:/mycode/I2P2-TowerDefense/Turret/TeleportMine.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/TeleportMine.cpp.obj"
+},
+{
+  "directory": "C:/mycode/I2P2-TowerDefense/build",
   "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Scene\\WinScene.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Scene\\WinScene.cpp",
   "file": "C:/mycode/I2P2-TowerDefense/Scene/WinScene.cpp",
   "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/WinScene.cpp.obj"
@@ -352,5 +376,23 @@
   "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Scene\\SurvivalPlayScene.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Scene\\SurvivalPlayScene.cpp",
   "file": "C:/mycode/I2P2-TowerDefense/Scene/SurvivalPlayScene.cpp",
   "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.obj"
+},
+{
+  "directory": "C:/mycode/I2P2-TowerDefense/build",
+  "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Scene\\StageSelectHandWriteScene.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Scene\\StageSelectHandWriteScene.cpp",
+  "file": "C:/mycode/I2P2-TowerDefense/Scene/StageSelectHandWriteScene.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StageSelectHandWriteScene.cpp.obj"
+},
+{
+  "directory": "C:/mycode/I2P2-TowerDefense/build",
+  "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Scene\\DataGeneratingScene.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Scene\\DataGeneratingScene.cpp",
+  "file": "C:/mycode/I2P2-TowerDefense/Scene/DataGeneratingScene.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/DataGeneratingScene.cpp.obj"
+},
+{
+  "directory": "C:/mycode/I2P2-TowerDefense/build",
+  "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Scene\\BlackPlayScene.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Scene\\BlackPlayScene.cpp",
+  "file": "C:/mycode/I2P2-TowerDefense/Scene/BlackPlayScene.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/BlackPlayScene.cpp.obj"
 }
 ]
