@@ -8,6 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Bullet/Bullet.cpp.obj.d"
   "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Bullet/FireBullet.cpp.obj"
   "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Bullet/FireBullet.cpp.obj.d"
+  "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Bullet/FrostBullet.cpp.obj"
+  "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Bullet/FrostBullet.cpp.obj.d"
   "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Bullet/LaserBullet.cpp.obj"
   "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Bullet/LaserBullet.cpp.obj.d"
   "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Bullet/MissileBullet.cpp.obj"

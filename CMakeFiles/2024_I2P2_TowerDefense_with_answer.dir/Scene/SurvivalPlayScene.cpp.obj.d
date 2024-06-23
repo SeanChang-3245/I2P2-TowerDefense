@@ -929,4 +929,9 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/SurvivalPlayScene.cpp.ob
   C:/mycode/I2P2-TowerDefense/./Turret/Shovel.hpp \
   C:/mycode/I2P2-TowerDefense/./DebugMacro.hpp \
   C:/mycode/I2P2-TowerDefense/./Bullet/FireBullet.hpp \
-  C:/mycode/I2P2-TowerDefense/./Bullet/Bullet.hpp
+  C:/mycode/I2P2-TowerDefense/./Bullet/Bullet.hpp \
+  C:/mycode/I2P2-TowerDefense/./Turret/Potion.hpp \
+  C:/mycode/I2P2-TowerDefense/./Turret/FrostPotion.hpp \
+  C:/mycode/I2P2-TowerDefense/./Turret/BerserkPotion.hpp \
+  C:/mycode/I2P2-TowerDefense/./Turret/ExplosionMine.hpp \
+  C:/mycode/I2P2-TowerDefense/./Turret/Mine.hpp

@@ -859,6 +859,8 @@ CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Turret/Turret.cpp.obj: \
   C:/mycode/I2P2-TowerDefense/./Scene/PlayScene.hpp \
   C:/allegro/include/allegro5/allegro_audio.h \
   C:/mycode/I2P2-TowerDefense/./Scene/NormalPlayScene.hpp \
+  C:/mycode/I2P2-TowerDefense/./Scene/SurvivalPlayScene.hpp \
+  C:/mycode/I2P2-TowerDefense/./Scene/BlackPlayScene.hpp \
   C:/mycode/I2P2-TowerDefense/Turret/Turret.hpp \
   C:/mycode/I2P2-TowerDefense/./UI/Component/ImageButton.hpp \
   C:/mycode/I2P2-TowerDefense/./Engine/Collider.hpp

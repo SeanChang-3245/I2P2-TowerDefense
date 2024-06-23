@@ -200,6 +200,30 @@ Bullet/FireBullet.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Bullet/FireBullet.cpp.s
 .PHONY : Bullet/FireBullet.cpp.s
 
+Bullet/FrostBullet.obj: Bullet/FrostBullet.cpp.obj
+.PHONY : Bullet/FrostBullet.obj
+
+# target to build an object file
+Bullet/FrostBullet.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Bullet/FrostBullet.cpp.obj
+.PHONY : Bullet/FrostBullet.cpp.obj
+
+Bullet/FrostBullet.i: Bullet/FrostBullet.cpp.i
+.PHONY : Bullet/FrostBullet.i
+
+# target to preprocess a source file
+Bullet/FrostBullet.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Bullet/FrostBullet.cpp.i
+.PHONY : Bullet/FrostBullet.cpp.i
+
+Bullet/FrostBullet.s: Bullet/FrostBullet.cpp.s
+.PHONY : Bullet/FrostBullet.s
+
+# target to generate assembly for a file
+Bullet/FrostBullet.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2024_I2P2_TowerDefense_with_answer.dir\build.make CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Bullet/FrostBullet.cpp.s
+.PHONY : Bullet/FrostBullet.cpp.s
+
 Bullet/LaserBullet.obj: Bullet/LaserBullet.cpp.obj
 .PHONY : Bullet/LaserBullet.obj
 
@@ -1730,6 +1754,9 @@ help:
 	@echo ... Bullet/FireBullet.obj
 	@echo ... Bullet/FireBullet.i
 	@echo ... Bullet/FireBullet.s
+	@echo ... Bullet/FrostBullet.obj
+	@echo ... Bullet/FrostBullet.i
+	@echo ... Bullet/FrostBullet.s
 	@echo ... Bullet/LaserBullet.obj
 	@echo ... Bullet/LaserBullet.i
 	@echo ... Bullet/LaserBullet.s

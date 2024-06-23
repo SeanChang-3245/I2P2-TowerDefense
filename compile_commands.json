@@ -109,6 +109,12 @@
 },
 {
   "directory": "C:/mycode/I2P2-TowerDefense/build",
+  "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\Bullet\\FrostBullet.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\Bullet\\FrostBullet.cpp",
+  "file": "C:/mycode/I2P2-TowerDefense/Bullet/FrostBullet.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Bullet/FrostBullet.cpp.obj"
+},
+{
+  "directory": "C:/mycode/I2P2-TowerDefense/build",
   "command": "C:\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/includes_CXX.rsp -g -o CMakeFiles\\2024_I2P2_TowerDefense_with_answer.dir\\UI\\Animation\\ExplosionEffect.cpp.obj -c C:\\mycode\\I2P2-TowerDefense\\UI\\Animation\\ExplosionEffect.cpp",
   "file": "C:/mycode/I2P2-TowerDefense/UI/Animation/ExplosionEffect.cpp",
   "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Animation/ExplosionEffect.cpp.obj"
