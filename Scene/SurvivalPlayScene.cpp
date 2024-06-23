@@ -433,7 +433,7 @@ void SurvivalPlayScene::Hit()
 		}
 	}
 }
-
+// #include <iostream>
 void SurvivalPlayScene::UpdateDangerIndicator()
 {
 	// Engine::LOG(Engine::INFO) << "alpha: " << dangerIndicator->Tint.a;
@@ -471,6 +471,7 @@ void SurvivalPlayScene::UpdateDangerIndicator()
 				}
 				float alpha = pos / DangerTime;
 				alpha = std::max(0, std::min(255, static_cast<int>(alpha * alpha * 255)));
+				// std::cout << alpha << std::endl;
 				dangerIndicator->Tint = al_map_rgba(255, 255, 255, alpha);
 				newDeathCountDown = it;
 				break;
