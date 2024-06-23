@@ -19,7 +19,7 @@ file(COPY allegro_monolith-5.2.dll DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 # See README to see how to install mlpack
 # Set to false if you can't build the project with mlpack
 # If you see squiggles line for the first time, still build it, it is normal. After a successful build, the lines will disappear
-set(USE_ML true)
+set(USE_ML false)
 
 # Declare the list that store the source files
 set(SRC_FILES)
@@ -122,6 +122,9 @@ list(APPEND SRC_FILES
     Turret/FrostPotion.cpp
     Turret/BerserkPotion.cpp
     Turret/ShieldPotion.cpp
+    Turret/Mine.cpp
+    Turret/ExplosionMine.cpp
+    Turret/TeleportMine.cpp
     
     Scene/WinScene.cpp
     Scene/MapCreateScene.cpp

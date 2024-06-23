@@ -79,6 +79,7 @@ public:
 	// place turret at (x,y) if possible
 	virtual void PlaceTurret(const int &x, const int &y) override final;
 	virtual void PlacePotion(const int &x, const int &y) override final;
+	virtual void PlaceMine(const int &x, const int &y) override final;
 	virtual void PlaceObject(const int &x, const int &y) override final;
 	// delete turret (x,y) and return half of its price if exist
 	virtual void DeconstructTurret(const int &x, const int &y) override final;

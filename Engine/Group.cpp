@@ -35,7 +35,15 @@ namespace Engine {
 		for (auto it = objects.begin(); it != objects.end();) {
 			auto preIt = it++;
 			if (preIt->second->Visible)
-				preIt->second->Update(deltaTime);
+				try
+				{
+					preIt->second->Update(deltaTime);
+				}
+				catch(const std::exception& e)
+				{
+					continue;
+				}
+				
 		}
 	}
 	void Group::Draw() const {
@@ -98,6 +106,7 @@ namespace Engine {
 	void Group::InsertNewObject(IObject* obj, std::list<std::pair<bool, IObject*>>::iterator it) {
 		insertObject(true, obj, it);
 	}
+
 	void Group::AddNewControl(IControl* ctrl) {
 		addControl(true, ctrl);
 	}

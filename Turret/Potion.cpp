@@ -11,8 +11,6 @@
 #include "Potion.hpp"
 #include "Enemy/Enemy.hpp"
 
-inline static std::string Potionbase="play/shovel.png";
-inline static std::string Potionimg="play/shovel.png";
 
 Potion::Potion(std::string Potionbase, std::string Potionimg, int r, int dmg, int p, int price, float x, float y) : Turret(Potionbase, Potionimg, x, y, r, price, 0, POTION)
 {

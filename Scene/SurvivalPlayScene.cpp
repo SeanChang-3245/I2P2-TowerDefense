@@ -229,6 +229,7 @@ void SurvivalPlayScene::ConstructUI()
 		1294, 252,
 		information_x, information_y,
 		0, 0, 0, 255,
+		0,
 		details);
 	btn->SetOnClickCallback(std::bind(&SurvivalPlayScene::UIBtnClicked, this, 4));
 	UIGroup->AddNewControlObject(btn);
@@ -512,6 +513,11 @@ void SurvivalPlayScene::PlaceObject(const int &x, const int &y)
 }
 
 void SurvivalPlayScene::PlacePotion(const int &x, const int &y)
+{
+	
+}
+
+void SurvivalPlayScene::PlaceMine(const int &x, const int &y)
 {
 	
 }

@@ -4,6 +4,7 @@
 #include <list>
 #include <string>
 #include <vector>
+#include "UI/Component/ImageButton.hpp"
 
 #include "Engine/Sprite.hpp"
 
@@ -12,10 +13,10 @@ class PlayScene;
 
 enum Turret_Type
 {
-    TURRET, TOOL, POTION
+    TURRET, TOOL, POTION, MINE
 };
 
-class Turret: public Engine::Sprite {
+class Turret: public Engine::Sprite, public Engine::IControl {
 protected:
     Turret_Type type;
     int price;
@@ -23,6 +24,9 @@ protected:
     float reload = 0;
     float rotateRadian = 2 * ALLEGRO_PI;
     float bullet_speed;
+    bool mouseIn;
+    int init;
+    Engine::ImageButton *Atkbtn, *Reloadbtn, *Rangebtn;
     Sprite imgBase;
     std::list<Turret*>::iterator lockedTurretIterator;
     PlayScene* getPlayScene();
@@ -32,6 +36,7 @@ protected:
 public:
     bool Enabled = true;
     bool Freeze;
+    bool MenuVisible;
     int Berserker;
     // decide whether the turret is preview or a real one
     bool Preview = false;
@@ -42,5 +47,13 @@ public:
     void Draw() const override;
 	int GetPrice() const;
     Turret_Type GetType() const;
+    void OnMouseMove(int mx, int my) override;
+    void OnMouseDown(int button, int mx, int my) override;
+    void TurretClicked();
+    void ShowMenu();
+    void DestroyMenu();
+    void AtkUpClick();
+    void RangeUpClick();
+    void ReloadUpClick();
 };
 #endif // TURRET_HPP

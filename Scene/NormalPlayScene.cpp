@@ -8,6 +8,7 @@
 #include <string>
 #include <memory>
 
+#include "Engine/Point.hpp"
 #include "Engine/AudioHelper.hpp"
 #include "UI/Animation/DirtyEffect.hpp"
 #include "Enemy/Enemy.hpp"
@@ -36,7 +37,8 @@
 #include "Turret/Potion.hpp"
 #include "Turret/FrostPotion.hpp"
 #include "Turret/BerserkPotion.hpp"
-
+#include "Turret/ExplosionMine.hpp"
+// #include "Turret/TeleportMine.hpp"
 
 void NormalPlayScene::Initialize()
 {
@@ -95,12 +97,14 @@ void NormalPlayScene::OnMouseMove(int mx, int my)
 	imgTarget->Visible = true;
 	imgTarget->Position.x = x * BlockSize;
 	imgTarget->Position.y = y * BlockSize;
+
 }
 
 void NormalPlayScene::PlaceObject(const int &x, const int &y)
 {
 	if (preview->GetType()==TURRET) PlaceTurret(x, y);
 	else if (preview->GetType()==POTION) PlacePotion(x, y);
+	else if (preview->GetType()==MINE) PlaceMine(x, y);
 }
 
 void NormalPlayScene::OnMouseUp(int button, int mx, int my)
@@ -236,6 +240,7 @@ void NormalPlayScene::ConstructUI()
 		1294, 252,
 		information_x, information_y,
 		0, 0, 0, 255,
+		0,
 		details);
 	btn->SetOnClickCallback(std::bind(&NormalPlayScene::UIBtnClicked, this, 4));
 	UIGroup->AddNewControlObject(btn);
@@ -248,7 +253,7 @@ void NormalPlayScene::ConstructUI()
 		1370, 252,
 		information_x, information_y,
 		0, 0, 0, 255,
-		FrostPotion::Price, FrostPotion::Range, FrostPotion::Range,
+		FrostPotion::Price, FrostPotion::Range, FrostPotion::Duration,
 		details);
 	btn->SetOnClickCallback(std::bind(&NormalPlayScene::UIBtnClicked, this, 5));
 	UIGroup->AddNewControlObject(btn);
@@ -256,12 +261,12 @@ void NormalPlayScene::ConstructUI()
 	details.clear();
 	details.push_back("freeze the enemies");
 	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
-		Engine::Sprite("play/potion.png", 1370, 252, 0, 0, 0, 0),
-		Engine::Sprite("play/potion.png", 1370, 252, 0, 0, 0, 0),
+		Engine::Sprite(FrostPotion::Potionbase, 1370, 252, 0, 0, 0, 0),
+		Engine::Sprite(FrostPotion::Potionimg, 1370, 252, 0, 0, 0, 0),
 		1370, 252,
 		information_x, information_y,
 		0, 0, 0, 255,
-		FrostPotion::Price, FrostPotion::Range, FrostPotion::Range,
+		FrostPotion::Price, FrostPotion::Range, FrostPotion::Duration,
 		details);
 	btn->SetOnClickCallback(std::bind(&NormalPlayScene::UIBtnClicked, this, 5));
 	UIGroup->AddNewControlObject(btn);
@@ -269,15 +274,41 @@ void NormalPlayScene::ConstructUI()
 	details.clear();
 	details.push_back("Berserk!!");
 	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
-		Engine::Sprite("play/potion.png", 1444, 252, 0, 0, 0, 0),
-		Engine::Sprite("play/potion.png", 1444, 252, 0, 0, 0, 0),
-		1444, 252,
+		Engine::Sprite(BerserkPotion::Potionbase, 1446, 252, 0, 0, 0, 0),
+		Engine::Sprite(BerserkPotion::Potionimg, 1446, 252, 0, 0, 0, 0),
+		1446, 252,
 		information_x, information_y,
 		0, 0, 0, 255,
 		BerserkPotion::Price, BerserkPotion::Range, BerserkPotion::Range,
 		details);
 	btn->SetOnClickCallback(std::bind(&NormalPlayScene::UIBtnClicked, this, 6));
 	UIGroup->AddNewControlObject(btn);
+
+	details.clear();
+	details.push_back("Explosion mine");
+	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
+		Engine::Sprite(ExplosionMine::Minebase, 1522, 252, 0, 0, 0, 0),
+		Engine::Sprite(ExplosionMine::Mineimg, 1522, 252, 0, 0, 0, 0),
+		1522, 252,
+		information_x, information_y,
+		0, 0, 0, 255,
+		ExplosionMine::Price,
+		details);
+	btn->SetOnClickCallback(std::bind(&NormalPlayScene::UIBtnClicked, this, 7));
+	UIGroup->AddNewControlObject(btn);
+
+	// details.clear();
+	// details.push_back("Teleport mine");
+	// btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
+	// 	Engine::Sprite("play/Mine.png", 1294, 328, 0, 0, 0, 0),
+	// 	Engine::Sprite("play/Mine.png", 1294, 328, 0, 0, 0, 0),
+	// 	1294, 328,
+	// 	information_x, information_y,
+	// 	0, 0, 0, 255,
+	// 	TeleportMine::Price,
+	// 	details);
+	// btn->SetOnClickCallback(std::bind(&NormalPlayScene::UIBtnClicked, this, 8));
+	// UIGroup->AddNewControlObject(btn);
 	// Background
 	// UIGroup->AddNewObject(new Engine::Image("play/sand.png", 1280, 0, 320, 832));
 
@@ -325,6 +356,10 @@ void NormalPlayScene::UIBtnClicked(int id)
 		preview = new FrostPotion(0, 0);
 	else if (id == 6 && money >= BerserkPotion::Price)
 		preview = new BerserkPotion(0, 0);
+	else if (id == 7 && money >= ExplosionMine::Price)
+		preview = new ExplosionMine(0, 0);
+	// else if (id == 8 && money >= TeleportMine::Price)
+	// 	preview = new TeleportMine(0, 0);
 
 
 	if (!preview)
@@ -364,15 +399,14 @@ void NormalPlayScene::PlaceTurret(const int &x, const int &y)
 	// Remove Preview.
 	preview->GetObjectIterator()->first = false;
 	UIGroup->RemoveObject(preview->GetObjectIterator());
-	
+
 	// Construct real turret.
 	preview->Position.x = x * BlockSize + BlockSize / 2;
 	preview->Position.y = y * BlockSize + BlockSize / 2;
 	preview->Enabled = true;
 	preview->Preview = false;
 	preview->Tint = al_map_rgba(255, 255, 255, 255);
-	TowerGroup->AddNewObject(preview);
-	
+	TowerGroup->AddNewControlObject(preview);
 	// To keep responding when paused.
 	preview->Update(0);
 	
@@ -400,17 +434,40 @@ void NormalPlayScene::PlaceTurret(const int &x, const int &y)
 	preview->Preview = false;
 	preview->Tint = al_map_rgba(255, 255, 255, 255);
 	TowerGroup->AddNewObject(preview);
-	
+
 	// To keep responding when paused.
 	preview->Update(0);
 	
 	// Remove Preview.
 	preview = nullptr;
 
-	// mapState[y][x] = TILE_OCCUPIED;
-	// OnMouseMove(mx, my);
-	
+	mapState[y][x] = TILE_OCCUPIED;	
  }
+void NormalPlayScene::PlaceMine(const int &x, const int &y)
+{
+	if (!preview || preview->GetType() != MINE)
+		return;
+	EarnMoney(-preview->GetPrice());
+	
+	// Remove Preview.
+	preview->GetObjectIterator()->first = false;
+	UIGroup->RemoveObject(preview->GetObjectIterator());
+	
+	// Construct real turret.
+	preview->Position.x = x * BlockSize + BlockSize / 2;
+	preview->Position.y = y * BlockSize + BlockSize / 2;
+	preview->Enabled = true;
+	preview->Preview = false;
+	preview->Tint = al_map_rgba(255, 255, 255, 255);
+	TowerGroup->AddNewObject(preview);
+
+	// To keep responding when paused.
+	preview->Update(0);
+	
+	// Remove Preview.
+	preview = nullptr;
+
+}
 
 void NormalPlayScene::DeconstructTurret(const int &x, const int &y)
 {
@@ -443,8 +500,7 @@ void NormalPlayScene::DeconstructTurret(const int &x, const int &y)
 	UIGroup->RemoveObject(preview->GetObjectIterator());
 
 	// Delete target turret.
-	TowerGroup->RemoveObject(target_turret->GetObjectIterator());
-
+	TowerGroup->RemoveControlObject(target_turret->GetControlIterator(), target_turret->GetObjectIterator());
 	// To keep responding when paused.
 	preview->Update(0);
 	
