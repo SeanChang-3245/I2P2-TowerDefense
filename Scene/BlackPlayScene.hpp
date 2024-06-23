@@ -25,6 +25,9 @@ private:
 
 public:
 	Turret* preview;
+    float blackTicks;
+    std::vector<std::vector<Engine::Sprite *> > blackSquare;
+    std::vector<std::vector<int> > blackA;
 	std::list<std::pair<int, float>> enemyWaveData;
 	// static bool DebugMode;
 	// static const std::vector<Engine::Point> directions;
@@ -91,6 +94,7 @@ public:
 	explicit BlackPlayScene() = default;
 	void ReadEnemyWave();
 	void UpdateSpawnEnemy(float deltaTime);
+    void UpdateBlackFlash(float deltaTime);
 	void ClearCloseEnemy();
 
 	// static Engine::Point GetClientSize();
