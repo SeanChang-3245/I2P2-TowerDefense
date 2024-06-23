@@ -47,6 +47,7 @@ public:
 	// static const int cost = 0;
 	float reachEndTime;
 	bool Frozen;
+	int FrostCount;
 	int Berserk;
 	bool ResetShield;
 	int Shield;
@@ -63,7 +64,7 @@ public:
 	void set_froze_timer(float duration);
 	void set_pass_intermediate_point(bool pass);
 	bool get_pass_intermediate_point() const;
-
+	void Freeze();
 	// float get_max_HP() const;
 	// int get_cost() const;
 	// float get_speed() const;
