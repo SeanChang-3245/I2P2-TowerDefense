@@ -28,6 +28,7 @@ public:
             int img_x, int img_y,
             int inf_x, int inf_y,
             unsigned char r, unsigned char g, unsigned char b, unsigned char a, 
+            int cost,
             std::vector<std::string> details);
     
     // constructor for potion
@@ -39,5 +40,6 @@ public:
             std::vector<std::string> details);
 	void Update(float deltaTime) override;
 	void Draw() const override;
+        
 };
 #endif // TURRETBUTTON_HPP

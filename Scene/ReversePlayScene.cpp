@@ -518,7 +518,6 @@ void ReversePlayScene::PlaceTurret(const int &x, const int &y)
 		if(!it)
 			return;
 	}
-
 	
 	// Construct real turret.
 	cur_turret->Position.x = x * BlockSize + BlockSize / 2;
@@ -534,6 +533,11 @@ void ReversePlayScene::PlaceTurret(const int &x, const int &y)
 	cur_turret = nullptr;
 
 	mapState[y][x] = TILE_OCCUPIED;
+}
+
+void ReversePlayScene::PlaceMine(const int &x, const int &y)
+{
+	
 }
 
 void ReversePlayScene::SetChooseTurretPositionFunc(std::function<void(void)> selectFunc)

@@ -29,8 +29,9 @@ Turret::Turret(std::string imgBase, std::string imgTurret, float x, float y, flo
 	Berserker=0;	
 	mouseIn=0;
 	MenuVisible=0;
+	init = 10;
 }
-#include <iostream>
+
 void Turret::Update(float deltaTime) {
 	Sprite::Update(deltaTime);
 	PlayScene* scene = getPlayScene();
@@ -40,6 +41,7 @@ void Turret::Update(float deltaTime) {
 	if (!Enabled)
 		return;
 	if (Target) {
+		if (init-->0) return ;
 		Engine::Point diff = Target->Position - Position;
 		if (diff.Magnitude() > CollisionRadius) {
 			Target->lockedTurrets.erase(lockedTurretIterator);
@@ -51,6 +53,7 @@ void Turret::Update(float deltaTime) {
 		// Lock first seen target.
 		// Can be improved by Spatial Hash, Quad Tree, ...
 		// However simply loop through all enemies is enough for this program.
+		if (init-->0) return ;
 		for (auto& it : scene->EnemyGroup->GetObjects()) {
 			Engine::Point diff = it->Position - Position;
 			if (diff.Magnitude() <= CollisionRadius) {
@@ -149,13 +152,9 @@ Turret_Type Turret::GetType() const{
 	return type;
 }
 
-void Turret::UIBtnClicked()
-{
-
-}
-
 void Turret::OnMouseMove(int mx, int my)
 {
+	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())=="play-reverse") return;
 	PlayScene* scene = getPlayScene();
 	int BlockSize=scene->BlockSize;
 	Engine::Point diff = Position - Engine::Point(mx, my);
@@ -163,6 +162,8 @@ void Turret::OnMouseMove(int mx, int my)
 }
 
 void Turret::OnMouseDown(int button, int mx, int my) {
+	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())=="play-reverse") return;
+	if (type!=TURRET) return ;
 	NormalPlayScene* scene = dynamic_cast<NormalPlayScene*>(getPlayScene());
 	if (scene->preview) return ;
 	if ((button == 1) && mouseIn) {
@@ -186,6 +187,7 @@ void Turret::OnMouseDown(int button, int mx, int my) {
 
 void Turret::TurretClicked()
 {
+	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())=="play-reverse") return;
 	if(!MenuVisible) DestroyMenu();
 	else ShowMenu();
 	MenuVisible=!MenuVisible;
@@ -193,6 +195,8 @@ void Turret::TurretClicked()
 
 void Turret::ShowMenu()
 {
+	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())=="play-reverse") return;
+	if (type!=TURRET) return ;
 	PlayScene* scene = getPlayScene();
 	int BlockSize=scene->BlockSize;
 	// Atkbtn = new Engine::ImageButton("play/AtkUp.png", "play/AtkUp_Hovered.png", Position.x + BlockSize/2, Position.y + BlockSize/2, scene->BlockSize, scene->BlockSize);
@@ -211,6 +215,7 @@ void Turret::ShowMenu()
 void Turret::DestroyMenu()
 {
 	PlayScene* scene = getPlayScene();
+	if (type!=TURRET) return ;
 	// if (Atkbtn) scene->UIGroup->RemoveControlObject(Atkbtn->GetControlIterator(), Atkbtn->GetObjectIterator());
 	if (Rangebtn)
 	{
@@ -226,6 +231,7 @@ void Turret::DestroyMenu()
 
 void Turret::ReloadUpClick()
 {
+	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())=="play-reverse") return;
 	PlayScene* scene = getPlayScene();
 	coolDown=coolDown/3*2;
 	scene->EarnMoney(-1*25);
@@ -233,6 +239,7 @@ void Turret::ReloadUpClick()
 
 void Turret::RangeUpClick()
 {
+	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())=="play-reverse") return;
 	PlayScene* scene = getPlayScene();
 	CollisionRadius=CollisionRadius/2*3;
 	scene->EarnMoney(-1*25);

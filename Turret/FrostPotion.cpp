@@ -32,7 +32,6 @@ void FrostPotion::resumeenemy(Enemy* enemy)
 	enemy->Frozen=0;
 }
 
-#include <iostream>
 void FrostPotion::effectturret(Turret *turret)
 {
 	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())=="play-normal") return;

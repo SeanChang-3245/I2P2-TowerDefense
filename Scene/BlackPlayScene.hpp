@@ -85,6 +85,7 @@ public:
 	virtual bool handle_revive() override final;
 	virtual void PlacePotion(const int &x, const int &y) override final;
 	virtual void PlaceObject(const int &x, const int &y) override final;
+	virtual void PlaceMine(const int &x, const int &y) override final;
 
 // ========= Non-Virtual Functions ============ //
 
