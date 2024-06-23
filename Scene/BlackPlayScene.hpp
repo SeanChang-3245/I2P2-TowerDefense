@@ -24,7 +24,7 @@ private:
 	// std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
 
 public:
-	Turret* preview;
+	// Turret* preview;
     float blackTicks;
     std::vector<std::vector<Engine::Sprite *> > blackSquare;
     std::vector<std::vector<int> > blackA;

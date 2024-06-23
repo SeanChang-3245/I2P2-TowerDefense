@@ -30,7 +30,7 @@ private:
 public:
     static const float EnemySpawnDuration; 
     static const float PlayerAutoEarnMoneyDuration;
-	Turret* preview;
+	// Turret* preview;
 	
 // ========= Virtual Functions Override ============ // 	
 	

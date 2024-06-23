@@ -11,6 +11,8 @@
 #include "Engine/IScene.hpp"
 #include "Scene/PlayScene.hpp"
 #include "Scene/NormalPlayScene.hpp"
+#include "Scene/SurvivalPlayScene.hpp"
+#include "Scene/BlackPlayScene.hpp"
 #include "Engine/Point.hpp"
 #include "Turret.hpp"
 #include "Engine/Collider.hpp"
@@ -162,7 +164,7 @@ void Turret::OnMouseMove(int mx, int my)
 void Turret::OnMouseDown(int button, int mx, int my) {
 	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())=="play-reverse") return;
 	if (type!=TURRET) return ;
-	NormalPlayScene* scene = dynamic_cast<NormalPlayScene*>(getPlayScene());
+	PlayScene* scene = dynamic_cast<PlayScene*>(getPlayScene());
 	if (scene->preview) return ;
 	if ((button == 1) && mouseIn) {
 		if (!MenuVisible)

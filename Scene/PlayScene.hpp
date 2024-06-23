@@ -54,7 +54,7 @@ public:
 	float ticks;
 	float deathCountDown;
 	int MapId;
-
+	Turret* preview;
 	// Map tiles.
 	Group* TileMapGroup;
 	Group* GroundEffectGroup;
