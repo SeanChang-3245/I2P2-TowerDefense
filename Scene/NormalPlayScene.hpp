@@ -24,7 +24,7 @@ private:
 	// std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
 
 public:
-	Turret* preview;
+	// Turret* preview;
 	std::list<std::pair<int, float>> enemyWaveData;
 	// static bool DebugMode;
 	// static const std::vector<Engine::Point> directions;
