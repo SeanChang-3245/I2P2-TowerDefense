@@ -25,8 +25,10 @@ protected:
     float rotateRadian = 2 * ALLEGRO_PI;
     float bullet_speed;
     bool mouseIn;
+    bool FrostUpdate;
     int init;
-    Engine::ImageButton *Atkbtn, *Reloadbtn, *Rangebtn;
+    bool AbletocastSnowball;
+    Engine::ImageButton *Frostbtn, *Reloadbtn, *Rangebtn;
     Sprite imgBase;
     std::list<Turret*>::iterator lockedTurretIterator;
     PlayScene* getPlayScene();
@@ -43,6 +45,7 @@ public:
     Enemy* Target = nullptr;
     Turret *Target_tower;
     Turret(std::string imgBase, std::string imgTurret, float x, float y, float radius, int price, float coolDown, Turret_Type type);
+    ~Turret();
     void Update(float deltaTime) override;
     void Draw() const override;
 	int GetPrice() const;
@@ -52,7 +55,7 @@ public:
     void TurretClicked();
     void ShowMenu();
     void DestroyMenu();
-    void AtkUpClick();
+    void FrostClick();
     void RangeUpClick();
     void ReloadUpClick();
 };
