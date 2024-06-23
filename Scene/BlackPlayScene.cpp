@@ -33,11 +33,19 @@
 #include "DebugMacro.hpp"
 #include "Bullet/FireBullet.hpp"
 #include "UI/Component/ImageButton.hpp"
+#include "Turret/Potion.hpp"
+#include "Turret/FrostPotion.hpp"
+#include "Turret/BerserkPotion.hpp"
+#include "Turret/ExplosionMine.hpp"
 
 void BlackPlayScene::Initialize()
 {
     Engine::LOG(Engine::INFO) << "enter BlackPlayScene::initialize\n";
     PlayScene::Initialize();
+
+    blackSquare = std::vector<std::vector<Engine::Sprite *> >(MapHeight, std::vector<Engine::Sprite *> (MapWidth));
+    blackA = std::vector<std::vector<int> >(MapHeight, std::vector<int> (MapWidth,255));
+
     
     if(have_entered_revive_scene)
 	{
@@ -45,8 +53,7 @@ void BlackPlayScene::Initialize()
 		return;
 	}
     
-    std::vector<std::vector<Engine::Sprite*>> blackSquare(MapHeight, std::vector<Engine::Sprite*>(MapWidth));
-
+  
     for(int i=0; i<MapHeight; ++ i)
     {
         for(int j=0; j<MapWidth; ++j)
@@ -56,7 +63,7 @@ void BlackPlayScene::Initialize()
             AddNewObject(blackSquare[i][j]);
         }
     }
-
+    blackTicks = 8;
     deathCountDown = -1;
     ReadEnemyWave();
     preview = nullptr;
@@ -71,6 +78,7 @@ void BlackPlayScene::Update(float deltaTime)
     {
         IScene::Update(deltaTime);
         UpdateSpawnEnemy(deltaTime);
+        UpdateBlackFlash(deltaTime);
     }
     if (preview)
     {
@@ -78,6 +86,27 @@ void BlackPlayScene::Update(float deltaTime)
         // To keep responding when paused.
         preview->Update(deltaTime);
     }
+}
+
+void BlackPlayScene::UpdateBlackFlash(float deltaTime)
+{
+    blackTicks += deltaTime;
+    double k = 1;
+    if(blackTicks >= 10 && blackTicks < 11)
+    {
+        if(blackTicks < 10.3)
+            k = 0.3 + 15.0/3 * abs(blackTicks - 10.15);
+        else
+            k = 0.5 + 10.0/13 * abs(blackTicks - 10.65);
+        printf("%lf %lf\n",k, blackTicks);
+    }
+    else if(blackTicks >= 11)
+    {
+        blackTicks = 0;
+    }
+    for(int i=0; i<MapHeight; ++i)
+        for(int j=0; j<MapWidth; ++j)
+            blackSquare[i][j]->Tint = al_map_rgba(255,255,255,blackA[i][j] * k);
 }
 
 void BlackPlayScene::OnMouseDown(int button, int mx, int my)
@@ -118,7 +147,7 @@ void BlackPlayScene::OnMouseUp(int button, int mx, int my)
     {
         if (mapState[y][x] != TILE_OCCUPIED)
         {
-            PlaceTurret(x, y);
+            PlaceObject(x, y);
         }
         if (mapState[y][x] == TILE_OCCUPIED)
         {
@@ -180,122 +209,159 @@ void BlackPlayScene::ConstructUI()
 {
     PlayScene::ConstructUI();
 
-    std::vector<std::string> details;
-    HoverTurretButton *btn;
-    const int information_x = 1294;
-    const int information_y = 400;
+	std::vector<std::string> details;
+	HoverTurretButton *btn;
+	const int information_x = 1294;
+	const int information_y = 400;
 
-    // Turret 1
-    btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
-                                Engine::Sprite("play/tower-base.png", 1294, 176, 0, 0, 0, 0),
-                                Engine::Sprite("play/turret-1.png", 1294, 176 - 8, 0, 0, 0, 0),
-                                1294, 176,
-                                information_x, information_y,
-                                0, 0, 0, 255,
-                                MachineGunTurret::Price, MachineGunTurret::Range, MachineGunTurret::Damage, MachineGunTurret::Reload);
-    btn->SetOnClickCallback(std::bind(&BlackPlayScene::UIBtnClicked, this, 0));
-    UIGroup->AddNewControlObject(btn);
+	// Turret 1
+	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
+		Engine::Sprite("play/tower-base.png", 1294, 176, 0, 0, 0, 0),
+		Engine::Sprite("play/turret-1.png", 1294, 176 - 8, 0, 0, 0, 0),
+		1294, 176,
+		information_x, information_y,
+		0, 0, 0, 255,
+		MachineGunTurret::Price, MachineGunTurret::Range, MachineGunTurret::Damage, MachineGunTurret::Reload);
+	btn->SetOnClickCallback(std::bind(&BlackPlayScene::UIBtnClicked, this, 0));
+	UIGroup->AddNewControlObject(btn);
 
-    // Turret 2
-    btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
-                                Engine::Sprite("play/tower-base.png", 1370, 176, 0, 0, 0, 0),
-                                Engine::Sprite("play/turret-2.png", 1370, 176 - 8, 0, 0, 0, 0),
-                                1370, 176,
-                                information_x, information_y,
-                                0, 0, 0, 255,
-                                LaserTurret::Price, LaserTurret::Range, LaserTurret::Damage, LaserTurret::Reload);
-    btn->SetOnClickCallback(std::bind(&BlackPlayScene::UIBtnClicked, this, 1));
-    UIGroup->AddNewControlObject(btn);
+	// Turret 2
+	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
+		Engine::Sprite("play/tower-base.png", 1370, 176, 0, 0, 0, 0),
+		Engine::Sprite("play/turret-2.png", 1370, 176 - 8, 0, 0, 0, 0),
+		1370, 176,
+		information_x, information_y,
+		0, 0, 0, 255,
+		LaserTurret::Price, LaserTurret::Range, LaserTurret::Damage, LaserTurret::Reload);
+	btn->SetOnClickCallback(std::bind(&BlackPlayScene::UIBtnClicked, this, 1));
+	UIGroup->AddNewControlObject(btn);
 
-    // Turret 3
-    btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
-                                Engine::Sprite("play/tower-base.png", 1446, 176, 0, 0, 0, 0),
-                                Engine::Sprite("play/turret-3.png", 1446, 176, 0, 0, 0, 0),
-                                1446, 176,
-                                information_x, information_y,
-                                0, 0, 0, 255,
-                                MissileTurret::Price, MissileTurret::Range, MissileTurret::Damage, MissileTurret::Reload);
-    btn->SetOnClickCallback(std::bind(&BlackPlayScene::UIBtnClicked, this, 2));
-    UIGroup->AddNewControlObject(btn);
+	// Turret 3
+	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
+		Engine::Sprite("play/tower-base.png", 1446, 176, 0, 0, 0, 0),
+		Engine::Sprite("play/turret-3.png", 1446, 176, 0, 0, 0, 0),
+		1446, 176,
+		information_x, information_y,
+		0, 0, 0, 255,
+		MissileTurret::Price, MissileTurret::Range, MissileTurret::Damage, MissileTurret::Reload);
+	btn->SetOnClickCallback(std::bind(&BlackPlayScene::UIBtnClicked, this, 2));
+	UIGroup->AddNewControlObject(btn);
 
-    // Turret 4
-    btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
-                                Engine::Sprite("play/tower-base.png", 1522, 176, 0, 0, 0, 0),
-                                Engine::Sprite("play/turret-6.png", 1522, 176, 0, 0, 0, 0),
-                                1522, 176,
-                                information_x, information_y,
-                                0, 0, 0, 255,
-                                AdvancedMissileTurret::Price, AdvancedMissileTurret::Range, AdvancedMissileTurret::Damage, AdvancedMissileTurret::Reload);
-    btn->SetOnClickCallback(std::bind(&BlackPlayScene::UIBtnClicked, this, 3));
-    UIGroup->AddNewControlObject(btn);
+	// Turret 4
+	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
+		Engine::Sprite("play/tower-base.png", 1522, 176, 0, 0, 0, 0),
+		Engine::Sprite("play/turret-6.png", 1522, 176, 0, 0, 0, 0),
+		1522, 176,
+		information_x, information_y,
+		0, 0, 0, 255,
+		AdvancedMissileTurret::Price, AdvancedMissileTurret::Range, AdvancedMissileTurret::Damage, AdvancedMissileTurret::Reload);
+	btn->SetOnClickCallback(std::bind(&BlackPlayScene::UIBtnClicked, this, 3));
+	UIGroup->AddNewControlObject(btn);
 
-    // Tool 1
-    details.clear();
-    details.push_back("return half price");
-    btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
-                                Engine::Sprite("play/shovel.png", 1294, 252, 0, 0, 0, 0),
-                                Engine::Sprite("play/shovel.png", 1294, 252, 0, 0, 0, 0),
-                                1294, 252,
-                                information_x, information_y,
-                                0, 0, 0, 255,
-                                0,
-                                details);
-    btn->SetOnClickCallback(std::bind(&BlackPlayScene::UIBtnClicked, this, 4));
-    UIGroup->AddNewControlObject(btn);
+	// Tool 1
+	details.clear();
+	details.push_back("return half price");
+	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
+		Engine::Sprite("play/shovel.png", 1294, 252, 0, 0, 0, 0),
+		Engine::Sprite("play/shovel.png", 1294, 252, 0, 0, 0, 0),
+		1294, 252,
+		information_x, information_y,
+		0, 0, 0, 255,
+		0,
+		details);
+	btn->SetOnClickCallback(std::bind(&BlackPlayScene::UIBtnClicked, this, 4));
+	UIGroup->AddNewControlObject(btn);
 
-    // Background
-    // UIGroup->AddNewObject(new Engine::Image("play/sand.png", 1280, 0, 320, 832));
+	details.clear();
+	details.push_back("freeze the enemies");
+	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
+		Engine::Sprite("play/potion.png", 1370, 252, 0, 0, 0, 0),
+		Engine::Sprite("play/potion.png", 1370, 252, 0, 0, 0, 0),
+		1370, 252,
+		information_x, information_y,
+		0, 0, 0, 255,
+		FrostPotion::Price, FrostPotion::Range, FrostPotion::Duration,
+		details);
+	btn->SetOnClickCallback(std::bind(&BlackPlayScene::UIBtnClicked, this, 5));
+	UIGroup->AddNewControlObject(btn);
 
-    // // Text
-    // UIGroup->AddNewObject(new Engine::Label(std::string("Stage ") + std::to_string(MapId), "pirulen.ttf", 32, 1294, 0));
-    // UIGroup->AddNewObject(UIMoney = new Engine::Label(std::string("$") + std::to_string(money), "pirulen.ttf", 24, 1294, 48));
-    // UIGroup->AddNewObject(UIScore = new Engine::Label(std::string("Score: ") + std::to_string(total_score), "pirulen.ttf", 24, 1294, 88));
-    // UIGroup->AddNewObject(UILives = new Engine::Label(std::string("Life ") + std::to_string(lives), "pirulen.ttf", 24, 1294, 128));
+	details.clear();
+	details.push_back("freeze the enemies");
+	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
+		Engine::Sprite(FrostPotion::Potionbase, 1370, 252, 0, 0, 0, 0),
+		Engine::Sprite(FrostPotion::Potionimg, 1370, 252, 0, 0, 0, 0),
+		1370, 252,
+		information_x, information_y,
+		0, 0, 0, 255,
+		FrostPotion::Price, FrostPotion::Range, FrostPotion::Duration,
+		details);
+	btn->SetOnClickCallback(std::bind(&BlackPlayScene::UIBtnClicked, this, 5));
+	UIGroup->AddNewControlObject(btn);
 
-    // // Exit button
-    // Engine::ImageButton *btn2;
-    // btn2 = new Engine::ImageButton("play/dirt.png", "play/floor.png", 1310, 750, 260, 75);
-    // btn2->SetOnClickCallback(std::bind(&BlackPlayScene::ExitOnClick, this));
-    // UIGroup->AddNewControlObject(btn2);
-    // UIGroup->AddNewObject(new Engine::Label("exit", "pirulen.ttf", 32, 1440, 750 + 75.0/2, 0, 0, 0, 255, 0.5, 0.5));
+	details.clear();
+	details.push_back("Berserk!!");
+	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
+		Engine::Sprite(BerserkPotion::Potionbase, 1446, 252, 0, 0, 0, 0),
+		Engine::Sprite(BerserkPotion::Potionimg, 1446, 252, 0, 0, 0, 0),
+		1446, 252,
+		information_x, information_y,
+		0, 0, 0, 255,
+		BerserkPotion::Price, BerserkPotion::Range, BerserkPotion::Range,
+		details);
+	btn->SetOnClickCallback(std::bind(&BlackPlayScene::UIBtnClicked, this, 6));
+	UIGroup->AddNewControlObject(btn);
 
-    // Danger indicator
-    // int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
-    // int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
-    // int shift = 135 + 25;
-    // dangerIndicator = new Engine::Sprite("play/benjamin.png", w - shift, h - shift - 100);
-    // dangerIndicator->Tint.a = 0;
-    // UIGroup->AddNewObject(dangerIndicator);
+	details.clear();
+	details.push_back("Explosion mine");
+	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
+		Engine::Sprite(ExplosionMine::Minebase, 1522, 252, 0, 0, 0, 0),
+		Engine::Sprite(ExplosionMine::Mineimg, 1522, 252, 0, 0, 0, 0),
+		1522, 252,
+		information_x, information_y,
+		0, 0, 0, 255,
+		ExplosionMine::Price,
+		details);
+	btn->SetOnClickCallback(std::bind(&BlackPlayScene::UIBtnClicked, this, 7));
+	UIGroup->AddNewControlObject(btn);
+
 }
 
 void BlackPlayScene::UIBtnClicked(int id)
 {
     if (preview)
-    {
-        UIGroup->RemoveObject(preview->GetObjectIterator());
-        preview = nullptr;
-    }
-    // TODO: [CUSTOM-TURRET]: On callback, create the turret.
-    if (id == 0 && money >= MachineGunTurret::Price)
-        preview = new MachineGunTurret(0, 0);
-    else if (id == 1 && money >= LaserTurret::Price)
-        preview = new LaserTurret(0, 0);
-    else if (id == 2 && money >= MissileTurret::Price)
-        preview = new MissileTurret(0, 0);
-    else if (id == 3 && money >= AdvancedMissileTurret::Price)
-        preview = new AdvancedMissileTurret(0, 0);
-    else if (id == 4)
-        preview = new Shovel(0, 0);
+	{
+		UIGroup->RemoveObject(preview->GetObjectIterator());
+		preview = nullptr;
+	}
+	// TODO: [CUSTOM-TURRET]: On callback, create the turret.
+	if (id == 0 && money >= MachineGunTurret::Price)
+		preview = new MachineGunTurret(0, 0);
+	else if (id == 1 && money >= LaserTurret::Price)
+		preview = new LaserTurret(0, 0);
+	else if (id == 2 && money >= MissileTurret::Price)
+		preview = new MissileTurret(0, 0);
+	else if (id == 3 && money >= AdvancedMissileTurret::Price)
+		preview = new AdvancedMissileTurret(0, 0);
+	else if (id == 4)
+		preview = new Shovel(0, 0);
+	else if (id == 5 && money >= FrostPotion::Price)
+		preview = new FrostPotion(0, 0);
+	else if (id == 6 && money >= BerserkPotion::Price)
+		preview = new BerserkPotion(0, 0);
+	else if (id == 7 && money >= ExplosionMine::Price)
+		preview = new ExplosionMine(0, 0);
+	// else if (id == 8 && money >= TeleportMine::Price)
+	// 	preview = new TeleportMine(0, 0);
 
 
-    if (!preview)
-        return;
-    preview->Position = Engine::GameEngine::GetInstance().GetMousePosition();
-    preview->Tint = al_map_rgba(255, 255, 255, 200);
-    preview->Enabled = false;
-    preview->Preview = true;
-    UIGroup->AddNewObject(preview);
-    OnMouseMove(Engine::GameEngine::GetInstance().GetMousePosition().x, Engine::GameEngine::GetInstance().GetMousePosition().y);
+	if (!preview)
+		return;
+	preview->Position = Engine::GameEngine::GetInstance().GetMousePosition();
+	preview->Tint = al_map_rgba(255, 255, 255, 200);
+	preview->Enabled = false;
+	preview->Preview = true;
+	UIGroup->AddNewObject(preview);
+	OnMouseMove(Engine::GameEngine::GetInstance().GetMousePosition().x, Engine::GameEngine::GetInstance().GetMousePosition().y);
 }
 
 void BlackPlayScene::PlaceTurret(const int &x, const int &y)
@@ -530,17 +596,61 @@ bool BlackPlayScene::handle_revive()
 
 void BlackPlayScene::PlaceObject(const int &x, const int &t)
 {
-    
+    if (preview->GetType()==TURRET) PlaceTurret(x, t);
+	else if (preview->GetType()==POTION) PlacePotion(x, t);
+	else if (preview->GetType()==MINE) PlaceMine(x, t);
 }
 
 void BlackPlayScene::PlacePotion(const int &x, const int &t)
 {
+    if (!preview || preview->GetType() != POTION)
+		return;
+	EarnMoney(-preview->GetPrice());
+	
+	// Remove Preview.
+	preview->GetObjectIterator()->first = false;
+	UIGroup->RemoveObject(preview->GetObjectIterator());
+	
+	// Construct real turret.
+	preview->Position.x = x * BlockSize + BlockSize / 2;
+	preview->Position.y = t * BlockSize + BlockSize / 2;
+	preview->Enabled = true;
+	preview->Preview = false;
+	preview->Tint = al_map_rgba(255, 255, 255, 255);
+	TowerGroup->AddNewObject(preview);
 
+	// To keep responding when paused.
+	preview->Update(0);
+	
+	// Remove Preview.
+	preview = nullptr;
+
+	mapState[t][x] = TILE_OCCUPIED;	
 }
 
 void BlackPlayScene::PlaceMine(const int &x, const int &y)
 {
+	if (!preview || preview->GetType() != MINE)
+		return;
+	EarnMoney(-preview->GetPrice());
 	
+	// Remove Preview.
+	preview->GetObjectIterator()->first = false;
+	UIGroup->RemoveObject(preview->GetObjectIterator());
+	
+	// Construct real turret.
+	preview->Position.x = x * BlockSize + BlockSize / 2;
+	preview->Position.y = y * BlockSize + BlockSize / 2;
+	preview->Enabled = true;
+	preview->Preview = false;
+	preview->Tint = al_map_rgba(255, 255, 255, 255);
+	TowerGroup->AddNewObject(preview);
+
+	// To keep responding when paused.
+	preview->Update(0);
+	
+	// Remove Preview.
+	preview = nullptr;
 }
 
 void BlackPlayScene::ClearCloseEnemy()

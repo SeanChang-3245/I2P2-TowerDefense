@@ -296,42 +296,6 @@ void NormalPlayScene::ConstructUI()
 		details);
 	btn->SetOnClickCallback(std::bind(&NormalPlayScene::UIBtnClicked, this, 7));
 	UIGroup->AddNewControlObject(btn);
-
-	// details.clear();
-	// details.push_back("Teleport mine");
-	// btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
-	// 	Engine::Sprite("play/Mine.png", 1294, 328, 0, 0, 0, 0),
-	// 	Engine::Sprite("play/Mine.png", 1294, 328, 0, 0, 0, 0),
-	// 	1294, 328,
-	// 	information_x, information_y,
-	// 	0, 0, 0, 255,
-	// 	TeleportMine::Price,
-	// 	details);
-	// btn->SetOnClickCallback(std::bind(&NormalPlayScene::UIBtnClicked, this, 8));
-	// UIGroup->AddNewControlObject(btn);
-	// Background
-	// UIGroup->AddNewObject(new Engine::Image("play/sand.png", 1280, 0, 320, 832));
-
-	// // Text
-	// UIGroup->AddNewObject(new Engine::Label(std::string("Stage ") + std::to_string(MapId), "pirulen.ttf", 32, 1294, 0));
-	// UIGroup->AddNewObject(UIMoney = new Engine::Label(std::string("$") + std::to_string(money), "pirulen.ttf", 24, 1294, 48));
-	// UIGroup->AddNewObject(UIScore = new Engine::Label(std::string("Score: ") + std::to_string(total_score), "pirulen.ttf", 24, 1294, 88));
-	// UIGroup->AddNewObject(UILives = new Engine::Label(std::string("Life ") + std::to_string(lives), "pirulen.ttf", 24, 1294, 128));
-
-	// // Exit button
-	// Engine::ImageButton *btn2;
-	// btn2 = new Engine::ImageButton("play/dirt.png", "play/floor.png", 1310, 750, 260, 75);
-	// btn2->SetOnClickCallback(std::bind(&NormalPlayScene::ExitOnClick, this));
-	// UIGroup->AddNewControlObject(btn2);
-	// UIGroup->AddNewObject(new Engine::Label("exit", "pirulen.ttf", 32, 1440, 750 + 75.0/2, 0, 0, 0, 255, 0.5, 0.5));
-
-	// Danger indicator
-	// int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
-	// int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
-	// int shift = 135 + 25;
-	// dangerIndicator = new Engine::Sprite("play/benjamin.png", w - shift, h - shift - 100);
-	// dangerIndicator->Tint.a = 0;
-	// UIGroup->AddNewObject(dangerIndicator);
 }
 
 void NormalPlayScene::UIBtnClicked(int id)
