@@ -121,14 +121,10 @@ void Turret::Update(float deltaTime) {
 			CreateBullet();
 		}
 	}
-	if (init-->0) return ;
-	if (Reloadbtn)
+	if (MenuVisible)
 	{
 		if (scene->GetMoney()>=25) Reloadbtn->Enabled=1;
 		else Reloadbtn->Enabled=0;
-	}
-	if (Rangebtn)
-	{
 		if (scene->GetMoney()>=25) Rangebtn->Enabled=1;
 		else Rangebtn->Enabled=0;
 	}
