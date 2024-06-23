@@ -22,6 +22,7 @@ namespace Engine {
 class ReversePlayScene final : public PlayScene 
 {
 private:
+	float player_auto_earn_money_cd;
 
 	bool playing_danger_bgm;
 	Engine::Point intermediate_point;
@@ -40,6 +41,7 @@ private:
 	Engine::Point closet_valid_space(Engine::Point p);
 
 public:
+	static const float PlayerAutoEarnMoneyDuration;
 	static const float MaxTimeSpan;
 	// remaining time to play this round, lose if run out
 	float remain_time;
@@ -83,7 +85,7 @@ public:
 	// Engine::Label* UIMoney;
 	// Engine::Label* UIScore;
 	// Engine::Label* UILives;
-	Turret* preview;
+	// Turret* preview;
 	// std::vector<std::vector<TileType>> mapState;
 	// std::vector<std::vector<TileType>> originalMapState;
 	// std::vector<std::vector<int>> mapDistance;

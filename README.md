@@ -7,21 +7,22 @@
 
 | **Features**                              | **張立璿**  | **郭明懿** | **陳廷森** |
 | :---------------------------------------- | :-------:  | :-------: | :-------: |
-| Potion Class: `Frozen Spell`              |     -      |     -     |      -    |
-| Landmine Class: `To Do`                   |     -      |     -     |      -    |
-| New UI: `Hover Image Button`              |     -      |     -     |      -    |
-| New UI: `Draw Board`                      |     -      |     -     |      -    |
-| New Game Mode: `Survival Play Mode`       |     -      |     -     |      -    |
-| New Game Mode: `Reverse Play Mode`        |     -      |     -     |      -    |
-| New Game Feature: `Dark Mode`             |     -      |     -     |      -    |
-| New Game Feature: `Better Turret Aiming`  |     -      |     -     |      -    |
-| New Game Feature: `Difficulty Selection`  |     -      |     -     |      -    |
+| Potion Class: `Frozen Spell`              |     -      |     -     |    100%   |
+| Potion Class: `Shield Spell`              |     -      |     -     |    100%   |
+| Potion Class: `Berserk Spell`             |     -      |     -     |    100%   |
+| Landmine Class: `Explode Landmine`        |     -      |     -     |    100%   |
+| New UI: `Hover Image Button`              |    70%     |     -     |    30%    |
+| New Game Mode: `Survival Play Mode`       |    80%     |     -     |    20%    |
+| New Game Mode: `Reverse Play Mode`        |    70%     |     -     |    30%    |
+| New Game Feature: `Dark Mode`             |   100%     |     -     |      -    |
+| New Game Feature: `Better Turret Aiming`  |   100%     |     -     |      -    |
+| New Game Feature: `Difficulty Selection`  |    80%     |   20%     |      -    |
 | New Enemy: `To Do`                        |     -      |     -     |      -    |
 | New Turret: `To Do`                       |     -      |     -     |      -    |
-| New Scene: `Map Create Scene`             |     -      |     -     |      -    |
-| New Scene: `Revive Scene`                 |     -      |     -     |      -    |
-| New Scene: `Data Generating Scene`        |     -      |     -     |      -    |
-| Stage Select: `AI Digit Classification`   |     -      |     -     |      -    |
+| New Scene: `Map Create Scene`             |   100%     |     -     |      -    |
+| New Scene: `Revive Scene`                 |    70%     |   15%     |    15%    |
+| New Scene: `Data Generating Scene`        |   100%     |     -     |      -    |
+| Stage Select: `AI Digit Classification`   |   100%     |     -     |      -    |
 
 ## Appendix: How to install mlpack
 * tested under the following environment

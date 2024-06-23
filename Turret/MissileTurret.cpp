@@ -19,6 +19,7 @@ MissileTurret::MissileTurret(float x, float y) :
 {
 	// make turret point directly at enemy
 	bullet_speed = 100000;
+	AbletocastSnowball=0;
 }
 
 void MissileTurret::CreateBullet() {

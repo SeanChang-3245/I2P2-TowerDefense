@@ -55,8 +55,9 @@ using namespace std;
 // 										  ALLEGRO_KEY_LEFT, ALLEGRO_KEY_LEFT, ALLEGRO_KEY_RIGHT, ALLEGRO_KEY_RIGHT,
 // 										  ALLEGRO_KEY_B, ALLEGRO_KEY_A, ALLEGRO_KEYMOD_SHIFT, ALLEGRO_KEY_ENTER};
 
-const float ReversePlayScene::PlaceTurretDuration = 10;
+const float ReversePlayScene::PlaceTurretDuration = 5;
 const float ReversePlayScene::MaxTimeSpan = 100;
+const float ReversePlayScene::PlayerAutoEarnMoneyDuration = 3;
 
 using Engine::LOG;
 using Engine::INFO;
@@ -71,11 +72,12 @@ void ReversePlayScene::Initialize()
 		return;
 
 	remain_time = MaxTimeSpan / difficulty;
-	placeTurretCountDown = PlaceTurretDuration;
+	placeTurretCountDown = PlayerAutoEarnMoneyDuration;
 	playing_danger_bgm = false;
 	cur_turret = nullptr;
 	turret_pos.x = turret_pos.y = -1;
 	intermediate_point.x = intermediate_point.y = -1;
+	player_auto_earn_money_cd = PlaceTurretDuration;
 
 	SetChooseTurretPositionFunc(std::bind(&ReversePlayScene::TurretPosision_RandomPosOnRandomPath, this));
 	preview = nullptr;
@@ -90,6 +92,13 @@ void ReversePlayScene::Update(float deltaTime)
 		UpdateTimer(deltaTime);
 		UpdatePlaceTurret(deltaTime);
 	
+		player_auto_earn_money_cd -= deltaTime;
+		if(player_auto_earn_money_cd <= 0)
+		{
+			player_auto_earn_money_cd = PlayerAutoEarnMoneyDuration;
+			EarnMoney(10);
+		}
+
 		// Check if run out of time, if so then lose
 		if(remain_time < 0)
 		{

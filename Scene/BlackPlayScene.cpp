@@ -398,7 +398,7 @@ void BlackPlayScene::PlaceTurret(const int &x, const int &y)
     preview->Enabled = true;
     preview->Preview = false;
     preview->Tint = al_map_rgba(255, 255, 255, 255);
-    TowerGroup->AddNewObject(preview);
+    TowerGroup->AddNewControlObject(preview);
 
     // To keep responding when paused.
     preview->Update(0);
