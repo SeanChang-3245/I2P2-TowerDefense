@@ -20,6 +20,6 @@ void FrostBullet::OnExplode(Enemy* enemy) {
 	std::mt19937 rng(dev());
 	std::uniform_int_distribution<std::mt19937::result_type> dist(2, 5);
 	getPlayScene()->GroundEffectGroup->AddNewObject(new DirtyEffect("play/dirty-1.png", dist(rng), enemy->Position.x, enemy->Position.y));
-	enemy->Retard();
+	enemy->Freeze();
 }
 

@@ -53,6 +53,7 @@ Enemy::Enemy(std::string img, float x, float y, float radius, float speed, float
 	ResetShield=0;
 	Shield=0;
 	Berserk=0;
+	FrostCount=0;
 }
 
 void Enemy::Hit(float damage) {
@@ -167,6 +168,7 @@ void Enemy::UpdateIntermediatePath(const std::vector<std::vector<int>>& mapDista
 
 void Enemy::Update(float deltaTime) {
 	// Pre-calculate the velocity.
+	if (FrostCount>0) Frozen=1;
 	if (Frozen) return;
 	float remainSpeed = speed * deltaTime;
 	if (Berserk-->0) remainSpeed *= 2;
@@ -313,17 +315,7 @@ bool Enemy::get_pass_intermediate_point() const
 	return pass_intermediate_point;
 }
 
-// int Enemy::get_cost() const 
-// {	
-// 	return Cost;
-// }
-
-// float Enemy::get_max_HP() const
-// {
-// 	return MaxHP;
-// }
-
-// float Enemy::get_speed() const
-// {
-// 	return Speed;
-// }
+void Enemy::Freeze()
+{
+	FrostCount=200;
+}
