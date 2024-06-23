@@ -55,7 +55,7 @@ Enemy::Enemy(std::string img, float x, float y, float radius, float speed, float
 }
 
 void Enemy::Hit(float damage) {
-	if (Berserk) damage*2/3;
+	if (Berserk) damage*=2/3;
 	if (Shield>0)
 	{
 		Shield-=damage;
