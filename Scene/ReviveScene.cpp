@@ -88,8 +88,17 @@ void ReviveScene::Update(float deltaTime)
 void ReviveScene::GiveUpOnClick() 
 {
 	Engine::LOG(Engine::INFO) << "give up on click";
-	Engine::GameEngine::GetInstance().GetPreviousScene()->Terminate();
-	Engine::GameEngine::GetInstance().ChangeScene("lose");
+	std::cout << Engine::GameEngine::GetInstance().GetSceneName(Engine::GameEngine::GetInstance().GetPreviousScene()) << std::endl;
+	if (Engine::GameEngine::GetInstance().GetSceneName(Engine::GameEngine::GetInstance().GetPreviousScene())=="play-survival")
+	{
+		Engine::GameEngine::GetInstance().GetPreviousScene()->Terminate();
+		Engine::GameEngine::GetInstance().ChangeScene("win");
+	}
+	else
+	{
+		Engine::GameEngine::GetInstance().GetPreviousScene()->Terminate();
+		Engine::GameEngine::GetInstance().ChangeScene("lose");
+	}
 }
 
 void ReviveScene::SubmitOnClick() 
