@@ -47,7 +47,7 @@ public:
 	// static const int cost = 0;
 	float reachEndTime;
 	bool Frozen;
-	bool Berserk;
+	int Berserk;
 	bool ResetShield;
 	int Shield;
 	std::list<Turret*> lockedTurrets;
