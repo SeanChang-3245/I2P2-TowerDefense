@@ -20,7 +20,7 @@ LaserTurret::LaserTurret(float x, float y) :
 	// Move center downward, since we the turret head is slightly biased upward.
 	Anchor.y += 8.0f / GetBitmapHeight();
 	bullet_speed = LaserBullet::Speed;
-	AbletocastSnowball=1;
+	AbletocastSnowball=0;
 }
 void LaserTurret::CreateBullet() {
 	Engine::Point diff = Engine::Point(cos(Rotation - ALLEGRO_PI / 2), sin(Rotation - ALLEGRO_PI / 2));

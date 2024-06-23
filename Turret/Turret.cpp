@@ -33,6 +33,31 @@ Turret::Turret(std::string imgBase, std::string imgTurret, float x, float y, flo
 	MenuVisible=0;
 	init = 10;
 	FrostUpdate = 0;
+	AbletocastSnowball=0;
+	Frostbtn=nullptr;
+	Rangebtn=nullptr;
+	Reloadbtn=nullptr;
+}
+
+Turret::~Turret()
+{
+	PlayScene* scene = getPlayScene();
+	if (type!=TURRET) return ;
+	if (Frostbtn)
+	{
+		scene->UIGroup->RemoveControlObject(Frostbtn->GetControlIterator(), Frostbtn->GetObjectIterator());
+		Frostbtn=nullptr;
+	}
+	if (Rangebtn)
+	{
+		scene->UIGroup->RemoveControlObject(Rangebtn->GetControlIterator(), Rangebtn->GetObjectIterator());
+		Rangebtn=nullptr;
+	}
+	if (Reloadbtn)
+	{
+		scene->UIGroup->RemoveControlObject(Reloadbtn->GetControlIterator(), Reloadbtn->GetObjectIterator());
+		Reloadbtn=nullptr;
+	}
 }
 
 void Turret::Update(float deltaTime) {

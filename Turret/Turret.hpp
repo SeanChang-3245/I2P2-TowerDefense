@@ -45,6 +45,7 @@ public:
     Enemy* Target = nullptr;
     Turret *Target_tower;
     Turret(std::string imgBase, std::string imgTurret, float x, float y, float radius, int price, float coolDown, Turret_Type type);
+    ~Turret();
     void Update(float deltaTime) override;
     void Draw() const override;
 	int GetPrice() const;
