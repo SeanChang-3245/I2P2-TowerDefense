@@ -1,3 +1,0 @@
-C:/mycode/I2P2-TowerDefense/build/CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir
-C:/mycode/I2P2-TowerDefense/build/CMakeFiles/edit_cache.dir
-C:/mycode/I2P2-TowerDefense/build/CMakeFiles/rebuild_cache.dir

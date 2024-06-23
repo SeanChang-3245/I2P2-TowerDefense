@@ -26,7 +26,7 @@ set(SRC_FILES)
 
 # Set to true only when you want to use the hand write scene, otherwise it will take a lot of time to build
 # Estimated build time: 3 minutes
-set(SERIALIZATION true)
+set(SERIALIZATION false)
 
 # Decide which CNN model we want to use 
 set(CNN_MODEL_VERSION 3)
