@@ -13,7 +13,7 @@ class PlayScene;
 
 enum Turret_Type
 {
-    TURRET, TOOL, POTION
+    TURRET, TOOL, POTION, MINE
 };
 
 class Turret: public Engine::Sprite, public Engine::IControl {
@@ -25,6 +25,7 @@ protected:
     float rotateRadian = 2 * ALLEGRO_PI;
     float bullet_speed;
     bool mouseIn;
+    int init;
     Engine::ImageButton *Atkbtn, *Reloadbtn, *Rangebtn;
     Sprite imgBase;
     std::list<Turret*>::iterator lockedTurretIterator;
@@ -46,7 +47,6 @@ public:
     void Draw() const override;
 	int GetPrice() const;
     Turret_Type GetType() const;
-    void UIBtnClicked();
     void OnMouseMove(int mx, int my) override;
     void OnMouseDown(int button, int mx, int my) override;
     void TurretClicked();

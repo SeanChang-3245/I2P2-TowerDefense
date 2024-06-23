@@ -46,8 +46,9 @@ HoverTurretButton::HoverTurretButton(std::string img, std::string imgIn, Engine:
 			int  img_x, int img_y,
 			int inf_x, int inf_y,
 			unsigned char r, unsigned char g, unsigned char b, unsigned char a, 
+			int cost,
 			std::vector<std::string> details) :
-		Base(Base), Turret(Turret), cost(0),
+		Base(Base), Turret(Turret), cost(cost),
 		HoverImageButton(img, imgIn, img_x, img_y, inf_x, inf_y, r, g, b, a)
 {
 	for(const auto &str : details)

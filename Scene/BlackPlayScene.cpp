@@ -238,6 +238,7 @@ void BlackPlayScene::ConstructUI()
                                 1294, 252,
                                 information_x, information_y,
                                 0, 0, 0, 255,
+                                0,
                                 details);
     btn->SetOnClickCallback(std::bind(&BlackPlayScene::UIBtnClicked, this, 4));
     UIGroup->AddNewControlObject(btn);
@@ -535,6 +536,11 @@ void BlackPlayScene::PlaceObject(const int &x, const int &t)
 void BlackPlayScene::PlacePotion(const int &x, const int &t)
 {
 
+}
+
+void BlackPlayScene::PlaceMine(const int &x, const int &y)
+{
+	
 }
 
 void BlackPlayScene::ClearCloseEnemy()

@@ -8,8 +8,8 @@
 #include "ShieldPotion.hpp"
 #include "Enemy/Enemy.hpp"
 
-const std::string ShieldPotion::Potionbase="play/potion.png";
-const std::string ShieldPotion::Potionimg="play/potion.png";
+const std::string ShieldPotion::Potionbase="play/ShieldPotion.png";
+const std::string ShieldPotion::Potionimg="play/ShieldPotion.png";
 const int ShieldPotion::Range=100;
 const int ShieldPotion::Duration=100;
 const int ShieldPotion::Price=50;
