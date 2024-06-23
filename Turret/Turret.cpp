@@ -32,6 +32,32 @@ Turret::Turret(std::string imgBase, std::string imgTurret, float x, float y, flo
 	mouseIn=0;
 	MenuVisible=0;
 	init = 10;
+	FrostUpdate = 0;
+	AbletocastSnowball=0;
+	Frostbtn=nullptr;
+	Rangebtn=nullptr;
+	Reloadbtn=nullptr;
+}
+
+Turret::~Turret()
+{
+	PlayScene* scene = getPlayScene();
+	if (type!=TURRET) return ;
+	if (Frostbtn)
+	{
+		scene->UIGroup->RemoveControlObject(Frostbtn->GetControlIterator(), Frostbtn->GetObjectIterator());
+		Frostbtn=nullptr;
+	}
+	if (Rangebtn)
+	{
+		scene->UIGroup->RemoveControlObject(Rangebtn->GetControlIterator(), Rangebtn->GetObjectIterator());
+		Rangebtn=nullptr;
+	}
+	if (Reloadbtn)
+	{
+		scene->UIGroup->RemoveControlObject(Reloadbtn->GetControlIterator(), Reloadbtn->GetObjectIterator());
+		Reloadbtn=nullptr;
+	}
 }
 
 void Turret::Update(float deltaTime) {
@@ -125,6 +151,11 @@ void Turret::Update(float deltaTime) {
 	}
 	if (MenuVisible)
 	{
+		if (AbletocastSnowball)
+		{
+			if (scene->GetMoney()>=25) Frostbtn->Enabled=1;
+			else Frostbtn->Enabled=0;
+		}
 		if (scene->GetMoney()>=25) Reloadbtn->Enabled=1;
 		else Reloadbtn->Enabled=0;
 		if (scene->GetMoney()>=25) Rangebtn->Enabled=1;
@@ -183,6 +214,14 @@ void Turret::OnMouseDown(int button, int mx, int my) {
 		DestroyMenu();
 		MenuVisible=0;
 	}
+	else if (AbletocastSnowball)
+	{
+		if (Frostbtn->GetMouseIn())
+		{
+			DestroyMenu();
+			MenuVisible=0;
+		}
+	}
 }
 
 void Turret::TurretClicked()
@@ -199,10 +238,14 @@ void Turret::ShowMenu()
 	if (type!=TURRET) return ;
 	PlayScene* scene = getPlayScene();
 	int BlockSize=scene->BlockSize;
-	// Atkbtn = new Engine::ImageButton("play/AtkUp.png", "play/AtkUp_Hovered.png", Position.x + BlockSize/2, Position.y + BlockSize/2, scene->BlockSize, scene->BlockSize);
-	// Atkbtn->SetOnClickCallback(std::bind(&Turret::AtkUpClick, this));
-	// scene->UIGroup->AddNewControlObject(Atkbtn);
-	Rangebtn = new Engine::ImageButton("play/RangeUp.png", "play/RangeUp_Hovered.png", Position.x + BlockSize/2, Position.y + BlockSize/2, scene->BlockSize, scene->BlockSize);
+	if (AbletocastSnowball)
+	{
+		Frostbtn = new Engine::ImageButton("play/Snowball.png", "play/Snowball_Hovered.png", Position.x + BlockSize/2, Position.y + BlockSize/2, scene->BlockSize, scene->BlockSize);
+		Frostbtn->SetOnClickCallback(std::bind(&Turret::FrostClick, this));
+		scene->UIGroup->AddNewControlObject(Frostbtn);
+		Frostbtn->Enabled=1;
+	}
+	Rangebtn = new Engine::ImageButton("play/RangeUp.png", "play/RangeUp_Hovered.png", Position.x - BlockSize/2, Position.y + BlockSize/2, scene->BlockSize, scene->BlockSize);
 	Rangebtn->SetOnClickCallback(std::bind(&Turret::RangeUpClick, this));
 	Rangebtn->Enabled=1;
 	scene->UIGroup->AddNewControlObject(Rangebtn);
@@ -216,7 +259,11 @@ void Turret::DestroyMenu()
 {
 	PlayScene* scene = getPlayScene();
 	if (type!=TURRET) return ;
-	// if (Atkbtn) scene->UIGroup->RemoveControlObject(Atkbtn->GetControlIterator(), Atkbtn->GetObjectIterator());
+	if (Frostbtn)
+	{
+		scene->UIGroup->RemoveControlObject(Frostbtn->GetControlIterator(), Frostbtn->GetObjectIterator());
+		Frostbtn=nullptr;
+	}
 	if (Rangebtn)
 	{
 		scene->UIGroup->RemoveControlObject(Rangebtn->GetControlIterator(), Rangebtn->GetObjectIterator());
@@ -242,5 +289,13 @@ void Turret::RangeUpClick()
 	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())=="play-reverse") return;
 	PlayScene* scene = getPlayScene();
 	CollisionRadius=CollisionRadius/2*3;
+	scene->EarnMoney(-1*25);
+}
+
+void Turret::FrostClick()
+{
+	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())=="play-reverse") return;
+	PlayScene* scene = getPlayScene();
+	FrostUpdate=1;
 	scene->EarnMoney(-1*25);
 }
