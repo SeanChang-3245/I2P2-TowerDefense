@@ -39,9 +39,16 @@ bool PlayScene::DebugMode = false;
 const std::vector<Engine::Point> PlayScene::directions = {Engine::Point(-1, 0), Engine::Point(0, -1), Engine::Point(1, 0), Engine::Point(0, 1)};
 const int PlayScene::MapWidth = 20, PlayScene::MapHeight = 13;
 const int PlayScene::BlockSize = 64;
+
 const Engine::Point PlayScene::SpawnGridPoint = Engine::Point(-1, 0);
 const Engine::Point PlayScene::EndGridPoint = Engine::Point(MapWidth, MapHeight - 1);
+
+const Engine::Point PlayScene::SpawnPoint = Engine::Point(-1.0/2 * BlockSize, 1.0/2 * BlockSize);
+const Engine::Point PlayScene::EndPoint = Engine::Point((MapWidth + 0.5) * BlockSize, (MapHeight - 0.5) * BlockSize);
+const Engine::Point PlayScene::MapSize = Engine::Point(MapWidth * BlockSize, MapHeight * BlockSize);
+
 const float PlayScene::DangerTime = 7.61;
+const int PlayScene::EnemyTypes = 4;
 
 // code to activate cheat mode
 const std::vector<int> PlayScene::code = {ALLEGRO_KEY_UP, ALLEGRO_KEY_UP, ALLEGRO_KEY_DOWN, ALLEGRO_KEY_DOWN,
@@ -55,6 +62,12 @@ Engine::Point PlayScene::GetClientSize()
 
 void PlayScene::Initialize()
 {
+	bool enter_from_revive = handle_revive();
+	if(enter_from_revive)
+		return;
+
+	
+
 	Engine::LOG(Engine::INFO) << "enter PlayScene::initialize\n";
 
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
@@ -69,6 +82,8 @@ void PlayScene::Initialize()
 	money = 150;
 	total_score = 0;
 	SpeedMult = 1;
+	have_entered_revive_scene = false;
+	entering_revive_scene = false;
 
 	// a scene is a Group, so there is a vector of object in the scene
 	// Add groups from bottom to top.
@@ -76,6 +91,7 @@ void PlayScene::Initialize()
 	AddNewObject(GroundEffectGroup = new Group());
 	AddNewObject(DebugIndicatorGroup = new Group());
 	AddNewObject(TowerGroup = new Group());
+	AddNewObject(PotionGroup = new Group());
 	AddNewObject(EnemyGroup = new Group());
 	AddNewObject(BulletGroup = new Group());
 	AddNewObject(EffectGroup = new Group());
@@ -95,6 +111,15 @@ void PlayScene::Initialize()
 
 void PlayScene::Terminate()
 {
+	if(entering_revive_scene)
+	{
+		AudioHelper::StopBGM(bgmId);
+		SpeedMult = 0;
+		entering_revive_scene = false;
+		return;
+	}
+
+	entering_revive_scene = have_entered_revive_scene = false;
 	AudioHelper::StopBGM(bgmId);
 	AudioHelper::StopSample(deathBGMInstance);
 	deathBGMInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();

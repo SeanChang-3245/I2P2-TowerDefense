@@ -28,6 +28,7 @@ public:
     float blackTicks;
     std::vector<std::vector<Engine::Sprite *> > blackSquare;
     std::vector<std::vector<int> > blackA;
+	std::list<std::pair<int, float>> enemyWaveData;
 	// static bool DebugMode;
 	// static const std::vector<Engine::Point> directions;
 	// static const int MapWidth, MapHeight;
@@ -84,6 +85,9 @@ public:
 	virtual void DeconstructTurret(const int &x, const int &y) override final;
 	virtual void UpdateDangerIndicator() override final;
 	virtual void ActivateCheatMode() override final;
+	virtual bool handle_revive() override final;
+	virtual void PlacePotion(const int &x, const int &y) override final;
+	virtual void PlaceObject(const int &x, const int &y) override final;
 
 // ========= Non-Virtual Functions ============ //
 
@@ -91,6 +95,8 @@ public:
 	void ReadEnemyWave();
 	void UpdateSpawnEnemy(float deltaTime);
     void UpdateBlackFlash(float deltaTime);
+	void ClearCloseEnemy();
+
 	// static Engine::Point GetClientSize();
 	// virtual void Draw() const override;
 	// void Hit();
