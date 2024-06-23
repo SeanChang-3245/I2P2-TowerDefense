@@ -5,6 +5,7 @@
 #include "Engine/AudioHelper.hpp"
 #include "Engine/Group.hpp"
 #include "Bullet/LaserBullet.hpp"
+#include "Bullet/FrostBullet.hpp"
 #include "LaserTurret.hpp"
 #include "Scene/PlayScene.hpp"
 #include "Engine/Point.hpp"
@@ -19,6 +20,7 @@ LaserTurret::LaserTurret(float x, float y) :
 	// Move center downward, since we the turret head is slightly biased upward.
 	Anchor.y += 8.0f / GetBitmapHeight();
 	bullet_speed = LaserBullet::Speed;
+	AbletocastSnowball=1;
 }
 void LaserTurret::CreateBullet() {
 	Engine::Point diff = Engine::Point(cos(Rotation - ALLEGRO_PI / 2), sin(Rotation - ALLEGRO_PI / 2));
@@ -26,7 +28,15 @@ void LaserTurret::CreateBullet() {
 	Engine::Point normalized = diff.Normalize();
 	Engine::Point normal = Engine::Point(-normalized.y, normalized.x);
 	// Change bullet position to the front of the gun barrel.
-	getPlayScene()->BulletGroup->AddNewObject(new LaserBullet(Position + normalized * 36 - normal * 6, diff, rotation, this));
-	getPlayScene()->BulletGroup->AddNewObject(new LaserBullet(Position + normalized * 36 + normal * 6, diff, rotation, this));
+	if (FrostUpdate)
+	{
+		getPlayScene()->BulletGroup->AddNewObject(new FrostBullet(Position + normalized * 36 - normal * 6, diff, rotation, this));
+		getPlayScene()->BulletGroup->AddNewObject(new FrostBullet(Position + normalized * 36 + normal * 6, diff, rotation, this));
+	}
+	else
+	{
+		getPlayScene()->BulletGroup->AddNewObject(new LaserBullet(Position + normalized * 36 - normal * 6, diff, rotation, this));
+		getPlayScene()->BulletGroup->AddNewObject(new LaserBullet(Position + normalized * 36 + normal * 6, diff, rotation, this));
+	}
 	AudioHelper::PlayAudio("laser.wav");
 }
