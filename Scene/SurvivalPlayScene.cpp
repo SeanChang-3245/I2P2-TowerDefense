@@ -33,6 +33,10 @@
 #include "DebugMacro.hpp"
 #include "Bullet/FireBullet.hpp"
 #include "UI/Component/ImageButton.hpp"
+#include "Turret/Potion.hpp"
+#include "Turret/FrostPotion.hpp"
+#include "Turret/BerserkPotion.hpp"
+#include "Turret/ExplosionMine.hpp"
 
 const float SurvivalPlayScene::EnemySpawnDuration = 0.5;
 const float SurvivalPlayScene::PlayerAutoEarnMoneyDuration = 2;
@@ -124,9 +128,9 @@ void SurvivalPlayScene::OnMouseUp(int button, int mx, int my)
 	// left click
 	if (button == 1)
 	{ 
-		if (mapState[y][x] != TILE_OCCUPIED)
+		if (mapState[y][x] != TILE_OCCUPIED || preview->GetType()==POTION)
 		{
-			PlaceTurret(x, y);
+			PlaceObject(x, y);
 		}
 		if (mapState[y][x] == TILE_OCCUPIED)
 		{
@@ -233,6 +237,58 @@ void SurvivalPlayScene::ConstructUI()
 		details);
 	btn->SetOnClickCallback(std::bind(&SurvivalPlayScene::UIBtnClicked, this, 4));
 	UIGroup->AddNewControlObject(btn);
+
+	details.clear();
+	details.push_back("freeze the enemies");
+	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
+		Engine::Sprite("play/potion.png", 1370, 252, 0, 0, 0, 0),
+		Engine::Sprite("play/potion.png", 1370, 252, 0, 0, 0, 0),
+		1370, 252,
+		information_x, information_y,
+		0, 0, 0, 255,
+		FrostPotion::Price, FrostPotion::Range, FrostPotion::Duration,
+		details);
+	btn->SetOnClickCallback(std::bind(&SurvivalPlayScene::UIBtnClicked, this, 5));
+	UIGroup->AddNewControlObject(btn);
+
+	details.clear();
+	details.push_back("freeze the enemies");
+	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
+		Engine::Sprite(FrostPotion::Potionbase, 1370, 252, 0, 0, 0, 0),
+		Engine::Sprite(FrostPotion::Potionimg, 1370, 252, 0, 0, 0, 0),
+		1370, 252,
+		information_x, information_y,
+		0, 0, 0, 255,
+		FrostPotion::Price, FrostPotion::Range, FrostPotion::Duration,
+		details);
+	btn->SetOnClickCallback(std::bind(&SurvivalPlayScene::UIBtnClicked, this, 5));
+	UIGroup->AddNewControlObject(btn);
+
+	details.clear();
+	details.push_back("Berserk!!");
+	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
+		Engine::Sprite(BerserkPotion::Potionbase, 1446, 252, 0, 0, 0, 0),
+		Engine::Sprite(BerserkPotion::Potionimg, 1446, 252, 0, 0, 0, 0),
+		1446, 252,
+		information_x, information_y,
+		0, 0, 0, 255,
+		BerserkPotion::Price, BerserkPotion::Range, BerserkPotion::Range,
+		details);
+	btn->SetOnClickCallback(std::bind(&SurvivalPlayScene::UIBtnClicked, this, 6));
+	UIGroup->AddNewControlObject(btn);
+
+	details.clear();
+	details.push_back("Explosion mine");
+	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
+		Engine::Sprite(ExplosionMine::Minebase, 1522, 252, 0, 0, 0, 0),
+		Engine::Sprite(ExplosionMine::Mineimg, 1522, 252, 0, 0, 0, 0),
+		1522, 252,
+		information_x, information_y,
+		0, 0, 0, 255,
+		ExplosionMine::Price,
+		details);
+	btn->SetOnClickCallback(std::bind(&SurvivalPlayScene::UIBtnClicked, this, 7));
+	UIGroup->AddNewControlObject(btn);
 }
 
 void SurvivalPlayScene::UIBtnClicked(int id)
@@ -253,6 +309,14 @@ void SurvivalPlayScene::UIBtnClicked(int id)
 		preview = new AdvancedMissileTurret(0, 0);
 	else if (id == 4)
 		preview = new Shovel(0, 0);
+	else if (id == 5 && money >= FrostPotion::Price)
+		preview = new FrostPotion(0, 0);
+	else if (id == 6 && money >= BerserkPotion::Price)
+		preview = new BerserkPotion(0, 0);
+	else if (id == 7 && money >= ExplosionMine::Price)
+		preview = new ExplosionMine(0, 0);
+	// else if (id == 8 && money >= TeleportMine::Price)
+	// 	preview = new TeleportMine(0, 0);
 
 
 	if (!preview)
@@ -509,15 +573,59 @@ void SurvivalPlayScene::ClearCloseEnemy()
 
 void SurvivalPlayScene::PlaceObject(const int &x, const int &y)
 {
-
+	if (preview->GetType()==TURRET) PlaceTurret(x, y);
+	else if (preview->GetType()==POTION) PlacePotion(x, y);
+	else if (preview->GetType()==MINE) PlaceMine(x, y);
 }
 
 void SurvivalPlayScene::PlacePotion(const int &x, const int &y)
 {
+	if (!preview || preview->GetType() != POTION)
+		return;
+	EarnMoney(-preview->GetPrice());
 	
+	// Remove Preview.
+	preview->GetObjectIterator()->first = false;
+	UIGroup->RemoveObject(preview->GetObjectIterator());
+	
+	// Construct real turret.
+	preview->Position.x = x * BlockSize + BlockSize / 2;
+	preview->Position.y = y * BlockSize + BlockSize / 2;
+	preview->Enabled = true;
+	preview->Preview = false;
+	preview->Tint = al_map_rgba(255, 255, 255, 255);
+	TowerGroup->AddNewObject(preview);
+
+	// To keep responding when paused.
+	preview->Update(0);
+	
+	// Remove Preview.
+	preview = nullptr;
+
+	mapState[y][x] = TILE_OCCUPIED;	
 }
 
 void SurvivalPlayScene::PlaceMine(const int &x, const int &y)
 {
+	if (!preview || preview->GetType() != MINE)
+		return;
+	EarnMoney(-preview->GetPrice());
 	
+	// Remove Preview.
+	preview->GetObjectIterator()->first = false;
+	UIGroup->RemoveObject(preview->GetObjectIterator());
+	
+	// Construct real turret.
+	preview->Position.x = x * BlockSize + BlockSize / 2;
+	preview->Position.y = y * BlockSize + BlockSize / 2;
+	preview->Enabled = true;
+	preview->Preview = false;
+	preview->Tint = al_map_rgba(255, 255, 255, 255);
+	TowerGroup->AddNewObject(preview);
+
+	// To keep responding when paused.
+	preview->Update(0);
+	
+	// Remove Preview.
+	preview = nullptr;
 }
