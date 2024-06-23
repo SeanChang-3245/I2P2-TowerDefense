@@ -93,6 +93,7 @@ void Turret::Update(float deltaTime) {
 
 	// make the turret points to the target enemy with leading
 	if (Target) {
+		if (init-->0) return ;
 		Engine::Point originRotation = Engine::Point(cos(Rotation - ALLEGRO_PI / 2), sin(Rotation - ALLEGRO_PI / 2));
 		
 		float estimatedTime = (Target->Position - this->Position).Magnitude() / bullet_speed;
@@ -120,6 +121,7 @@ void Turret::Update(float deltaTime) {
 			CreateBullet();
 		}
 	}
+	if (init-->0) return ;
 	if (Reloadbtn)
 	{
 		if (scene->GetMoney()>=25) Reloadbtn->Enabled=1;
