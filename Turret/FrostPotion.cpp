@@ -22,25 +22,29 @@ FrostPotion::FrostPotion(float x, float y) : Potion(Potionbase, Potionimg, Range
 
 void FrostPotion::effectenemy(Enemy *enemy)
 {
-	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())=="play-reverse") return;
+	std::string SceneName = Engine::GameEngine::GetInstance().GetSceneName(getPlayScene());
+	if (SceneName == "play-reverse") return;
 	enemy->Frozen=1;
 }
 
 void FrostPotion::resumeenemy(Enemy* enemy)
 {
-	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())=="play-reverse") return;
+	std::string SceneName = Engine::GameEngine::GetInstance().GetSceneName(getPlayScene());
+	if(SceneName == "play-reverse") return;
 	enemy->Frozen=0;
 }
 
 void FrostPotion::effectturret(Turret *turret)
 {
-	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())=="play-normal") return;
+	std::string SceneName = Engine::GameEngine::GetInstance().GetSceneName(getPlayScene());
+	if (SceneName == "play-normal" || SceneName == "play-black" || SceneName == "play-survival") return;
 	turret->Freeze=1;
 }
 
 void FrostPotion::resumeturret(Turret *turret)
 {
-	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())=="play-normal") return;
+	std::string SceneName = Engine::GameEngine::GetInstance().GetSceneName(getPlayScene());
+	if (SceneName == "play-normal" || SceneName == "play-black" || SceneName == "play-survival") return;
 	turret->Freeze=0;
 }
 

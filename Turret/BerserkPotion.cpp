@@ -22,26 +22,33 @@ BerserkPotion::BerserkPotion(float x, float y) : Potion(Potionbase, Potionimg, R
 
 void BerserkPotion::effectenemy(Enemy *enemy)
 {
-	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())!="play-reverse") return;
+	std::string SceneName = Engine::GameEngine::GetInstance().GetSceneName(getPlayScene()); 
+	if (SceneName != "play-reverse") 
+		return;
 	enemy->Berserk=100;
 	// std::cout << "Freeze!\n";
 }
 
 void BerserkPotion::resumeenemy(Enemy* enemy)
 {
-	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())!="play-reverse") return;
+	std::string SceneName = Engine::GameEngine::GetInstance().GetSceneName(getPlayScene()); 
+	if (SceneName != "play-reverse") return;
 	// enemy->Berserk=0;
 }
 
 void BerserkPotion::effectturret(Turret *turret)
 {
-	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())!="play-normal") return;
+	std::string SceneName = Engine::GameEngine::GetInstance().GetSceneName(getPlayScene()); 
+	if (SceneName != "play-normal" && SceneName != "play-black" && SceneName != "play-survival") 
+		return;
 	turret->Berserker=1;
 }
 
 void BerserkPotion::resumeturret(Turret *turret)
 {
-	if (Engine::GameEngine::GetInstance().GetSceneName(getPlayScene())!="play-normal") return;
+	std::string SceneName = Engine::GameEngine::GetInstance().GetSceneName(getPlayScene()); 
+	if (SceneName != "play-normal" && SceneName != "play-black" && SceneName != "play-survival") 
+		return;
 	turret->Berserker=0;
 }
 

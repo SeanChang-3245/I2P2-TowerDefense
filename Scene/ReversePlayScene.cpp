@@ -55,7 +55,7 @@ using namespace std;
 // 										  ALLEGRO_KEY_LEFT, ALLEGRO_KEY_LEFT, ALLEGRO_KEY_RIGHT, ALLEGRO_KEY_RIGHT,
 // 										  ALLEGRO_KEY_B, ALLEGRO_KEY_A, ALLEGRO_KEYMOD_SHIFT, ALLEGRO_KEY_ENTER};
 
-const float ReversePlayScene::PlaceTurretDuration = 1.0;
+const float ReversePlayScene::PlaceTurretDuration = 10;
 const float ReversePlayScene::MaxTimeSpan = 100;
 
 using Engine::LOG;

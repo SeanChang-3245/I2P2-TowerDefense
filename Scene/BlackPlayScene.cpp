@@ -42,6 +42,10 @@ void BlackPlayScene::Initialize()
 {
     Engine::LOG(Engine::INFO) << "enter BlackPlayScene::initialize\n";
     PlayScene::Initialize();
+
+    blackSquare = std::vector<std::vector<Engine::Sprite *> >(MapHeight, std::vector<Engine::Sprite *> (MapWidth));
+    blackA = std::vector<std::vector<int> >(MapHeight, std::vector<int> (MapWidth,255));
+
     
     if(have_entered_revive_scene)
 	{
@@ -49,8 +53,7 @@ void BlackPlayScene::Initialize()
 		return;
 	}
     
-    std::vector<std::vector<Engine::Sprite*>> blackSquare(MapHeight, std::vector<Engine::Sprite*>(MapWidth));
-
+  
     for(int i=0; i<MapHeight; ++ i)
     {
         for(int j=0; j<MapWidth; ++j)
@@ -60,7 +63,7 @@ void BlackPlayScene::Initialize()
             AddNewObject(blackSquare[i][j]);
         }
     }
-
+    blackTicks = 8;
     deathCountDown = -1;
     ReadEnemyWave();
     preview = nullptr;
@@ -75,6 +78,7 @@ void BlackPlayScene::Update(float deltaTime)
     {
         IScene::Update(deltaTime);
         UpdateSpawnEnemy(deltaTime);
+        UpdateBlackFlash(deltaTime);
     }
     if (preview)
     {
@@ -82,6 +86,27 @@ void BlackPlayScene::Update(float deltaTime)
         // To keep responding when paused.
         preview->Update(deltaTime);
     }
+}
+
+void BlackPlayScene::UpdateBlackFlash(float deltaTime)
+{
+    blackTicks += deltaTime;
+    double k = 1;
+    if(blackTicks >= 10 && blackTicks < 11)
+    {
+        if(blackTicks < 10.3)
+            k = 0.3 + 15.0/3 * abs(blackTicks - 10.15);
+        else
+            k = 0.5 + 10.0/13 * abs(blackTicks - 10.65);
+        printf("%lf %lf\n",k, blackTicks);
+    }
+    else if(blackTicks >= 11)
+    {
+        blackTicks = 0;
+    }
+    for(int i=0; i<MapHeight; ++i)
+        for(int j=0; j<MapWidth; ++j)
+            blackSquare[i][j]->Tint = al_map_rgba(255,255,255,blackA[i][j] * k);
 }
 
 void BlackPlayScene::OnMouseDown(int button, int mx, int my)
@@ -600,7 +625,7 @@ void BlackPlayScene::PlacePotion(const int &x, const int &t)
 	// Remove Preview.
 	preview = nullptr;
 
-	mapState[t][x] = TILE_OCCUPIED;	
+	// mapState[t][x] = TILE_OCCUPIED;	
 }
 
 void BlackPlayScene::PlaceMine(const int &x, const int &y)
