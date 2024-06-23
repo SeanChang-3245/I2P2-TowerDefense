@@ -63,6 +63,8 @@ Engine::Point PlayScene::GetClientSize()
 void PlayScene::Initialize()
 {
 	bool enter_from_revive = handle_revive();
+	// Start BGM.
+	bgmId = AudioHelper::PlayBGM("play.ogg");
 	if(enter_from_revive)
 		return;
 
@@ -105,8 +107,6 @@ void PlayScene::Initialize()
 	deathBGMInstance = Engine::Resources::GetInstance().GetSampleInstance("astronomia.ogg");
 	Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
 
-	// Start BGM.
-	bgmId = AudioHelper::PlayBGM("play.ogg");
 }
 
 void PlayScene::Terminate()

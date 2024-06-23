@@ -503,7 +503,8 @@ void SurvivalPlayScene::UpdateSpawnEnemy(float deltaTime)
         return;
 
     enemy_spawn_cd = EnemySpawnDuration;
-	ticks=0;
+	// ticks -= EnemySpawnDuration;
+	ticks = 0;
 
 	const Engine::Point SpawnCoordinate = Engine::Point(SpawnGridPoint.x * BlockSize + BlockSize / 2, SpawnGridPoint.y * BlockSize + BlockSize / 2);
 	Enemy *enemy = nullptr;
