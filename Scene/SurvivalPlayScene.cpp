@@ -602,7 +602,7 @@ void SurvivalPlayScene::PlacePotion(const int &x, const int &y)
 	// Remove Preview.
 	preview = nullptr;
 
-	mapState[y][x] = TILE_OCCUPIED;	
+	// mapState[y][x] = TILE_OCCUPIED;	
 }
 
 void SurvivalPlayScene::PlaceMine(const int &x, const int &y)

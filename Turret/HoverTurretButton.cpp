@@ -40,6 +40,9 @@ HoverTurretButton::HoverTurretButton(std::string img, std::string imgIn, Engine:
 	{
 		AddNewInformation(str);
 	}
+	AddNewInformation("Cost: " + std::to_string(cost));
+	AddNewInformation("Radius: " + std::to_string(radius));
+	AddNewInformation("Duration: " + std::to_string(duration));
 }
 
 HoverTurretButton::HoverTurretButton(std::string img, std::string imgIn, Engine::Sprite Base, Engine::Sprite Turret, 
@@ -55,6 +58,7 @@ HoverTurretButton::HoverTurretButton(std::string img, std::string imgIn, Engine:
 	{
 		AddNewInformation(str);
 	}
+	AddNewInformation("Cost: " + std::to_string(cost));
 }
 
 

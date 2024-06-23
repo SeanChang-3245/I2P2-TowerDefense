@@ -625,7 +625,7 @@ void BlackPlayScene::PlacePotion(const int &x, const int &t)
 	// Remove Preview.
 	preview = nullptr;
 
-	mapState[t][x] = TILE_OCCUPIED;	
+	// mapState[t][x] = TILE_OCCUPIED;	
 }
 
 void BlackPlayScene::PlaceMine(const int &x, const int &y)
