@@ -154,6 +154,7 @@ list(APPEND SRC_FILES
     Bullet/MissileBullet.cpp
     Bullet/AdvancedMissileBullet.cpp
     Bullet/LaserBullet.cpp
+    Bullet/FrostBullet.cpp
 
     UI/Animation/ExplosionEffect.cpp
     UI/Animation/DirtyEffect.cpp
