@@ -121,6 +121,7 @@ public:
 	void UpdatePlaceTurret(float deltaTime);
 	virtual void PlaceObject(const int &x, const int &y) override final;
 	virtual void PlacePotion(const int &x, const int &y) override final;
+	virtual void PlaceMine(const int &x, const int &y) override final;
 	// After placing new turret, update all enemies' path and intermediate_path
 	void UpdateAllEnemyPath();
 	void SetChooseTurretPositionFunc(std::function<void(void)> selectFunc);

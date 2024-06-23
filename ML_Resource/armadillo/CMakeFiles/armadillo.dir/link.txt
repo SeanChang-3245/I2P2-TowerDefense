@@ -1,2 +1,2 @@
-C:\mingw64\bin\ar.exe qc libarmadillo.a CMakeFiles/armadillo.dir/wrapper1.cpp.obj CMakeFiles/armadillo.dir/wrapper2.cpp.obj
-C:\mingw64\bin\ranlib.exe libarmadillo.a
+C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\llvm-ar.exe qc libarmadillo.a CMakeFiles/armadillo.dir/wrapper1.cpp.obj CMakeFiles/armadillo.dir/wrapper2.cpp.obj
+C:\llvm-mingw-20240417-msvcrt-x86_64\llvm-mingw-20240417-msvcrt-x86_64\bin\llvm-ranlib.exe libarmadillo.a

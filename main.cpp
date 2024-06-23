@@ -56,7 +56,7 @@ int main(int argc, char **argv) {
 	
 	game.AddNewScene("play-normal", new NormalPlayScene());
 	game.AddNewScene("play-reverse", new ReversePlayScene());
-  game.AddNewScene("play-black", new BlackPlayScene());
+  	game.AddNewScene("play-black", new BlackPlayScene());
 	game.AddNewScene("play-survival", new SurvivalPlayScene());
 	
 	game.AddNewScene("lose", new LoseScene());
