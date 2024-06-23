@@ -18,8 +18,8 @@
 
 const int ExplosionMine::dmg=200;
 const int ExplosionMine::Price=30;
-inline static std::string Minebase="play/Mine.png";
-inline static std::string Mineimg="play/Mine.png";
+inline std::string ExplosionMine::Minebase="play/Mine.png";
+inline std::string ExplosionMine::Mineimg="play/Mine.png";
 
 ExplosionMine::ExplosionMine(float x, float y) : Mine(Minebase, Mineimg, Price, x, y)
 {

@@ -9,8 +9,8 @@
 #include "FrostPotion.hpp"
 #include "Enemy/Enemy.hpp"
 
-const std::string FrostPotion::Potionbase="play/potion.png";
-const std::string FrostPotion::Potionimg="play/potion.png";
+const std::string FrostPotion::Potionbase="play/FrostPotion.png";
+const std::string FrostPotion::Potionimg="play/FrostPotion.png";
 const int FrostPotion::Range=100;
 const int FrostPotion::Duration=100;
 const int FrostPotion::Price=50;

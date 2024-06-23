@@ -9,8 +9,8 @@
 #include "BerserkPotion.hpp"
 #include "Enemy/Enemy.hpp"
 
-const std::string BerserkPotion::Potionbase="play/potion.png";
-const std::string BerserkPotion::Potionimg="play/potion.png";
+const std::string BerserkPotion::Potionbase="play/BerserkPotion.png";
+const std::string BerserkPotion::Potionimg="play/BerserkPotion.png";
 const int BerserkPotion::Range=200;
 const int BerserkPotion::Duration=200;
 const int BerserkPotion::Price=50;

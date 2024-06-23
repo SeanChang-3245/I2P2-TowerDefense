@@ -247,8 +247,8 @@ void ReversePlayScene::ConstructUI()
 	details.clear();
 	details.push_back("Berserk!!");
 	pbtn = new HoverTurretButton("play/floor.png", "play/dirt.png",
-		Engine::Sprite("play/potion.png", 1294, 292, 0, 0, 0, 0),
-		Engine::Sprite("play/potion.png", 1294, 292, 0, 0, 0, 0),
+		Engine::Sprite(BerserkPotion::Potionbase, 1294, 292, 0, 0, 0, 0),
+		Engine::Sprite(BerserkPotion::Potionimg, 1294, 292, 0, 0, 0, 0),
 		1294, 292,
 		information_x, information_y,
 		0, 0, 0, 255,
@@ -258,10 +258,10 @@ void ReversePlayScene::ConstructUI()
 	UIGroup->AddNewControlObject(pbtn);
 
 	details.clear();
-	details.push_back("Shiled Up!");
+	details.push_back("Shield Up!");
 	pbtn = new HoverTurretButton("play/floor.png", "play/dirt.png",
-		Engine::Sprite("play/potion.png", 1370, 292, 0, 0, 0, 0),
-		Engine::Sprite("play/potion.png", 1370, 292, 0, 0, 0, 0),
+		Engine::Sprite(ShieldPotion::Potionbase, 1370, 292, 0, 0, 0, 0),
+		Engine::Sprite(ShieldPotion::Potionimg, 1370, 292, 0, 0, 0, 0),
 		1370, 292,
 		information_x, information_y,
 		0, 0, 0, 255,
@@ -273,8 +273,8 @@ void ReversePlayScene::ConstructUI()
 	details.clear();
 	details.push_back("freeze the enemies");
 	pbtn = new HoverTurretButton("play/floor.png", "play/dirt.png",
-		Engine::Sprite("play/potion.png", 1446, 292, 0, 0, 0, 0),
-		Engine::Sprite("play/potion.png", 1446, 292, 0, 0, 0, 0),
+		Engine::Sprite(FrostPotion::Potionbase, 1446, 292, 0, 0, 0, 0),
+		Engine::Sprite(FrostPotion::Potionimg, 1446, 292, 0, 0, 0, 0),
 		1446, 292,
 		information_x, information_y,
 		0, 0, 0, 255,

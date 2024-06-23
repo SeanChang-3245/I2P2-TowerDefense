@@ -261,8 +261,8 @@ void NormalPlayScene::ConstructUI()
 	details.clear();
 	details.push_back("freeze the enemies");
 	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
-		Engine::Sprite("play/potion.png", 1370, 252, 0, 0, 0, 0),
-		Engine::Sprite("play/potion.png", 1370, 252, 0, 0, 0, 0),
+		Engine::Sprite(FrostPotion::Potionbase, 1370, 252, 0, 0, 0, 0),
+		Engine::Sprite(FrostPotion::Potionimg, 1370, 252, 0, 0, 0, 0),
 		1370, 252,
 		information_x, information_y,
 		0, 0, 0, 255,
@@ -274,8 +274,8 @@ void NormalPlayScene::ConstructUI()
 	details.clear();
 	details.push_back("Berserk!!");
 	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
-		Engine::Sprite("play/potion.png", 1446, 252, 0, 0, 0, 0),
-		Engine::Sprite("play/potion.png", 1446, 252, 0, 0, 0, 0),
+		Engine::Sprite(BerserkPotion::Potionbase, 1446, 252, 0, 0, 0, 0),
+		Engine::Sprite(BerserkPotion::Potionimg, 1446, 252, 0, 0, 0, 0),
 		1446, 252,
 		information_x, information_y,
 		0, 0, 0, 255,
@@ -287,8 +287,8 @@ void NormalPlayScene::ConstructUI()
 	details.clear();
 	details.push_back("Explosion mine");
 	btn = new HoverTurretButton("play/floor.png", "play/dirt.png",
-		Engine::Sprite("play/Mine.png", 1522, 252, 0, 0, 0, 0),
-		Engine::Sprite("play/Mine.png", 1522, 252, 0, 0, 0, 0),
+		Engine::Sprite(ExplosionMine::Minebase, 1522, 252, 0, 0, 0, 0),
+		Engine::Sprite(ExplosionMine::Mineimg, 1522, 252, 0, 0, 0, 0),
 		1522, 252,
 		information_x, information_y,
 		0, 0, 0, 255,
