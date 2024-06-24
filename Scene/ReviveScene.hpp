@@ -10,6 +10,7 @@ private:
     static const float MaxAnswerTime; 
     float countDownTimer;
 	float ticks;
+	int scores;
 	Engine::TextInputBlock* input_block;
     std::string picture_path;
     std::string question_answer;
@@ -29,6 +30,7 @@ public:
 	void OnKeyDown(int keyCode) override final;
     void GiveUpOnClick();
 	void SubmitOnClick();
+	int GetScore();
 	
 };
 

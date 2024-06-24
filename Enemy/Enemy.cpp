@@ -61,9 +61,8 @@ void Enemy::Hit(float damage) {
 	if (Shield>0)
 	{
 		Shield-=damage;
-		return;
 	}
-	hp -= damage;
+	else hp -= damage;
 	if (hp <= 0) {
 		OnExplode();
 		// Remove all turret's reference to target.
@@ -214,6 +213,7 @@ void Enemy::Update(float deltaTime) {
 			if (path.empty()) 
 			{
 				// Reach end point.
+				Shield=0;
 				Hit(hp);
 				getPlayScene()->Hit();
 				reachEndTime = 0;

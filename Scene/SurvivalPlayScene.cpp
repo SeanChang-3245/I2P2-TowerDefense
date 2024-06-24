@@ -433,7 +433,11 @@ void SurvivalPlayScene::Hit()
 		}
 	}
 }
+<<<<<<< HEAD
+#include <iostream>
+=======
 
+>>>>>>> fc6d15608558fc1cc00f22dfd64b37366cc8cd55
 void SurvivalPlayScene::UpdateDangerIndicator()
 {
 	// Engine::LOG(Engine::INFO) << "alpha: " << dangerIndicator->Tint.a;
@@ -480,10 +484,12 @@ void SurvivalPlayScene::UpdateDangerIndicator()
 	deathCountDown = newDeathCountDown;
 	if (SpeedMult == 0)
 		AudioHelper::StopSample(deathBGMInstance);
+		// std::cout <<"stop1\n";
 	if (deathCountDown == -1 && lives > 0)
 	{
 		AudioHelper::StopSample(deathBGMInstance);
 		dangerIndicator->Tint.a = 0;
+		// std::cout <<"stop2\n";
 	}
 	if (SpeedMult == 0)
 		deathCountDown = -1;

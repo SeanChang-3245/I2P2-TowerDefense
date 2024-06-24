@@ -27,7 +27,7 @@ void ReviveScene::Initialize() {
 	int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
 	int halfW = w / 2;
 	int halfH = h / 2;
-
+	scores=dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetPreviousScene())->GetScore();
 	countDownTimer = MaxAnswerTime;
 
 
@@ -167,3 +167,7 @@ std::string ReviveScene::getPrevSceneName() {
 	return Engine::GameEngine::GetInstance().GetSceneName(scene);
 }
 
+int ReviveScene::GetScore()
+{
+	return scores; 
+}
