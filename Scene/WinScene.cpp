@@ -63,6 +63,7 @@ void WinScene::OnKeyDown(int keyCode)
 
 void WinScene::handleUserInput()
 {
+	
 	int final_score = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetPreviousScene())->GetScore();
 	input_block->save_input_to_file(final_score);
 }
