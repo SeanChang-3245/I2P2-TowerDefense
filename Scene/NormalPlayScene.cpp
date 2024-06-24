@@ -490,7 +490,7 @@ void NormalPlayScene::Hit()
 		}
 	}
 }
-// #include <iostream>
+
 void NormalPlayScene::UpdateDangerIndicator()
 {
 	// If we use deltaTime directly, then we might have Bullet-through-paper problem.
@@ -527,7 +527,6 @@ void NormalPlayScene::UpdateDangerIndicator()
 				}
 				float alpha = pos / DangerTime;
 				alpha = std::max(0, std::min(255, static_cast<int>(alpha * alpha * 255)));
-				// std::cout << alpha << std::endl;
 				dangerIndicator->Tint = al_map_rgba(255, 255, 255, alpha);
 				newDeathCountDown = it;
 				break;
